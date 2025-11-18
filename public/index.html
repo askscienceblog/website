@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-SG">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Wang Chen" />
+  <meta name="description"
+    content="ASEAN Young Researchers’ Journal is research journal for student research. We’re based in ASEAN, open to the world." />
+
+  <title>ASEAN Young Researchers’ Journal</title>
+
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyhxAMDKMoTpVlevfrb6czmXwkcS4K0kQ&loading=async&callback=initMap&v=weekly"></script>
+  <script src="./index.js" defer></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+</head>
+
+<body>
+  <header>
+    <div>
+      ASEAN Young Researchers’ Journal
+    </div>
+    <div>
+      <input type="text" placeholder="Search">
+    </div>
+  </header>
+
+  <nav>
+    <select>
+      <option disabled selected hidden>Content</option>
+      <option>Articles</option>
+      <option>Editorials</option>
+      <option>Announcments</option>
+    </select>
+    <select>
+      <option disabled selected hidden>About</option>
+      <option>Story & Team</option>
+      <option>Contact Us</option>
+    </select>
+    <select>
+      <option disabled selected hidden>Publish</option>
+      <option>For Authors</option>
+      <option>For Referees</option>
+      <option>Guidelines</option>
+    </select>
+    <select>
+      <option disabled selected hidden>SHRO</option>
+      <option>Mentee Sign-up</option>
+      <option>Mentor Sign-up</option>
+    </select>
+  </nav>
+
+  <main>
+    <section id="hero">
+      <h2>ASEAN Young Researchers’ Journal</h2>
+      <p>Based in ASEAN, Open to the World</p>
+      <gmp-map-3d mode="satellite" center="1.352111,103.819806,70000" default-ui-hidden
+        style="height: 500px; pointer-events: none;" gestureHandling="cooperative"></gmp-map-3d>
+    </section>
+  </main>
+</body>
+
+</html>
