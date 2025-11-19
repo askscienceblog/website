@@ -27,3 +27,21 @@
     font-style: italic;
     font-weight: bold;
 }
+
+@mixin schola($size, $weight, $style) {
+    font-family: 'Schola', serif;
+    font-style: $style;
+    font-weight: $weight;
+    font-size: $size;
+    font-optical-sizing: auto;
+    font-synthesis: none;
+}
+
+@mixin open-sans($size, $weight, $style) {
+    font-family: 'Open Sans', sans-serif;
+    font-style: $style;
+    font-weight: $weight;
+    font-size: $size;
+    font-optical-sizing: auto;
+    font-synthesis: none;
+}
