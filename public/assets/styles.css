@@ -17,12 +17,13 @@ p {
   max-width: 50rem;
   margin: 1rem auto;
   text-align: start;
+  text-justify: auto;
 }
 
 h1 {
   font-family: "Source Serif 4", serif;
   font-optical-sizing: auto;
-  font-weight: 700;
+  font-weight: 650;
   font-style: normal;
   font-size: 2.8284271247rem;
   margin: 4px 0;
@@ -86,7 +87,7 @@ header div img {
   top: 10%;
   height: 80%;
   aspect-ratio: 1/1;
-  background-image: url("/assets/icons/mag_glass_icon.svg");
+  background-image: url("/assets/mag_glass_icon.svg");
   background-size: cover;
   border: 0;
   background-color: transparent;
@@ -129,9 +130,6 @@ section div {
 }
 #hero h2 {
   font-style: italic;
-}
-#hero p {
-  text-wrap: balance;
 }
 #hero .vignette {
   position: relative;

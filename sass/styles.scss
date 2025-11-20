@@ -22,10 +22,11 @@ p {
     max-width: $text-max-width;
     margin: 1rem auto;
     text-align: start;
+    text-justify: auto;
 }
 
 h1 {
-    @include fonts.serif(math.pow($font-series, 3)*1rem, 700, normal);
+    @include fonts.serif(math.pow($font-series, 3)*1rem, 650, normal);
     margin: 4px 0;
 }
 
@@ -80,7 +81,7 @@ header div {
         height: 80%;
         aspect-ratio: 1 / 1;
 
-        background-image: url("/assets/icons/mag_glass_icon.svg");
+        background-image: url("/assets/mag_glass_icon.svg");
 
         background-size: cover;
         border: 0;
@@ -129,10 +130,6 @@ section div {
 
     h2 {
         font-style: italic;
-    }
-
-    p {
-        text-wrap: balance;
     }
 
     .vignette {
