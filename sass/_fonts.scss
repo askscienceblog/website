@@ -1,47 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
-@font-face {
-    font-family: "Schola";
-    src: url("/assets/fonts/texgyreschola-regular.otf") format("opentype");
-    font-style: normal;
-    font-weight: normal;
+@mixin sans($size, $weight, $style) {
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  font-style: $style;
+  font-size: $size;
 }
 
-@font-face {
-    font-family: "Schola";
-    src: url("/assets/fonts/texgyreschola-bold.otf") format("opentype");
-    font-style: normal;
-    font-weight: bold;
-}
 
-@font-face {
-    font-family: "Schola";
-    src: url("/assets/fonts/texgyreschola-italic.otf") format("opentype");
-    font-style: italic;
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: "Schola";
-    src: url("/assets/fonts/texgyreschola-bolditalic.otf") format("opentype");
-    font-style: italic;
-    font-weight: bold;
-}
-
-@mixin schola($size, $weight, $style) {
-    font-family: 'Schola', serif;
-    font-style: $style;
-    font-weight: $weight;
-    font-size: $size;
-    font-optical-sizing: auto;
-    font-synthesis: none;
-}
-
-@mixin open-sans($size, $weight, $style) {
-    font-family: 'Open Sans', sans-serif;
-    font-style: $style;
-    font-weight: $weight;
-    font-size: $size;
-    font-optical-sizing: auto;
-    font-synthesis: none;
+@mixin serif($size, $weight, $style) {
+  font-family: "Source Serif 4", serif;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  font-style: $style;
+  font-size: $size;
 }

@@ -3,7 +3,7 @@
 
 $page-max-width: 70rem;
 $text-max-width: 50rem;
-$font-series: 1.3333;
+$font-series: math.sqrt(2);
 
 * {
     margin: 0;
@@ -12,7 +12,7 @@ $font-series: 1.3333;
 
     text-wrap: pretty;
 
-    @include fonts.open-sans(1rem, 400, normal);
+    @include fonts.sans(1rem, 500, normal);
     font-weight: inherit;
     font-style: inherit;
     font-size: inherit;
@@ -25,16 +25,18 @@ p {
 }
 
 h1 {
-    @include fonts.schola(math.pow($font-series, 3)*1rem, bold, normal);
-    margin: 0;
+    @include fonts.serif(math.pow($font-series, 3)*1rem, 700, normal);
+    margin: 4px 0;
 }
 
 h2 {
-    @include fonts.schola(math.pow($font-series, 2)*1rem, normal, normal);
+    @include fonts.serif(math.pow($font-series, 2)*1rem, 600, normal);
+    margin: 4px 0;
 }
 
 h3 {
-    @include fonts.schola(math.pow($font-series, 1)*1rem, normal, normal);
+    @include fonts.serif(math.pow($font-series, 1)*1rem, 500, normal);
+    margin: 4px 0;
 }
 
 header {
@@ -57,7 +59,7 @@ header div {
 }
 
 .search {
-    @include fonts.open-sans(1rem, 400, normal);
+    @include fonts.sans(1rem, 400, normal);
     flex-grow: 1;
     text-align: end;
     position: relative;
@@ -116,6 +118,7 @@ nav div {
 section div {
     max-width: $page-max-width;
     margin: 0 auto;
+    padding: 0 4px;
 }
 
 #hero {
@@ -128,6 +131,10 @@ section div {
         font-style: italic;
     }
 
+    p {
+        text-wrap: balance;
+    }
+
     .vignette {
         position: relative;
     }
@@ -136,8 +143,39 @@ section div {
         content: "";
         position: absolute;
         inset: 0;
-        background: radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+        background: radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 40%, black 100%);
         z-index: 2;
         pointer-events: none;
+    }
+}
+
+footer {
+    background-color: black;
+    color: white;
+
+    div {
+        max-width: $page-max-width;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px;
+
+        span {
+            flex-grow: 1;
+        }
+
+        figure {
+            width: fit-content;
+            margin: 4px auto;
+        }
+        figcaption {
+            @include fonts.serif(math.pow($font-series, 1)*1rem, 400, normal);
+            margin: 4px 0;
+        }
+
+        ul {
+            list-style: none;
+        }
     }
 }

@@ -7,7 +7,7 @@ const map = document.querySelector("gmp-map-3d");
 let globeSpin = false;
 
 document.addEventListener("scroll", () => {
-    const scr = Math.max(0.0, window.scrollY - 70) / 240;
+    const scr = Math.max(0.0, window.scrollY - 70) / 200;
 
     if (scr <= 1.0) {
         globeSpin = false;
@@ -30,7 +30,7 @@ document.addEventListener("scroll", () => {
 function zoomGlobe(globe, t) {
     globe.flyCameraTo({
         endCamera: {
-            center: { lat: lerp(1.352111, 0, ease(t)), lng: 103.819806, altitude: lerp(70000, 20000000, ease(t)) },
+            center: { lat: lerp(1.352111, 0, ease(t)), lng: 103.819806, altitude: lerp(80000, 21000000, ease(t)) },
             roll: lerp(0, -23, ease(t))
         },
         durationMillis: 0
@@ -55,5 +55,5 @@ function lerp(start, end, t) {
 }
 
 function ease(t) {
-    return Math.pow(t, 2);
+    return Math.pow(t, 3);
 }
