@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-SG">
+
+<head>
+    {% block head %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Wang Chen" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
+    <link rel="stylesheet" href="/assets/styles.css">
+    {% endblock %}
+</head>
+
+<body>
+    <script>0</script>
+    {% block page-top %}
+    <header>
+        <div>
+            <img src="https://placehold.co/1500x500?text=Logo">
+            <form method="get" action="/content" class="search">
+                <input type="text" name="keywords" required placeholder="Search" size="0">
+                <button type="submit"></button>
+            </form>
+        </div>
+    </header>
+    <nav>
+        <div>
+            <select>
+                <option disabled selected hidden>Content</option>
+                <option>Articles</option>
+                <option>Editorials</option>
+                <option>Announcments</option>
+            </select>
+            <select>
+                <option disabled selected hidden>About</option>
+                <option>Story & Team</option>
+                <option>Contact Us</option>
+            </select>
+            <select>
+                <option disabled selected hidden>Publish</option>
+                <option>For Authors</option>
+                <option>For Referees</option>
+                <option>Guidelines</option>
+            </select>
+            <select>
+                <option disabled selected hidden>SHRO</option>
+                <option>Mentee Sign-up</option>
+                <option>Mentor Sign-up</option>
+            </select>
+        </div>
+    </nav>
+    {% endblock %}
+
+    {% block main %}{% endblock %}
+
+    {% block page-bottom%}
+    <footer>
+        <div>
+            <span>
+                <figure>
+                    <figcaption>Socials</figcaption>
+                    <ul>
+                        <li>Instagram</li>
+                        <li>Discord</li>
+                        <li>Whatsapp</li>
+                    </ul>
+                </figure>
+            </span><span>
+                <figure>
+                    <figcaption>Contact</figcaption>
+                    <ul>
+                        <li>Email</li>
+                        <li>Phone IDK</li>
+                    </ul>
+                </figure>
+            </span>
+        </div>
+    </footer>
+    {%endblock%}
+</body>
+
+</html>
