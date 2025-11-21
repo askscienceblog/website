@@ -3,6 +3,7 @@
 
 <head>
     
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Wang Chen" />
@@ -15,6 +16,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
     <link rel="stylesheet" href="/assets/styles.css">
     
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyhxAMDKMoTpVlevfrb6czmXwkcS4K0kQ&loading=async&callback=initMap"
+    async></script>
+<script src="./index.js" defer></script>
+
 </head>
 
 <body>
@@ -63,9 +68,6 @@
         <div>
             <h1>ASEAN Young Researchers’ Journal</h1>
             <h2>Empowering youth through research</h2>
-
-
-
             <div class="vignette">
                 <gmp-map-3d mode="satellite" center="1.352111,103.819806,70000" default-ui-hidden
                     style="height: 500px; pointer-events: none;" gestureHandling="cooperative"></gmp-map-3d>
