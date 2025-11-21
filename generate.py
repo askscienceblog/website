@@ -1,11 +1,10 @@
-from jinja2 import Environment, FileSystemLoader, TemplateNotFound
-
-from pathlib import Path
 import json
 import os
+from pathlib import Path
+
+from jinja2 import Environment, FileSystemLoader
 
 env = Environment(loader=FileSystemLoader(""), autoescape=True)
-
 
 
 def generate_templates(search_dir: Path, output_dir: Path) -> None:
@@ -31,4 +30,4 @@ def generate_templates(search_dir: Path, output_dir: Path) -> None:
 
 
 if __name__ == "__main__":
-    main()
+    generate_templates(Path("templates"), Path("public"))
