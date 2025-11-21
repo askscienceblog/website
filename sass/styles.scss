@@ -1,8 +1,8 @@
 @use 'fonts';
 @use 'sass:math';
 
-$page-max-width: 70rem;
-$text-max-width: 50rem;
+$page-max-width: 72rem;
+$text-max-width: 55rem;
 $font-series: math.sqrt(2);
 
 * {
@@ -20,7 +20,6 @@ $font-series: math.sqrt(2);
 
 p {
     max-width: $text-max-width;
-    margin: 1rem auto;
     text-align: start;
     text-justify: auto;
 }
@@ -52,6 +51,7 @@ header div {
     flex-direction: row;
     height: 70px;
     align-items: center;
+    justify-content: space-between;
     gap: 4px;
 
     img {
@@ -61,16 +61,12 @@ header div {
 
 .search {
     @include fonts.sans(1rem, 400, normal);
-    flex-grow: 1;
-    text-align: end;
     position: relative;
     height: $font-series*1rem;
-
 
     input {
         width: 100%;
         height: 100%;
-        max-width: 20rem;
     }
 
     button {
@@ -128,6 +124,10 @@ section div {
     color: white;
     text-align: center;
 
+    p {
+        margin: 1rem auto;
+    }
+
     h2 {
         font-style: italic;
     }
@@ -157,15 +157,13 @@ footer {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 4px;
-
-        span {
-            flex-grow: 1;
-        }
+        justify-content: space-around;
 
         figure {
             width: fit-content;
-            margin: 4px auto;
+            margin: 4px 0;
         }
+
         figcaption {
             @include fonts.serif(math.pow($font-series, 1)*1rem, 400, normal);
             margin: 4px 0;
@@ -175,4 +173,26 @@ footer {
             list-style: none;
         }
     }
+}
+
+.featured {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    height: 400px;
+    justify-content: start;
+
+    div {
+        margin: 0;
+        flex: 1 1 0;
+        background-color: black;
+        padding: 4px;
+        color: white;
+    }
+
+    img {
+        flex: 1 1 auto;
+        height: 100%;
+    }
+
 }

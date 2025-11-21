@@ -1,4 +1,5 @@
 {% extends "templates/base.html.j2" %}
+{%import "templates/components.html.j2" as components%}
 
 {% block head %}
 {{super()}}
@@ -18,22 +19,16 @@
                 <gmp-map-3d mode="satellite" center="1.352111,103.819806,70000" default-ui-hidden
                     style="height: 500px; pointer-events: none;" gestureHandling="cooperative"></gmp-map-3d>
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem
-                placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
-                Pulvinar
-                vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
-                posuere.
-                Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos
-                himenaeos.</p>
+            <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born
+                and I will give you a complete account of the system, and expound the actual teachings of the great
+                explorer of the truth, the master-builder of human happiness. No one rejects,</p>
         </div>
     </section>
 
     <section>
         <div>
             <h2>Featured</h2>
-            <img src="https://placehold.co/10x1000">
-            <article>
-            </article>
+            {{ components.featured(feature.title, feature.desc, feature.img, feature.authors, feature.date) }}
         </div>
     </section>
 
