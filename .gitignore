@@ -70,4 +70,5 @@ node_modules/
 
 # generated files
 **/index.html
+**/404.html
 public/assets/styles.*
