@@ -7,6 +7,7 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyhxAMDKMoTpVlevfrb6czmXwkcS4K0kQ&loading=async&callback=initMap"
     async></script>
 <script src="./index.js" defer></script>
+<title>Home ∈ AYRJ</title>
 {%endblock%}
 
 {% block main %}
@@ -15,29 +16,30 @@
         <div>
             <h1>ASEAN Young Researchers’ Journal</h1>
             <h2>Empowering youth through research</h2>
-            <div class="vignette">
-                <gmp-map-3d mode="satellite" center="1.352111,103.819806,70000" default-ui-hidden
-                    style="height: 500px; pointer-events: none;" gestureHandling="cooperative"></gmp-map-3d>
+            <div>
+                <gmp-map-3d tabindex="-1" mode="satellite" center="1.352111,103.819806,70000" default-ui-hidden
+                    style="display:block; height: 400px;" gestureHandling="cooperative"></gmp-map-3d>
+                <div class="vignette"></div>
             </div>
-            <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born
-                and I will give you a complete account of the system, and expound the actual teachings of the great
-                explorer of the truth, the master-builder of human happiness. No one rejects,</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit lectus ut dolor aliquet, in
+                fermentum erat vehicula. Maecenas et porttitor nibh. Fusce luctus laoreet justo, tincidunt dignissim
+                turpis semper vitae. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras non magna
+                luctus, viverra sapien vitae, scelerisque arcu. Curabitur vel efficitur erat. Nam nisi velit, eleifend
+                in lacus nec, molestie fringilla leo. Ut malesuada sit amet eros et mollis.</p>
         </div>
     </section>
 
     <section>
         <div>
-            <h2>Featured</h2>
-            {{ components.featured(feature.title, feature.desc, feature.img, feature.authors, feature.date) }}
+            <h2>Recent Publications</h2>
         </div>
-    </section>
-
-    <section>
-        <h2>Recent Publications</h2>
-        <ul>
-            <li>article 1</li>
-            <li>article 2</li>
-        </ul>
+        <ol class="article-list">
+            {%for index in featured%}
+            <li>
+                <div>{{components.card(articles[index])}}</div>
+            </li>
+            {%endfor%}
+        </ol>
     </section>
 </main>
 {%endblock%}

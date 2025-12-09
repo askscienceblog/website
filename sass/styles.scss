@@ -20,106 +20,109 @@ $font-series: math.sqrt(2);
 
 p {
     max-width: $text-max-width;
-    text-align: start;
-    text-justify: auto;
+    text-wrap: balance;
+    margin: 1rem 0;
 }
 
 h1 {
     @include fonts.serif(math.pow($font-series, 3)*1rem, 650, normal);
-    margin: 4px 0;
+    margin: 0 0 4px 0;
 }
 
 h2 {
     @include fonts.serif(math.pow($font-series, 2)*1rem, 600, normal);
-    margin: 4px 0;
+    margin: 0 0 4px 0;
 }
 
 h3 {
     @include fonts.serif(math.pow($font-series, 1)*1rem, 500, normal);
-    margin: 4px 0;
+    margin: 0 0 4px 0;
 }
 
-header {
-    border-bottom: 1px solid black;
+a:link {
+    color: inherit;
 }
 
-header div {
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+div.center {
+    height: 100%;
     max-width: $page-max-width;
     margin: 0 auto;
     padding: 0 4px;
     display: flex;
-    flex-direction: row;
-    height: 70px;
-    align-items: center;
-    justify-content: space-between;
-    gap: 4px;
-
-    img {
-        height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    * {
+        text-align: center;
     }
 }
 
-.search {
-    @include fonts.sans(1rem, 400, normal);
-    position: relative;
-    height: $font-series*1rem;
-
-    input {
-        width: 100%;
-        height: 100%;
-    }
-
-    button {
-        position: absolute;
-        right: 0;
-        top: 10%;
-
-        height: 80%;
-        aspect-ratio: 1 / 1;
-
-        background-image: url("/assets/mag_glass_icon.svg");
-
-        background-size: cover;
-        border: 0;
-        background-color: transparent;
-    }
-}
-
-nav {
-    border-bottom: 1px solid black;
+header {
     position: sticky;
     top: 0;
     z-index: 10;
     background-color: #ffffffe0;
 }
 
-nav div {
+header>div {
     max-width: $page-max-width;
+    height: 2rem;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
-    height: 30px;
+    align-items: center;
+    gap: 4px;
+
+    a {
+        height: 100%;
+    }
+
+    img {
+        height: 100%;
+    }
+
+    a#search {
+        height: 60%;
+    }
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    min-width: 0;
+    gap: 8px;
 
     select {
         border: none;
-
-        flex: 0 1 6em;
+        flex: 0 1 6rem;
         min-width: 0;
-        margin: 0 4px;
-
         background-color: transparent;
     }
 }
 
+section {
+    padding: 12px 0;
+}
 
-section div {
+section>div {
     max-width: $page-max-width;
     margin: 0 auto;
     padding: 0 4px;
 }
 
 #hero {
-    padding: 4px 0;
     background-color: black;
     color: white;
     text-align: center;
@@ -132,17 +135,17 @@ section div {
         font-style: italic;
     }
 
-    .vignette {
+    div {
         position: relative;
     }
 
-    .vignette::before {
-        content: "";
+    div.vignette {
         position: absolute;
-        inset: 0;
-        background: radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 40%, black 100%);
-        z-index: 2;
-        pointer-events: none;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 50%, black 100%);
     }
 }
 
@@ -175,24 +178,62 @@ footer {
     }
 }
 
-.featured {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap-reverse;
-    height: 400px;
-    justify-content: start;
+.article-list {
+    list-style: none;
+
+    a,
+    a:link,
+    a:active,
+    a:hover,
+    a:visited {
+        color: inherit;
+        text-decoration: inherit;
+    }
 
     div {
-        margin: 0;
-        flex: 1 1 0;
-        background-color: black;
-        padding: 4px;
+        max-width: $page-max-width;
+        margin: 0 auto;
+        padding: 0 4px;
+    }
+
+    li {
+        padding: 4px 0;
+        border-top: 1px solid black;
+    }
+
+    li:last-child {
+        border-bottom: 1px solid black;
+    }
+
+    p.abstract {
+        display: none;
+    }
+
+    li:hover {
         color: white;
+        background-color: black;
+
+        p {
+            display: block;
+        }
+    }
+}
+
+ol.authors {
+    li {
+        display: inline;
+        border: none;
     }
 
-    img {
-        flex: 1 1 auto;
-        height: 100%;
+    li:last-child {
+        border: none;
     }
 
+    li::after {
+        content: ", ";
+    }
+
+    li:last-child::after {
+        content: "";
+    }
 }

@@ -22,39 +22,36 @@
     {%block page_top%}
     <header>
         <div>
-            <img src="https://placehold.co/1500x500?text=Logo">
-            <form method="get" action="/content" class="search">
-                <input type="text" name="keywords" required placeholder="Search" size="0">
-                <button type="submit"></button>
-            </form>
+            <a href="/"><img src="https://placehold.co/500x500?text=Logo" alt="ASEAN Young Researchers' Journal Logo"></a>
+
+            <nav>
+                <select>
+                    <option disabled selected hidden>Content</option>
+                    <option>Articles</option>
+                    <option>Editorials</option>
+                    <option>Announcments</option>
+                </select>
+                <select>
+                    <option disabled selected hidden>About</option>
+                    <option>Story & Team</option>
+                    <option>Contact Us</option>
+                </select>
+                <select>
+                    <option disabled selected hidden>Publish</option>
+                    <option>For Authors</option>
+                    <option>For Referees</option>
+                    <option>Guidelines</option>
+                </select>
+                <select>
+                    <option disabled selected hidden>SHRO</option>
+                    <option>Mentee Sign-up</option>
+                    <option>Mentor Sign-up</option>
+                </select>
+            </nav>
+
+            <a href="/articles"  id="search"><img src="/assets/mag_glass_icon.svg" alt="Magnifying glass search icon"></a>
         </div>
     </header>
-    <nav>
-        <div>
-            <select>
-                <option disabled selected hidden>Content</option>
-                <option>Articles</option>
-                <option>Editorials</option>
-                <option>Announcments</option>
-            </select>
-            <select>
-                <option disabled selected hidden>About</option>
-                <option>Story & Team</option>
-                <option>Contact Us</option>
-            </select>
-            <select>
-                <option disabled selected hidden>Publish</option>
-                <option>For Authors</option>
-                <option>For Referees</option>
-                <option>Guidelines</option>
-            </select>
-            <select>
-                <option disabled selected hidden>SHRO</option>
-                <option>Mentee Sign-up</option>
-                <option>Mentor Sign-up</option>
-            </select>
-        </div>
-    </nav>
     {%endblock%}
 
     {%block main%}{%endblock%}

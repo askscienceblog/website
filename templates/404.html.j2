@@ -1,0 +1,18 @@
+{% extends "templates/base.html.j2" %}
+{%import "templates/components.html.j2" as components%}
+
+{% block head %}
+{{super()}}
+<script src="./404.js" defer></script>
+<title>Error 404 ∉ AYRJ</title>
+{%endblock%}
+
+{% block main %}
+<main>
+    <div class="center">
+        <h1>404: Page not found</h1>
+        <h2>:(</h2>
+        <p>The server could not find this page. Please head back to our <a href="/">homepage</a>.</p>
+    </div>
+</main>
+{%endblock%}

@@ -7,7 +7,7 @@ const map = document.querySelector("gmp-map-3d");
 let globeSpin = false;
 
 document.addEventListener("scroll", () => {
-    const scr = Math.max(0.0, window.scrollY - 70) / 200;
+    const scr = Math.max(0.0, window.scrollY) / 200;
 
     if (scr <= 1.0) {
         globeSpin = false;

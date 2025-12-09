@@ -1,19 +1,23 @@
-{%macro featured(title, desc, img_src, authors, date)%}
-<article class="featured">
-    <div>
-        <h3>{{title}}</h3>
-        <p>{{desc}}</p>
+{%macro card(article)%}
+<a href="/{{article.id}}" class="no-style    ">
+    <article class="card">
         <span>
-            {% if authors is defined%}
-            <p>{{authors | join(', ')}}</p>
-            {%endif%}
-            {%if date is defined%}
-            <time datetime="{{date}}">{{date}}</time>
-            {%endif%}
+            <h3>{{article.title}}</h3>
+            <ol class="authors">
+                {%for author in article.authors%}
+                <li>{{author}}</li>
+                {%endfor%}
+            </ol>
         </span>
-    </div>
-    {%if img_src is defined%}
-    <img src="{{img_src}}">
-    {%endif%}
-</article>
+
+        <p class="abstract">{{article.abstract}}</p>
+
+        {%if article.img is not none%}
+        <img src="{{article.img}}">
+        {%else%}
+        <div></div>
+        {%endif%}
+        <time datetime="{{article.date}}">{{article.date}}</time>
+    </article>
+</a>
 {%endmacro%}
