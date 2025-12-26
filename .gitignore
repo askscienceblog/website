@@ -169,5 +169,5 @@ dist
 # ignore generated files
 **/*.html
 
-# ignore assets
-public/assets
+# ignore static assets
+public/static
