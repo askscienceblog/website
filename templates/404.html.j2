@@ -1,10 +1,17 @@
-{% extends "templates/base.html.j2" %}
-{%import "templates/components.html.j2" as components%}
+{% extends "templates/bases/base.html.j2" %}
+{%import "templates/bases/components.html.j2" as components%}
+
+{#
+{
+    "copies": ["templates/404.json"],
+    "extension": ".html"
+}
+#}
 
 {% block head %}
 {{super()}}
 <script src="./404.js" defer></script>
-<title>Error 404 ∉ AYRJ</title>
+<title>404 ∉ AYRJ</title>
 {%endblock%}
 
 {% block main %}

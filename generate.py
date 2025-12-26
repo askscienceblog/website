@@ -1,8 +1,16 @@
 import json
 import os
-from pathlib import Path
+import re
 
 from jinja2 import Environment, FunctionLoader, StrictUndefined
+from pydantic import BaseModel, Field
+
+CONFIG_JSON = re.compile(r"{#(?:\+|-)*\s*({.*?})\s*(?:\+|-)*#}", re.DOTALL)
+
+
+class TemplateOptions(BaseModel):
+    copies: list[str] = []
+    extension: str = Field(default="", pattern=r"^$|^\..*")
 
 
 def load_from_path(path: str) -> str:
@@ -15,39 +23,32 @@ env = Environment(
 )
 
 
-def generate_templates(search_dir: Path, output_dir: Path, variables: Path) -> None:
-    if variables.is_file():
-        with variables.open() as file:
-            data = json.load(file)
-    else:
-        data = {}
+def generate_templates(search_dir: str, output_dir: str) -> None:
+    for entry in os.scandir(search_dir):
+        if entry.is_file() and os.path.splitext(entry)[1] == ".j2":
+            with open(entry, "r") as file:
+                text = file.read()
+            mat = CONFIG_JSON.search(text)
+            if mat is None:
+                mat = r"{}"
+            else:
+                mat = mat.group(1)
 
-    index_path = search_dir / "index.html.j2"
-    if index_path.is_file():
-        output = env.get_template(str(index_path)).render(**data)
-        output_dir.mkdir(parents=True, exist_ok=True)
-        with open(output_dir / "index.html", "w") as file:
-            file.write(output)
+            options = TemplateOptions.model_validate_json(mat)
+            for copy in options.copies:
+                with open(copy, "r") as file:
+                    var = json.load(file)
+                    
+                filename = os.path.splitext(os.path.basename(copy))[0]
+                output = env.get_template(entry.path).render(**var)
 
-    for path in os.listdir(search_dir):
-        next_dir = search_dir / path
-        if next_dir.is_dir():
-            generate_templates(next_dir, output_dir / path, variables)
+                os.makedirs(output_dir, exist_ok=True)
+                with open(os.path.join(output_dir, filename+options.extension), "w") as file:
+                    file.write(output)
+
+        if entry.is_dir():
+            generate_templates(entry.path, os.path.join(output_dir, entry.name))
 
 
 if __name__ == "__main__":
-    root = Path("templates")
-    output = Path("public")
-    var = Path("vars.json")
-    generate_templates(root, output, var)
-
-    if var.is_file():
-        with var.open() as file:
-            data = json.load(file)
-    else:
-        data = {}
-
-    if (root / "404.html.j2").is_file():
-        outputs = env.get_template(str(root / "404.html.j2")).render(**data)
-        with open(output / "404.html", "w") as file:
-            file.write(outputs)
+    generate_templates("templates", "output")

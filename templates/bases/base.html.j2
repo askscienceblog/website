@@ -14,6 +14,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
     <link rel="stylesheet" href="/assets/styles.css">
+    <script src="/nav.js" defer></script>
     {% endblock %}
 </head>
 
@@ -25,25 +26,24 @@
             <a href="/"><img src="https://placehold.co/500x500?text=Logo" alt="ASEAN Young Researchers' Journal Logo"></a>
 
             <nav>
-                <select>
-                    <option disabled selected hidden>Content</option>
+                <select onchange="change_nav(this)" aria-label="Content-related navigation options">
+                    <option selected hidden>Content</option>
                     <option>Articles</option>
-                    <option>Editorials</option>
                     <option>Announcments</option>
                 </select>
-                <select>
-                    <option disabled selected hidden>About</option>
+                <select onchange="change_nav(this)" aria-label="About-us-related navigation options">
+                    <option selected hidden>About</option>
                     <option>Story & Team</option>
                     <option>Contact Us</option>
                 </select>
-                <select>
-                    <option disabled selected hidden>Publish</option>
+                <select onchange="change_nav(this)" aria-label="Publication-related navigation options">
+                    <option selected hidden>Publish</option>
                     <option>For Authors</option>
                     <option>For Referees</option>
                     <option>Guidelines</option>
                 </select>
-                <select>
-                    <option disabled selected hidden>SHRO</option>
+                <select onchange="change_nav(this)" aria-label="SHRO-related navigation options">
+                    <option selected hidden>SHRO</option>
                     <option>Mentee Sign-up</option>
                     <option>Mentor Sign-up</option>
                 </select>

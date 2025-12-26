@@ -1,6 +1,11 @@
 @use 'fonts';
 @use 'sass:math';
 
+@mixin invert-colors {
+    color: white;
+    background-color: black;
+}
+
 $page-max-width: 72rem;
 $text-max-width: 55rem;
 $font-series: math.sqrt(2);
@@ -63,6 +68,7 @@ div.center {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+
     * {
         text-align: center;
     }
@@ -124,8 +130,7 @@ section>div {
 }
 
 #hero {
-    background-color: black;
-    color: white;
+    @include invert-colors();
     text-align: center;
 
     p {
@@ -151,8 +156,7 @@ section>div {
 }
 
 footer {
-    background-color: black;
-    color: white;
+    @include invert-colors();
 
     div {
         max-width: $page-max-width;
@@ -182,11 +186,7 @@ footer {
 .article-list {
     list-style: none;
 
-    a,
-    a:link,
-    a:active,
-    a:hover,
-    a:visited {
+    a {
         color: inherit;
         text-decoration: inherit;
     }
@@ -212,8 +212,7 @@ footer {
 
     li:hover,
     li:focus-within {
-        color: white;
-        background-color: black;
+        @include invert-colors();
 
         p {
             display: block;
