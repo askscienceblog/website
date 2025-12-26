@@ -38,12 +38,14 @@ def generate_templates(search_dir: str, output_dir: str) -> None:
             for copy in options.copies:
                 with open(copy, "r") as file:
                     var = json.load(file)
-                    
+
                 filename = os.path.splitext(os.path.basename(copy))[0]
                 output = env.get_template(entry.path).render(**var)
 
                 os.makedirs(output_dir, exist_ok=True)
-                with open(os.path.join(output_dir, filename+options.extension), "w") as file:
+                with open(
+                    os.path.join(output_dir, filename + options.extension), "w"
+                ) as file:
                     file.write(output)
 
         if entry.is_dir():
@@ -51,4 +53,4 @@ def generate_templates(search_dir: str, output_dir: str) -> None:
 
 
 if __name__ == "__main__":
-    generate_templates("templates", "output")
+    generate_templates("templates", "public")

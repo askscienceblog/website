@@ -1,0 +1,12 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "ayrj-website",
+	"compatibility_date": "2025-12-25",
+	// "main": "src/index.js",
+	"assets": {
+		"directory": "./public"
+	},
+	"observability": {
+		"enabled": true
+	}
+}
