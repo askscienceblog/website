@@ -1,9 +1,7 @@
 function change_nav(select) {
 
-    console.log("change")
-
     switch (select.value.toLowerCase()) {
-        
+
         case "articles":
             window.location.href = "/articles";
             break;

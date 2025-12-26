@@ -167,8 +167,7 @@ dist
 .wrangler/
 
 # ignore generated files
-**/index.html
-**/404.html
+**/*.html
 
 # ignore assets
 public/assets
