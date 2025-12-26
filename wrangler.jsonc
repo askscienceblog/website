@@ -4,9 +4,16 @@
 	"compatibility_date": "2025-12-25",
 	// "main": "src/index.js",
 	"assets": {
-		"directory": "./public"
+		"directory": "./dist"
 	},
 	"observability": {
 		"enabled": true
+	},
+	"env": {
+		"dev": {
+			"assets": {
+				"directory": "./public"
+			}
+		},
 	}
 }
