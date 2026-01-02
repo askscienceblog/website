@@ -1,0 +1,119 @@
+{
+  "title": "Effectiveness of different mouthwash agents and herb extracts in inhibition of *Streptococcus mutans* biofilm",
+  "contributors": [
+    {
+      "surname": "Wen",
+      "given_name": "Jamie",
+      "sequence": 1,
+      "name_style": "western"
+    },
+    {
+      "surname": "Xuan",
+      "given_name": "Ling Kee, Shannon",
+      "sequence": 2,
+      "name_style": "eastern"
+    },
+    {
+      "given_name": "Samantha Mi Mi",
+      "surname": "Chan",
+      "sequence": 3,
+      "name_style": "western"
+    }
+  ],
+  "abstract": [
+    {
+      "paragraph": "This study aims to examine the efficacy of different mouthwash agents and Traditional Chinese Medicine (TCM) extracts in the removal of *Streptococcus mutans* ATCC 25175 (*S. mutans*) biofilm and reducing growth of planktonic cells after rinsing. Crystal violet assay, well diffusion assay and MTT assay were utilised to determine the efficacy of the individual mouthwashes and extracts. The data shows that Cetyl Pyridinium Chloride and water extracted *Rhizoma coptidis* (Huang Lian) and *Fructus armeniaca mume* (Wu Mei), had the best holistic performance, with it being the most effective mouthwash in both biofilm removal and in the reduction of planktonic cells. Mouthwash containing ethanol as the active ingredient performed the worst with only a 49.8% decrease in biofilm. Water extracted herbs performance was superior to that of organic solvent extracted herbs. No synergistic effects between the different TCM extracts were found, instead, an antagonistic effect between Huang Lian and Wu Mei was observed. We eventually hope to design and test an alternative natural mouthwash incorporating Huang Lian and/or Wu Mei extracts, identifying the specific active compound found in the respective herbs."
+    }
+  ],
+  "full_text": [],
+  "citation_list": [
+    {
+      "type": "ndoi_cite",
+      "article_title": "Oral Health",
+      "author": "World Health Organization",
+      "cYear": 2020,
+      "unstructured_citation": "*Oral health*. (2020, March 25). World Health Organization. https://www.who.int/news-room/fact-sheets/detail/oral-health"
+    },
+    {
+      "type": "ndoi_cite",
+      "article_title": "Dental services expenditure in the U.S. 1960–2018.",
+      "author": "Satista",
+      "cYear": 2021,
+      "unstructured_citation": "Statista. (2021, March 15). *Dental services expenditure in the U.S. 1960–2018.* https://www.statista.com/statistics/184916/dental-services-expenditures-in-the-us-since-1960/"
+    },
+    {
+      "type": "ndoi_cite",
+      "article_title": "Microbiology of Dental Decay and Periodontal Disease",
+      "author": "W. J. Loesche",
+      "cYear": 1996,
+      "unstructured_citation": "Loesche, W.J. (1996). Microbiology of Dental Decay and Periodontal Disease. In: S. Baron (Ed.), *Medical Microbiology* (4th ed.). University of Texas Medical Branch at Galveston. https://www.ncbi.nlm.nih.gov/books/NBK8259/"
+    },
+    {
+      "type": "doi_cite",
+      "doi": "10.1016/0003-9969(95)00103-4"
+    },
+    {
+      "type": "ndoi_cite",
+      "article_title": "\"Alcohol use in mouthwash and possible oral health concerns\"",
+      "author": "Muhammad Wasif Haq",
+      "cYear": 2009,
+      "unstructured_citation": "Haq, M. W., Batool, M., Ahsan, S. H., & Qureshi, N. R. (2009). \"Alcohol use in mouthwash and possible oral health concerns\". *JPMA. The Journal of the Pakistan Medical Association*, *59*(3), 186–190."
+    },
+    {
+      "type": "ndoi_cite",
+      "author": "Gianni Testino",
+      "cYear": 2011,
+      "article_title": "The burden of cancer attributable to alcohol consumption",
+      "unstructured_citation": "Testino G. (2011). The burden of cancer attributable to alcohol consumption. *Maedica*, *6*(4), 313–320."
+    },
+    {
+      "type": "doi_cite",
+      "doi": "10.1111/j.1600-0722.1996.tb00041.x"
+    },
+    {
+      "type": "doi_cite",
+      "doi": "10.1111/eos.12745"
+    },
+    {
+      "type": "ndoi_cite",
+      "article_title": "Essential Oils Promise Help, But Beware the Risks",
+      "author": "L. Marshall",
+      "cYear": 2018,
+      "unstructured_citation": "Marshall, L. (2018, August 13). *Essential Oils Promise Help, But Beware the Risks*. WebMD. https://www.webmd.com/beauty/news/20180813/essential-oils-promise-help-but-beware-the-risks"
+    },
+    {
+      "type": "doi_cite",
+      "doi": "10.1111/eos.12745"
+    },
+    {
+      "type": "ndoi_cite",
+      "article_title": "A wash worth its while?",
+      "author": "Harvard Health",
+      "cYear": 2011,
+      "unstructured_citation": "*A wash worth its while?* (2011, March). Harvard Health. https://www.health.harvard.edu/staying-healthy/a-wash-worth-its-while"
+    },
+    {
+      "type": "doi_cite",
+      "doi": "10.1034/j.1600-051x.2001.280107.x"
+    },
+    {
+      "type": "ndoi_cite",
+      "author": "Park Yong-Duk",
+      "article_title": "Clinical Study on Effects of Dentifrice Containing 0.05% Isopropyl Methylphenol (IPMP) and 0.05% Dipotassium Glycyrrhizinate (GK2) on Gingival Conditions",
+      "cYear": 2010,
+      "unstructured_citation": "Park, Y. D., Cho, J. W., Seo, W. S., Park, H. H., Shin, S. C., Sano, H., & Kambara, M. (2010). Clinical study on effects of dentifrice containing 0.05% isopropyl methylphenol (IPMP) and 0.05% dipotassium glycyrrhizinate (GK2) on gingival conditions. *International Journal of Clinical Preventive Dentistry, 6*(2), 55-61."
+    },
+    {
+      "type": "doi_cite",
+      "doi": "10.3892/ijmm.2016.2550"
+    },
+    {
+      "type": "doi_cite",
+      "doi": "10.1016/j.ijom.2010.02.024"
+    },
+    {
+      "type": "doi_cite",
+      "doi": "10.4236/cm.2011.22007"
+    }
+  ]
+}
