@@ -163,7 +163,76 @@
           "literal": "Harvard Health"
         }
       ]
+    },
+    {
+      "type": "doi_cite",
+      "key": "12",
+      "doi": "10.1034/j.1600-051x.2001.280107.x"
+    },
+    {
+      "cite_type": "article-journal",
+      "authors": [
+        {
+          "type": "person",
+          "given": "Yong-Duk",
+          "family": "Park"
+        },
+        {
+          "type": "person",
+          "given": "Ja-Won",
+          "family": "Cho"
+        },
+        {
+          "type": "person",
+          "given": "Woo-Seok",
+          "family": "Seo"
+        },
+        {
+          "type": "person",
+          "given": "Hae-Hoon",
+          "family": "Park"
+        },
+        {
+          "type": "person",
+          "family": "Shin",
+          "given": "Seung-Chul"
+        },
+        {
+          "type": "person",
+          "given": "Hiroshi",
+          "family": "Sano"
+        },
+        {
+          "type": "person",
+          "given": "Masaki",
+          "family": "Kambara"
+        }
+      ],
+      "container-title": "International Journal of Clinical Preventive Dentistry",
+      "URL": "http://www.ijcpd.org/journal/view.html?spage=55&volume=6&number=2",
+      "page": "55-61",
+      "issued_year": 2010,
+      "title": "Clinical Study on Effects of Dentifrice Containing 0.05% Isopropyl Methylphenol (IPMP) and 0.05% Dipotassium Glycyrrhizinate (GK2) on Gingival Conditions",
+      "issue": "2",
+      "volume": "6",
+      "type": "ndoi_cite",
+      "key": "13"
+    },
+    {
+      "type": "doi_cite",
+      "doi": "10.3892/ijmm.2016.2550",
+      "key": "14"
+    },
+    {
+      "type": "doi_cite",
+      "key": "15",
+      "doi": "10.1016/j.ijom.2010.02.024"
+    },
+    {
+      "type": "doi_cite",
+      "key": "16",
+      "doi": "10.4236/cm.2011.22007"
     }
   ],
-  "full_text": ""
+  "full_text": "[@16]"
 }
