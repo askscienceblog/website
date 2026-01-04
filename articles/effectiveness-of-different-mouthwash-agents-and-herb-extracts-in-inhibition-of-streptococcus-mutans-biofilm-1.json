@@ -1,0 +1,149 @@
+{
+  "title": "Effectiveness of different mouthwash agents and herb extracts in inhibition of *Streptococcus mutans* biofilm",
+  "contributors": [
+    {
+      "surname": "Wen",
+      "given_name": "Jamie",
+      "name_style": "western",
+      "sequence": 1
+    },
+    {
+      "surname": "Xuan",
+      "given_name": "Ling Kee, Shannon",
+      "sequence": 2,
+      "name_style": "eastern"
+    },
+    {
+      "surname": "Chan",
+      "given_name": "Samantha Mi Mi",
+      "sequence": 3,
+      "name_style": "western"
+    }
+  ],
+  "abstract": "This study aims to examine the efficacy of different mouthwash agents and Traditional Chinese Medicine (TCM) extracts in the removal of *Streptococcus mutans* ATCC 25175 (*S. mutans*) biofilm and reducing growth of planktonic cells after rinsing. Crystal violet assay, well diffusion assay and MTT assay were utilised to determine the efficacy of the individual mouthwashes and extracts. The data shows that Cetyl Pyridinium Chloride and water extracted *Rhizoma coptidis* (Huang Lian) and *Fructus armeniaca mume* (Wu Mei), had the best holistic performance, with it being the most effective mouthwash in both biofilm removal and in the reduction of planktonic cells. Mouthwash containing ethanol as the active ingredient performed the worst with only a 49.8% decrease in biofilm. Water extracted herbs performance was superior to that of organic solvent extracted herbs. No synergistic effects between the different TCM extracts were found, instead, an antagonistic effect between Huang Lian and Wu Mei was observed. We eventually hope to design and test an alternative natural mouthwash incorporating Huang Lian and/or Wu Mei extracts, identifying the specific active compound found in the\nrespective herbs.",
+  "citation_list": [
+    {
+      "type": "ndoi_cite",
+      "key": "1",
+      "cite_type": "webpage",
+      "title": "Oral Health",
+      "authors": [
+        {
+          "type": "org",
+          "literal": "World Health Organization"
+        }
+      ],
+      "accessed": "2020-03-25",
+      "URL": "https://www.who.int/news-room/fact-sheets/detail/oral-health",
+      "issued_year": ""
+    },
+    {
+      "type": "ndoi_cite",
+      "key": "2",
+      "cite_type": "dataset",
+      "title": "Dental services expenditure in the U.S. 1960–2018.",
+      "authors": [
+        {
+          "type": "org",
+          "literal": "Statista"
+        }
+      ],
+      "accessed": "2021-03-15",
+      "URL": "https://www.statista.com/statistics/184916/dental-services-expenditures-in-the-us-since-1960/"
+    },
+    {
+      "cite_type": "chapter",
+      "authors": [
+        {
+          "type": "person",
+          "given": "Walter J.",
+          "family": "Loesche"
+        }
+      ],
+      "container-title": "Medical Microbiology, 4th edition",
+      "URL": "https://www.ncbi.nlm.nih.gov/books/NBK7627/",
+      "issued_year": 1996,
+      "title": "Microbiology of Dental Decay and Periodontal Disease",
+      "type": "ndoi_cite",
+      "publisher": "University of Texas Medical Branch at Galveston",
+      "key": "3"
+    },
+    {
+      "type": "doi_cite",
+      "doi": "10.1016/0003-9969(95)00103-4",
+      "key": "4"
+    },
+    {
+      "cite_type": "article-journal",
+      "authors": [
+        {
+          "type": "person",
+          "given": "Muhammad Wasif",
+          "family": "Haq"
+        },
+        {
+          "type": "person",
+          "given": "Mehwish",
+          "family": "Batool"
+        },
+        {
+          "type": "person",
+          "given": "Syed Hammad",
+          "family": "Ahsan"
+        },
+        {
+          "type": "person",
+          "given": "Navid Rashid",
+          "family": "Qureshi"
+        }
+      ],
+      "container-title": "The Journal of the Pakistan Medical Association",
+      "URL": "https://pubmed.ncbi.nlm.nih.gov/19288954/",
+      "page": "186-190",
+      "issued_year": 2009,
+      "title": "\"Alcohol use in mouthwash and possible oral health concerns\"",
+      "issue": "3",
+      "volume": "59",
+      "type": "ndoi_cite",
+      "key": "5"
+    },
+    {
+      "cite_type": "article-journal",
+      "authors": [
+        {
+          "type": "person",
+          "family": "Testino",
+          "given": "Gianni"
+        }
+      ],
+      "container-title": "Maedica",
+      "URL": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3391950/",
+      "page": "313-320",
+      "issued_year": 2011,
+      "title": "The Burden of Cancer Attributable to Alcohol Consumption",
+      "issue": "4",
+      "volume": "6",
+      "type": "ndoi_cite",
+      "key": "6"
+    },
+    {
+      "type": "doi_cite",
+      "key": "7",
+      "doi": "10.1111/j.1600-0722.1996.tb00041.x"
+    },
+    {
+      "type": "doi_cite",
+      "key": "8",
+      "doi": "10.1111/eos.12745"
+    },
+    {
+      "type": "ndoi_cite",
+      "key": "9",
+      "cite_type": "webpage",
+      "title": "Essential Oils Promise Help, But Beware the Risks",
+      "container-title": "WebMD",
+      "issued_year": 2018
+    }
+  ],
+  "full_text": ""
+}
