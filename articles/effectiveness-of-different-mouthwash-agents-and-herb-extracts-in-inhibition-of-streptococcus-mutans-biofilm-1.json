@@ -20,7 +20,7 @@
       "name_style": "western"
     }
   ],
-  "abstract": "This study aims to examine the efficacy of different mouthwash agents and Traditional Chinese Medicine (TCM) extracts in the removal of *Streptococcus mutans* ATCC 25175 (*S. mutans*) biofilm and reducing growth of planktonic cells after rinsing. Crystal violet assay, well diffusion assay and MTT assay were utilised to determine the efficacy of the individual mouthwashes and extracts. The data shows that Cetyl Pyridinium Chloride and water extracted *Rhizoma coptidis* (Huang Lian) and *Fructus armeniaca mume* (Wu Mei), had the best holistic performance, with it being the most effective mouthwash in both biofilm removal and in the reduction of planktonic cells. Mouthwash containing ethanol as the active ingredient performed the worst with only a 49.8% decrease in biofilm. Water extracted herbs performance was superior to that of organic solvent extracted herbs. No synergistic effects between the different TCM extracts were found, instead, an antagonistic effect between Huang Lian and Wu Mei was observed. We eventually hope to design and test an alternative natural mouthwash incorporating Huang Lian and/or Wu Mei extracts, identifying the specific active compound found in the\nrespective herbs.",
+  "abstract": "This study aims to examine the efficacy of different mouthwash agents and Traditional Chinese Medicine (TCM) extracts in the removal of *Streptococcus mutans* ATCC 25175 (*S. mutans*) biofilm and reducing growth of planktonic cells after rinsing. Crystal violet assay, well diffusion assay and MTT assay were utilised to determine the efficacy of the individual mouthwashes and extracts. The data shows that Cetyl Pyridinium Chloride and water extracted *Rhizoma coptidis* (Huang Lian) and *Fructus armeniaca mume* (Wu Mei), had the best holistic performance, with it being the most effective mouthwash in both biofilm removal and in the reduction of planktonic cells. Mouthwash containing ethanol as the active ingredient performed the worst with only a 49.8% decrease in biofilm. Water extracted herbs performance was superior to that of organic solvent extracted herbs. No synergistic effects between the different TCM extracts were found, instead, an antagonistic effect between Huang Lian and Wu Mei was observed. We eventually hope to design and test an alternative natural mouthwash incorporating Huang Lian and/or Wu Mei extracts, identifying the specific active compound found in the respective herbs.",
   "citation_list": [
     {
       "type": "ndoi_cite",
@@ -142,7 +142,27 @@
       "cite_type": "webpage",
       "title": "Essential Oils Promise Help, But Beware the Risks",
       "container-title": "WebMD",
-      "issued_year": 2018
+      "issued_year": 2018,
+      "authors": [
+        {
+          "type": "person",
+          "family": "Marshall"
+        }
+      ]
+    },
+    {
+      "type": "ndoi_cite",
+      "key": "11",
+      "cite_type": "webpage",
+      "issued_year": 2011,
+      "URL": "https://www.health.harvard.edu/staying-healthy/a-wash-worth-its-while",
+      "title": "A wash worth its while?",
+      "authors": [
+        {
+          "type": "org",
+          "literal": "Harvard Health"
+        }
+      ]
     }
   ],
   "full_text": ""
