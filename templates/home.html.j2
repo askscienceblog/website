@@ -3,8 +3,9 @@
 
 {#
 {
-    "copies": ["templates/index.json"],
-    "extension": ".html"
+    "read_from": "page_vars/home",
+    "write_to": [],
+    "file_extension": ".html"
 }
 #}
 
@@ -15,6 +16,7 @@
     async></script>
 <script src="./index.js" defer></script>
 <title>Home ∈ AYRJ</title>
+<meta name="description" content="ASEAN Young Researchers’ Journal is a student-led academic journal dedicated to publishing research by students. Based in Singapore, we are proudly open to the world.">
 {%endblock%}
 
 {% block main %}
@@ -28,11 +30,16 @@
                     style="height: 400px;" gestureHandling="cooperative"></gmp-map-3d>
                 <div class="vignette"></div>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit lectus ut dolor aliquet, in
-                fermentum erat vehicula. Maecenas et porttitor nibh. Fusce luctus laoreet justo, tincidunt dignissim
-                turpis semper vitae. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras non magna
-                luctus, viverra sapien vitae, scelerisque arcu. Curabitur vel efficitur erat. Nam nisi velit, eleifend
-                in lacus nec, molestie fringilla leo. Ut malesuada sit amet eros et mollis.</p>
+            <p>
+            ASEAN Young Researchers’ Journal is a student-led academic journal 
+            dedicated to publishing research by students.
+            
+            Through our flagship mentorship programme, SHRO, 
+            we support pre-university students in developing original research 
+            by connecting them with professionals in their fields.
+            
+            Based in Singapore, we are proudly open to the world.
+            </p>
         </div>
     </section>
 
