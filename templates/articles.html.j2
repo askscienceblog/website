@@ -18,37 +18,16 @@
 {% block main %}
 <main>
 
-    <article id="main">
-        {{("# " ~ title) | pandoc}}
-        <div class="article">
-            <div class="body">
-                <h2 id="abstract">Abstract</h2>
-                {{abstract | pandoc}}
-                {{markdown | pandoc( ["-f",
-                "markdown",
-                "-t",
-                "html",
-                "--citeproc",
-                "--mathml",
-                "--shift-heading-level-by=1",
-                "--csl=apa.csl",])}}
-            </div>
-            <nav aria-label="Article Contents">
-                <button onclick="toggleTOC(this)">Hide</button>
-                <div id="toc">
-                    {{markdown | pandoc( ["-f",
-                    "markdown",
-                    "-t",
-                    "html",
-                    "--citeproc",
-                    "--mathml",
-                    "--shift-heading-level-by=1",
-                    "--csl=apa.csl",])| content_list}}
-                </div>
-            </nav>
-        </div>
-    </article>
-    {# <p>testing</p> #}
+    {{markdown | pandoc( ["-f",
+    "markdown",
+    "-t",
+    "html",
+    "--citeproc",
+    "--mathml",
+    "--shift-heading-level-by=1",
+    "--csl=apa.csl",
+    "--template=pandoc.html",
+    "--toc=true"])}}
 
 </main>
 {% endblock %}

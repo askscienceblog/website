@@ -321,7 +321,7 @@ button {
     background-color: transparent;
 }
 
-div.article {
+div.content {
     margin: 0 auto;
     width: 100%;
     display: flex;
@@ -346,6 +346,7 @@ div.article {
 
         li {
             list-style: none;
+            line-height: 150%;
         }
 
         a {

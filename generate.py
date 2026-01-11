@@ -5,10 +5,10 @@ import subprocess
 from pathlib import Path
 from typing import Annotated
 
+from bs4 import BeautifulSoup
 from jinja2 import Environment, FunctionLoader, StrictUndefined
 from markupsafe import Markup
 from pydantic import BaseModel, Field
-from bs4 import BeautifulSoup
 
 CONFIG_JSON = re.compile(r"{#(?:\+|-)*\s*({.*?})\s*(?:\+|-)*#}", re.DOTALL)
 
@@ -74,15 +74,15 @@ def pandoc(
     value,
     arguments=["-f", "markdown", "-t", "html"],
 ):
-    return Markup(
-        subprocess.run(
-            ["pandoc"] + arguments,
-            capture_output=True,
-            text=True,
-            encoding="utf-8",
-            input=value,
-        ).stdout
+    res = subprocess.run(
+        ["pandoc"] + arguments,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        input=value,
     )
+    print(res.stderr)
+    return Markup(res.stdout)
 
 
 def content_list(article_html):
@@ -96,7 +96,7 @@ def content_list(article_html):
         elif heading < tag_level:
             output += "</ol></li>" * (tag_level - heading)
 
-        output += f"<li><a href='#{tag.attrs["id"]}'>{tag.get_text()}</a></li>"
+        output += f"<li><a href='#{tag.attrs['id']}'>{tag.get_text()}</a></li>"
         tag_level = heading
 
     output += "</ol></li>" * (tag_level)
