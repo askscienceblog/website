@@ -96,7 +96,7 @@ def content_list(article_html):
         elif heading < tag_level:
             output += "</ol></li>" * (tag_level - heading)
 
-        output += f"<li>{tag.get_text()}</li>"
+        output += f"<li><a href='#{tag.attrs["id"]}'>{tag.get_text()}</a></li>"
         tag_level = heading
 
     output += "</ol></li>" * (tag_level)

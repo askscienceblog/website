@@ -22,7 +22,7 @@
         {{("# " ~ title) | pandoc}}
         <div class="article">
             <div class="body">
-                <h2>Abstract</h2>
+                <h2 id="abstract">Abstract</h2>
                 {{abstract | pandoc}}
                 {{markdown | pandoc( ["-f",
                 "markdown",
@@ -33,7 +33,7 @@
                 "--shift-heading-level-by=1",
                 "--csl=apa.csl",])}}
             </div>
-            <nav>
+            <nav aria-label="Article Contents">
                 <button onclick="toggleTOC(this)">Hide</button>
                 <div id="toc">
                     {{markdown | pandoc( ["-f",

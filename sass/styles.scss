@@ -23,6 +23,10 @@ $font-series: math.sqrt(2);
     font-size: inherit;
 }
 
+* {
+    scroll-margin-top: 2rem;
+}
+
 p {
     max-width: $text-max-width;
     margin: 0;
@@ -335,15 +339,26 @@ div.article {
 
         max-height: 80vh;
         overflow: auto;
-        background-color: white;
+        background-color: #ffffffe0;
         z-index: 10;
+        margin-right: auto;
+        padding: 4px;
 
         li {
             list-style: none;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        a.current {
+            @include invert-colors()
         }
     }
 
     .body {
         max-width: $text-max-width;
+        margin: 0 auto;
     }
 }
