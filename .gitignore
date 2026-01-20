@@ -168,6 +168,8 @@ dist
 
 # ignore generated files
 **/*.html
+!pandoc.html
+/page_vars/articles
 
 # ignore static assets
 public/static

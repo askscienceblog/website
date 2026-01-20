@@ -17,7 +17,8 @@ $font-series: math.sqrt(2);
 
     text-wrap: pretty;
 
-    font-family: charter;
+    font-family: charter, "STIX Two Text", serif;
+    font-optical-sizing: auto;
     font-weight: inherit;
     font-style: inherit;
     font-size: inherit;
@@ -84,6 +85,7 @@ header {
     top: 0;
     z-index: 10;
     background-color: #ffffffe0;
+    @include fonts.sans(1rem, 400, normal)
 }
 
 header>div {
@@ -141,6 +143,7 @@ section>div {
     p {
         margin: 1rem auto;
         text-wrap: balance;
+        line-height: initial;
     }
 
     h2 {
@@ -224,14 +227,25 @@ footer {
     }
 }
 
+div.center {
+    height: 100%;
+    max-width: $page-max-width;
+    margin: 0 auto;
+    padding: 0 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    * {
+        text-align: center;
+    }
+}
+
 ol.authors {
+    padding: 0;
+
     li {
         display: inline;
-        border: none;
-    }
-
-    li:last-child {
-        border: none;
     }
 
     li::after {
@@ -298,7 +312,7 @@ div#refs {
 }
 
 math {
-    font-family: "STIX 2";
+    font-family: "STIX Two Math";
 }
 
 p+figure {
@@ -321,7 +335,20 @@ button {
     background-color: transparent;
 }
 
-div.content {
+#frontmatter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    justify-content: space-around;
+    align-items: start;
+}
+
+#abstract {
+    max-width: $text-max-width;
+}
+
+
+#content {
     margin: 0 auto;
     width: 100%;
     display: flex;
@@ -358,7 +385,7 @@ div.content {
         }
     }
 
-    .body {
+    #body {
         max-width: $text-max-width;
         margin: 0 auto;
     }

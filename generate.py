@@ -5,7 +5,6 @@ import subprocess
 from pathlib import Path
 from typing import Annotated
 
-from bs4 import BeautifulSoup
 from jinja2 import Environment, FunctionLoader, StrictUndefined
 from markupsafe import Markup
 from pydantic import BaseModel, Field
@@ -85,27 +84,7 @@ def pandoc(
     return Markup(res.stdout)
 
 
-def content_list(article_html):
-    soup = BeautifulSoup(article_html, "html5lib")
-    tag_level = 0
-    output = ""
-    for tag in soup.find_all(["h2", "h3", "h4", "h5", "h6"]):
-        heading = int(tag.name[1]) - 1
-        if heading > tag_level:
-            output += "<li><ol>" * (heading - tag_level)
-        elif heading < tag_level:
-            output += "</ol></li>" * (tag_level - heading)
-
-        output += f"<li><a href='#{tag.attrs['id']}'>{tag.get_text()}</a></li>"
-        tag_level = heading
-
-    output += "</ol></li>" * (tag_level)
-
-    return Markup(output[4:-5])
-
-
 env.filters["pandoc"] = pandoc
-env.filters["content_list"] = content_list
 
 if __name__ == "__main__":
     for entry in os.scandir("templates"):

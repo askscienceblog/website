@@ -1,5 +1,13 @@
 @mixin serif($size, $weight, $style) {
-  font-family: "Source Serif 4", serif;
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  font-style: $style;
+  font-size: $size;
+}
+
+@mixin sans($size, $weight, $style) {
+  font-family: "Source Sans 3", sans-serif;
   font-optical-sizing: auto;
   font-weight: $weight;
   font-style: $style;
@@ -7,7 +15,7 @@
 }
 
 @font-face {
-  font-family: "STIX 2";
+  font-family: "STIX Two Math";
   src: url("/static/STIXTwoMath-Regular.woff2") format("woff2");
 }
 

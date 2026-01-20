@@ -1,0 +1,46 @@
+$for(include-before)$
+$include-before$
+$endfor$
+
+<article id="main">
+
+  $if(title)$
+  <h1>$title$</h1>
+  $endif$
+
+  <div id="frontmatter">
+    $if(abstract)$
+    <div id="abstract">
+      <h2 id="abstract">Abstract</h2>
+      $abstract$
+    </div>
+    $endif$
+    <div>
+      <ol class="authors">
+        $for(author)$
+        <li>$author$</li>
+        $endfor$
+      </ol>
+    </div>
+  </div>
+
+  <div id="content">
+    <div id="body">
+      $body$
+    </div>
+
+    $if(toc)$
+    <nav id="$idprefix$TOC" role="doc-toc">
+      $if(toc-title)$
+      <h2 id="$idprefix$toc-title">$toc-title$</h2>
+      $endif$
+      <button onclick="toggleTOC(this)">Hide</button>
+      $table-of-contents$
+    </nav>
+  </div>
+  $endif$
+</article>
+
+$for(include-after)$
+$include-after$
+$endfor$
