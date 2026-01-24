@@ -9,26 +9,34 @@ $endfor$
   $endif$
 
   <div id="frontmatter">
+    <div id="add-info">
+      <ol class="authors">
+        $for(author_with_affiliation)$
+        <li>$author_with_affiliation.name$<sup>
+            $for(author_with_affiliation.id)$$author_with_affiliation.id/roman$$sep$, $endfor$
+          </sup></li>
+        $endfor$
+      </ol>
+      <ul class="authors">
+        $for(affiliation)$
+        <li><sup>$affiliation.id/roman$</sup>$affiliation.name$</li>
+        $endfor$
+      </ul>
+      $if(contact)$
+      <span>Contact: </span>
+      <address class="sans">$contact$</address>
+      $endif$
+    </div>
+
     $if(abstract)$
     <div id="abstract">
-      <h2 id="abstract">Abstract</h2>
+      <h2>Abstract</h2>
       $abstract$
     </div>
     $endif$
-    <div>
-      <ol class="authors">
-        $for(author)$
-        <li>$author$</li>
-        $endfor$
-      </ol>
-    </div>
   </div>
 
   <div id="content">
-    <div id="body">
-      $body$
-    </div>
-
     $if(toc)$
     <nav id="$idprefix$TOC" role="doc-toc">
       $if(toc-title)$
@@ -37,8 +45,12 @@ $endfor$
       <button onclick="toggleTOC(this)">Hide</button>
       $table-of-contents$
     </nav>
+    $endif$
+
+    <div id="body">
+      $body$
+    </div>
   </div>
-  $endif$
 </article>
 
 $for(include-after)$

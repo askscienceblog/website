@@ -8,7 +8,8 @@
 
 $page-max-width: 80rem;
 $text-max-width: 55ch;
-$font-series: math.sqrt(2);
+$font-series: 1.2;
+$header-height: 2rem;
 
 :root {
     margin: 0;
@@ -17,15 +18,23 @@ $font-series: math.sqrt(2);
 
     text-wrap: pretty;
 
-    font-family: charter, "STIX Two Text", serif;
-    font-optical-sizing: auto;
+    @include fonts.charter(1rem, normal, normal);
     font-weight: inherit;
     font-style: inherit;
     font-size: inherit;
+    font-variant-numeric: oldstyle-nums proportional-nums;
 }
 
 * {
-    scroll-margin-top: 2rem;
+    scroll-margin-top: $header-height;
+}
+
+.monospace {
+    @include fonts.monospace(inherit, 450, normal)
+}
+
+.sans {
+    @include fonts.sans(inherit, 400, normal)
 }
 
 p {
@@ -35,7 +44,7 @@ p {
 }
 
 p+p {
-    text-indent: 1em;
+    text-indent: 1.5em;
 }
 
 p:has(+:is(h1, h2, h3, h4)) {
@@ -43,27 +52,40 @@ p:has(+:is(h1, h2, h3, h4)) {
 }
 
 h1 {
-    @include fonts.serif(math.pow($font-series, 3)*1rem, 650, normal);
-    margin: 0 0 4px 0;
+    @include fonts.serif(math.pow($font-series, 4)*1rem, 650, normal);
+    margin: 0 0 0.5rlh 0;
 }
 
 h2 {
-    @include fonts.serif(math.pow($font-series, 2)*1rem, 600, normal);
-    margin: 0 0 4px 0;
+    @include fonts.serif(math.pow($font-series, 3)*1rem, 600, normal);
+    margin: 0 0 0.5rlh 0;
 }
 
 h3 {
-    @include fonts.serif(math.pow($font-series, 1)*1rem, 500, normal);
-    margin: 0 0 4px 0;
+    @include fonts.serif(math.pow($font-series, 2)*1rem, 500, normal);
+    margin: 0 0 0.5rlh 0;
 }
 
 h4 {
-    @include fonts.serif(1rem, 400, normal);
-    margin: 0 0 4px 0;
+    @include fonts.serif($font-series*1rem, 400, normal);
+    margin: 0 0 0.5rlh 0;
+}
+
+a {
+    font-variant-numeric: proportional-nums lining-nums;
 }
 
 a:link {
-    color: inherit;
+    color: #0000EE;
+}
+
+a:visited {
+    color: #551A8B;
+}
+
+a:link:active,
+a:visited:active {
+    color: #FF0000;
 }
 
 body {
@@ -90,7 +112,7 @@ header {
 
 header>div {
     max-width: $page-max-width;
-    height: 2rem;
+    height: $header-height;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -166,6 +188,7 @@ section>div {
 
 footer {
     @include invert-colors();
+    @include fonts.sans(1rem, 400, normal);
 
     div {
         max-width: $page-max-width;
@@ -181,7 +204,7 @@ footer {
         }
 
         figcaption {
-            @include fonts.serif(math.pow($font-series, 1)*1rem, 400, normal);
+            font-size: $font-series*1em;
         }
 
         ul {
@@ -241,7 +264,8 @@ div.center {
     }
 }
 
-ol.authors {
+ol.authors,
+ul.authors {
     padding: 0;
 
     li {
@@ -287,6 +311,10 @@ table {
     border: 1px solid black;
     width: 100%;
 
+    :not(caption) * {
+        font-variant-numeric: lining-nums tabular-nums;
+    }
+
     thead {
         font-weight: bolder;
         box-shadow: 0 2px 0 black;
@@ -301,13 +329,17 @@ table {
     }
 }
 
-div#refs {
+#refs {
     div {
         @include fonts.serif(1rem, 400, normal);
         margin: 1rem 0;
         padding-left: 1em;
         text-indent: -1em;
         text-wrap: balance;
+
+        a {
+            @include fonts.sans(inherit, 350, normal)
+        }
     }
 }
 
@@ -337,14 +369,32 @@ button {
 
 #frontmatter {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap-reverse;
-    justify-content: space-around;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
     align-items: start;
+    margin-bottom: 1lh;
+    padding-bottom: 1lh;
+    border-bottom: 1px solid black;
 }
 
 #abstract {
-    max-width: $text-max-width;
+    max-width: 1.3*$text-max-width;
+    margin: 0 auto;
+
+    p {
+        max-width: 1.3*$text-max-width;
+    }
+}
+
+#add-info {
+    margin-right: auto;
+    font-variant-numeric: lining-nums proportional-nums;
+
+    address {
+        display: inline;
+    }
+
+    font-size: $font-series*1em;
 }
 
 
@@ -352,15 +402,15 @@ button {
     margin: 0 auto;
     width: 100%;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: start;
     position: relative;
 
     nav {
         position: sticky;
-        top: 2rem;
+        top: $header-height;
         justify-content: start;
         flex-grow: 0;
 
@@ -371,17 +421,26 @@ button {
         margin-right: auto;
         padding: 4px;
 
+        button {
+            position: sticky;
+            top: 0;
+        }
+
         li {
             list-style: none;
             line-height: 150%;
         }
 
-        a {
-            color: inherit;
+        a.before {
+            color:#551A8B;
         }
 
         a.current {
-            @include invert-colors()
+            color: #FF0000;
+        }
+
+        a.after {
+            color: #0000EE;
         }
     }
 

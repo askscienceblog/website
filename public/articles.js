@@ -30,8 +30,10 @@ window.addEventListener("scroll", () => {
         }
         if (h < window.innerHeight && header_height + 4 < next_height) {
             obj.anchor.setAttribute("class", "current")
+        } else if (h >= window.innerHeight) {
+            obj.anchor.setAttribute("class", "after")
         } else {
-            obj.anchor.removeAttribute("class")
+            obj.anchor.setAttribute("class", "before")
         }
     }
 })
