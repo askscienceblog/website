@@ -71,10 +71,6 @@ h4 {
     margin: 0 0 0.5rlh 0;
 }
 
-a {
-    font-variant-numeric: proportional-nums lining-nums;
-}
-
 a:link {
     color: #0000EE;
 }
@@ -338,7 +334,8 @@ table {
         text-wrap: balance;
 
         a {
-            @include fonts.sans(inherit, 350, normal)
+            @include fonts.sans(inherit, 350, normal);
+            font-variant-numeric: lining-nums proportional-nums;
         }
     }
 }
