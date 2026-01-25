@@ -18,10 +18,11 @@ jobs:
           sh install.sh
           echo '~/context/tex/texmf-linux-64/bin:$PATH' >> $GITHUB_PATH
           export PATH="~/context/tex/texmf-linux-64/bin:$PATH"
-          mtxrun --generate
+          sudo mtxrun --scripts cache --erase
+          sudo mtxrun --generate
           rm context-linux-64.zip
           sh install.sh
-
+          
       - name: Download Fonts
         uses: actions/checkout@v6
       
@@ -35,6 +36,7 @@ jobs:
         run: |
           mtxrun --scripts cache --erase
           mtxrun --generate
+          context --make
       
       - name: Cache Output
         uses: actions/cache/save@v4
