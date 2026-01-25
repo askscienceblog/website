@@ -1,15 +1,20 @@
+import base64
 import json
 import os
 import re
 import subprocess
 from pathlib import Path
-from typing import Annotated
+from typing import Annotated, Callable
 
+from bs4 import BeautifulSoup
 from jinja2 import Environment, FunctionLoader, StrictUndefined
 from markupsafe import Markup
 from pydantic import BaseModel, Field
 
+from prng import pseudoRandom
+
 CONFIG_JSON = re.compile(r"{#(?:\+|-)*\s*({.*?})\s*(?:\+|-)*#}", re.DOTALL)
+RANDOM = pseudoRandom("ayrj.org")
 
 
 class RenderVariable(BaseModel):
@@ -34,7 +39,11 @@ env = Environment(
 )
 
 
-def render_template(template_path: str, output_dir: str) -> None:
+def render_template(
+    template_path: str,
+    output_dir: str,
+    post_processing: Callable[[str], str] = lambda x: x,
+) -> None:
     # load config
     with open(template_path, "r") as file:
         template = file.read()
@@ -66,7 +75,7 @@ def render_template(template_path: str, output_dir: str) -> None:
         with Path(output_dir, *options.write_to, filename).open(
             "w", encoding="utf-8"
         ) as file:
-            file.write(output)
+            file.write(post_processing(output))
 
 
 def pandoc(
@@ -86,7 +95,23 @@ def pandoc(
 
 env.filters["pandoc"] = pandoc
 
+
+def censor_addresses(html: str) -> str:
+    soup = BeautifulSoup(html, "html5lib")
+    for address in soup.find_all("address"):
+        inner_html = address.encode_contents(encoding="utf-8")
+        scrambled = bytes(
+            a ^ b for a, b in zip(RANDOM.randBytes(len(inner_html)), inner_html)
+        )
+        address.string = (
+            "Contact information is protected. Please enable JavaScript to view."
+        )
+        address["enc-addr"] = base64.b64encode(scrambled).decode("utf-8")
+
+    return soup.prettify()
+
+
 if __name__ == "__main__":
     for entry in os.scandir("templates"):
         if entry.is_file():
-            render_template(entry.path, "public")
+            render_template(entry.path, "public", censor_addresses)

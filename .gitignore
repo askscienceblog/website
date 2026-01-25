@@ -170,6 +170,8 @@ dist
 **/*.html
 !pandoc.html
 /page_vars/articles
+__pycache__
+
 
 # ignore static assets
 public/static
