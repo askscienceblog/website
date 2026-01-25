@@ -12,7 +12,6 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: $GITHUB_WORKSPACE
     env:
       CF_API_TOKEN: ${{ secrets.WRANGLER_KEY }}
 
@@ -33,17 +32,22 @@ jobs:
       - name: Install Dependencies
         run: |
           sudo apt install pandoc
-          pip install -r requirements.txt
+          pip install -r $GITHUB_WORKSPACE/requirements.txt
       - name: Install Dependencies
         uses: actions/setup-node@v6
         with:
           node-version: 24
       - name: Install Dependencies
         run: |
+          cd $GITHUB_WORKSPACE
           npm install
 
       - name: Generate Website
-        run: python -m generate.py
+        run: |
+          cd $GITHUB_WORKSPACE
+          python -m generate.py
 
       - name: Deploy Website
-        run: npm run deploy
+        run: |
+          cd $GITHUB_WORKSPACE
+          npm run deploy
