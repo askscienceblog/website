@@ -153,8 +153,9 @@ nav {
             line-height: 200%;
         }
 
+        $half-width: 0.5em;
         summary::before {
-            content: "🡫\00A0"
+            content: "⏷\00A0";
         }
 
         summary {
@@ -170,7 +171,7 @@ nav {
         }
 
         summary::before {
-            content: "🡩\00A0"
+            content: "⏶\00A0"
         }
 
         >* {
@@ -294,9 +295,11 @@ div.center {
     * {
         text-align: center;
     }
+
     p {
         margin-bottom: 1lh;
     }
+
     p+p {
         text-indent: 0;
     }
