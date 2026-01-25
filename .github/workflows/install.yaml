@@ -19,7 +19,7 @@ jobs:
             ${{ runner.os }}-context-
       
       - name: Install ConTeXt
-        if: steps.cache.outputs.cache-hit != 'true'
+        if: steps.cache.outputs.cache-hit == ''
         run: |
           mkdir ~/context
           cd ~/context
@@ -30,11 +30,11 @@ jobs:
           rm context-linux-64.zip
           
       - name: Download Fonts
-        if: steps.cache.outputs.cache-hit != 'true'
+        if: steps.cache.outputs.cache-hit == ''
         uses: actions/checkout@v6
       
       - name: Move Fonts into ConTeXt
-        if: steps.cache.outputs.cache-hit != 'true'
+        if: steps.cache.outputs.cache-hit == ''
         run: |
           unzip $GITHUB_WORKSPACE/fonts.zip
           cp -r $GITHUB_WORKSPACE/Source_Code_Pro/static/* ~/context/tex/texmf-fonts
