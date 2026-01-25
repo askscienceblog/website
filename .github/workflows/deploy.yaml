@@ -7,19 +7,25 @@ on:
   workflow_dispatch:
 
 jobs:
-  set-up-context:
-    name: Set up ConTeXt
-    uses: askscienceblog/website/.github/workflows/install.yaml@main
-
   run:
-    needs: set-up-context
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v6
-      
+
+      - name: Set Up ConTeXt
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/context
+          key: ${{ runner.os }}-context-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-context
+
+      - name: Set Up ConTeXt
+        run: echo "$HOME/context/tex/texmf-linux-64/bin" >> $GITHUB_PATH
+
       - name: Install Dependencies
         run: |
           sudo apt install pandoc
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-          pip install -r $GITHUB_WORKSPACE/requirements.txt
+          sudo curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | sudo bash
+          sudo pip install -r $GITHUB_WORKSPACE/requirements.txt

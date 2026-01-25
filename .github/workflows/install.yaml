@@ -2,7 +2,6 @@ name: Install or Update ConTeXt and Fonts
 
 on:
   workflow_dispatch:
-  workflow_call:
 
 jobs:
   run:
