@@ -27,6 +27,8 @@ $header-height: 2rem;
 * {
     scroll-margin-top: $header-height;
     box-sizing: border-box;
+    min-width: 0;
+    overflow-wrap: break-word;
 }
 
 .monospace {
@@ -92,8 +94,7 @@ body {
 
 main {
     flex-grow: 1;
-    display: grid;
-    grid-template-rows: 1fr;
+    position: relative;
 }
 
 
@@ -102,7 +103,7 @@ header {
     top: 0;
     z-index: 10;
     background-color: #ffffffe0;
-    @include fonts.sans(1rem, 400, normal)
+    @include fonts.sans(1rem, 400, normal);
 }
 
 header>div {
@@ -154,6 +155,7 @@ nav {
         }
 
         $half-width: 0.5em;
+
         summary::before {
             content: "⏷\00A0";
         }
@@ -284,9 +286,11 @@ footer {
 }
 
 div.center {
+    position: absolute;
+    inset: 0;
     height: 100%;
     max-width: $page-max-width;
-    margin: 0 auto;
+    margin: auto auto;
     padding: 0 4px;
     display: flex;
     flex-direction: column;
@@ -422,6 +426,7 @@ table:has(+p) {
 
 button {
     background-color: transparent;
+    min-width: fit-content;
 }
 
 #frontmatter {
