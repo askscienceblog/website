@@ -27,5 +27,5 @@ jobs:
       - name: Install Dependencies
         run: |
           sudo apt install pandoc
-          sudo curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | sudo bash
-          sudo pip install -r $GITHUB_WORKSPACE/requirements.txt
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+          pip install -r $GITHUB_WORKSPACE/requirements.txt
