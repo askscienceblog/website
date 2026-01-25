@@ -169,7 +169,6 @@ dist
 # ignore generated files
 **/*.html
 !pandoc.html
-/page_vars/articles
 __pycache__
 
 

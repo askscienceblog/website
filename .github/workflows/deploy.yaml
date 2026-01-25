@@ -45,7 +45,7 @@ jobs:
       - name: Generate Website
         run: |
           cd $GITHUB_WORKSPACE
-          python -m generate.py
+          python generate.py
 
       - name: Deploy Website
         run: |
