@@ -30,8 +30,7 @@ jobs:
 
       - name: Generate ConTeXt Cache
         run: |
-          cd ~/context
-          sh install.sh
+          context --make
           mtxrun --generate
       
       - name: Cache Output
