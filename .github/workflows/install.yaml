@@ -1,4 +1,4 @@
-name: Install ConTeXt and Fonts
+name: Install or Update ConTeXt and Fonts
 
 on: workflow_dispatch
 
@@ -9,7 +9,15 @@ jobs:
       run:
         shell: bash
     steps:
+      - name: Restore Cache
+        id: cache
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/context
+          key: ${{ runner.os }}-context
+      
       - name: Install ConTeXt
+        if: steps.cache.outputs.cache-hit != 'true'
         run: |
           mkdir ~/context
           cd ~/context
@@ -20,13 +28,20 @@ jobs:
           rm context-linux-64.zip
           
       - name: Download Fonts
+        if: steps.cache.outputs.cache-hit != 'true'
         uses: actions/checkout@v6
       
       - name: Move Fonts into ConTeXt
+        if: steps.cache.outputs.cache-hit != 'true'
         run: |
           unzip $GITHUB_WORKSPACE/fonts.zip
           cp -r $GITHUB_WORKSPACE/Source_Code_Pro/static/* ~/context/tex/texmf-fonts
           cp -r $GITHUB_WORKSPACE/Source_Sans_3/static/* ~/context/tex/texmf-fonts
+
+      - name: Update ConTeXt Installation
+        run: |
+          cd ~/context
+          sh install.sh
 
       - name: Re-Generate ConTeXt Cache
         run: |
@@ -38,4 +53,4 @@ jobs:
         uses: actions/cache/save@v4
         with:
           key: context
-          path: ~/context
+          path: ${{ runner.os }}-context
