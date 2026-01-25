@@ -29,7 +29,10 @@ jobs:
           cp -r $GITHUB_WORKSPACE/Source_Sans_3/static/* ~/context/tex/texmf-fonts
 
       - name: Generate ConTeXt Cache
-        run: mtxrun --generate
+        run: |
+          cd ~/context
+          sh install.sh
+          mtxrun --generate
       
       - name: Cache Output
         uses: actions/cache/save@v4
