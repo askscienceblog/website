@@ -9,6 +9,9 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+    env:
+      CF_API_TOKEN: ${{ secrets.WRANGLER_KEY }}
+
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v6
