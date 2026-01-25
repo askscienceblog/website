@@ -1,0 +1,20 @@
+name: Install ConTeXt and Fonts
+
+on: workflow_dispatch
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Install ConTeXt
+        run: |
+          mkdir ~/context
+          cd ~/context
+          wget https://lmtx.pragma-ade.com/install-lmtx/context-linux-64.zip
+          unzip context-linux-64.zip
+          sh install.sh
+          echo '~/context/tex/texmf-linux-64/bin:$PATH' >> $GITHUB_PATH
+          rm context-linux-64.zip
