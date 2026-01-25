@@ -17,8 +17,10 @@ jobs:
           unzip context-linux-64.zip
           sh install.sh
           echo '~/context/tex/texmf-linux-64/bin:$PATH' >> $GITHUB_PATH
+          mtxrun --generate
           rm context-linux-64.zip
-      
+          sh install.sh
+
       - name: Download Fonts
         uses: actions/checkout@v6
       
@@ -28,9 +30,9 @@ jobs:
           cp -r $GITHUB_WORKSPACE/Source_Code_Pro/static/* ~/context/tex/texmf-fonts
           cp -r $GITHUB_WORKSPACE/Source_Sans_3/static/* ~/context/tex/texmf-fonts
 
-      - name: Generate ConTeXt Cache
+      - name: Re-Generate ConTeXt Cache
         run: |
-          context --make
+          mtxrun --scripts cache --erase
           mtxrun --generate
       
       - name: Cache Output
