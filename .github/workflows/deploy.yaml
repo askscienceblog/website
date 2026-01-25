@@ -7,12 +7,14 @@ on:
   workflow_dispatch:
 
 jobs:
+  set-up-context:
+    name: Set up ConTeXt
+    uses: askscienceblog/website/.github/workflows/install.yaml@main
+
   run:
+    needs: set-up-context
     runs-on: ubuntu-latest
     steps:
-      - name: Set up ConTeXt
-        uses: askscienceblog/website/.github/workflows/install.yaml@main
-      
       - name: Checkout Repo
         uses: actions/checkout@v6
       
