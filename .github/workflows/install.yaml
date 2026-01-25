@@ -19,7 +19,7 @@ jobs:
           path: ~/context
           key: ${{ runner.os }}-context-${{ github.run_id }}
           restore-keys: |
-            ${{ runner.os }}-context-
+            ${{ runner.os }}-context
       
       - name: Install ConTeXt
         if: steps.cache.outputs.cache-hit == ''
@@ -29,9 +29,8 @@ jobs:
           wget https://lmtx.pragma-ade.com/install-lmtx/context-linux-64.zip
           unzip context-linux-64.zip
           sh install.sh
-          sudo mtxrun --generate
+          mtxrun --generate
           rm context-linux-64.zip
-          chmod -R 755 ~/context
           
       - name: Download Fonts
         if: steps.cache.outputs.cache-hit == ''
@@ -48,7 +47,6 @@ jobs:
         run: |
           cd ~/context
           sh install.sh
-          chmod -R 755 ~/context
 
       - name: Re-Generate ConTeXt Cache
         run: |
