@@ -19,7 +19,22 @@ function toggleTOC(element) {
     }
 
     const header_height = document.getElementById("header").getBoundingClientRect().bottom
-
+    for (const [ind, obj] of headings.entries()) {
+        let h = obj.heading.getBoundingClientRect().y
+        let next_height;
+        try {
+            next_height = headings[ind + 1].heading.getBoundingClientRect().y
+        } catch {
+            next_height = Infinity
+        }
+        if (h < window.innerHeight && header_height + 4 < next_height) {
+            obj.anchor.setAttribute("class", "current")
+        } else if (h >= window.innerHeight) {
+            obj.anchor.setAttribute("class", "after")
+        } else {
+            obj.anchor.setAttribute("class", "before")
+        }
+    }
     window.addEventListener("scroll", () => {
         for (const [ind, obj] of headings.entries()) {
             let h = obj.heading.getBoundingClientRect().y

@@ -12,9 +12,7 @@ $endfor$
     <div id="add-info">
       <ol class="authors">
         $for(author_with_affiliation)$
-        <li>$author_with_affiliation.name$<sup>
-            $for(author_with_affiliation.id)$$author_with_affiliation.id/roman$$sep$, $endfor$
-          </sup></li>
+        <li>$author_with_affiliation.name$<sup>$for(author_with_affiliation.id)$$author_with_affiliation.id/roman$$sep$, $endfor$</sup></li>
         $endfor$
       </ol>
       <ul class="authors">
@@ -23,9 +21,12 @@ $endfor$
         $endfor$
       </ul>
       $if(contact)$
-      <span>Contact: </span>
-      <address class="sans">$contact$</address>
+      <div>
+        <span>Contact: </span>
+        <address class="sans">$contact$</address>
+      </div>
       $endif$
+      <a id="pdfDownload" href="/">Download Full-Text PDF</a>
     </div>
 
     $if(abstract)$

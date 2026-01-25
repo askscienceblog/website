@@ -48,6 +48,7 @@ jobs:
           sudo ~/context/tex/texmf-linux-64/bin/mtxrun --scripts cache --erase
           sudo ~/context/tex/texmf-linux-64/bin/mtxrun --generate
           sudo ~/context/tex/texmf-linux-64/bin/context --make
+          echo $GITHUB_PATH
       
       - name: Cache Output
         uses: actions/cache/save@v4

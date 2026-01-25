@@ -79,8 +79,7 @@ a:visited {
     color: #551A8B;
 }
 
-a:link:active,
-a:visited:active {
+a:active {
     color: #FF0000;
 }
 
@@ -260,8 +259,7 @@ div.center {
     }
 }
 
-ol.authors,
-ul.authors {
+ol.authors {
     padding: 0;
 
     li {
@@ -270,6 +268,22 @@ ul.authors {
 
     li::after {
         content: ", ";
+    }
+
+    li:last-child::after {
+        content: "";
+    }
+}
+
+ul.authors {
+    padding: 0;
+
+    li {
+        display: inline;
+    }
+
+    li::after {
+        content: "; ";
     }
 
     li:last-child::after {
@@ -368,6 +382,7 @@ button {
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: wrap;
+    text-wrap: balance;
     align-items: start;
     margin-bottom: 1lh;
     padding-bottom: 1lh;
@@ -385,13 +400,31 @@ button {
 
 #add-info {
     margin-right: auto;
+    margin-bottom: 1lh;
     font-variant-numeric: lining-nums proportional-nums;
+    font-size: $font-series*1em;
+
+    >div {
+        margin: 1em 0;
+    }
 
     address {
         display: inline;
     }
 
-    font-size: $font-series*1em;
+    #pdfDownload {
+        width: fit-content;
+        display: block;
+        padding: 12px;
+        border: 1px solid black;
+        @include invert-colors();
+    }
+
+    #pdfDownload:hover,
+    #pdfDownload:focus {
+        color: black;
+        background-color: transparent;
+    }
 }
 
 
@@ -429,7 +462,7 @@ button {
         }
 
         a.before {
-            color:#551A8B;
+            color: #551A8B;
         }
 
         a.current {

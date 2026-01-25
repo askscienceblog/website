@@ -10,11 +10,138 @@ from bs4 import BeautifulSoup
 from jinja2 import Environment, FunctionLoader, StrictUndefined
 from markupsafe import Markup
 from pydantic import BaseModel, Field
-
-from prng import pseudoRandom
+from slugify import slugify
 
 CONFIG_JSON = re.compile(r"{#(?:\+|-)*\s*({.*?})\s*(?:\+|-)*#}", re.DOTALL)
-RANDOM = pseudoRandom("ayrj.org")
+STOPWORDS = [
+    "i",
+    "me",
+    "my",
+    "myself",
+    "we",
+    "our",
+    "ours",
+    "ourselves",
+    "you",
+    "your",
+    "yours",
+    "yourself",
+    "yourselves",
+    "he",
+    "him",
+    "his",
+    "himself",
+    "she",
+    "her",
+    "hers",
+    "herself",
+    "it",
+    "its",
+    "itself",
+    "they",
+    "them",
+    "their",
+    "theirs",
+    "themselves",
+    "what",
+    "which",
+    "who",
+    "whom",
+    "this",
+    "that",
+    "these",
+    "those",
+    "am",
+    "is",
+    "are",
+    "was",
+    "were",
+    "be",
+    "been",
+    "being",
+    "have",
+    "has",
+    "had",
+    "having",
+    "do",
+    "does",
+    "did",
+    "doing",
+    "a",
+    "an",
+    "the",
+    "and",
+    "but",
+    "if",
+    "or",
+    "because",
+    "as",
+    "until",
+    "while",
+    "of",
+    "at",
+    "by",
+    "for",
+    "with",
+    "about",
+    "against",
+    "between",
+    "into",
+    "through",
+    "during",
+    "before",
+    "after",
+    "above",
+    "below",
+    "to",
+    "from",
+    "up",
+    "down",
+    "in",
+    "out",
+    "on",
+    "off",
+    "over",
+    "under",
+    "again",
+    "further",
+    "then",
+    "once",
+    "here",
+    "there",
+    "when",
+    "where",
+    "why",
+    "how",
+    "all",
+    "any",
+    "both",
+    "each",
+    "few",
+    "more",
+    "most",
+    "other",
+    "some",
+    "such",
+    "no",
+    "nor",
+    "not",
+    "only",
+    "own",
+    "same",
+    "so",
+    "than",
+    "too",
+    "very",
+    "s",
+    "t",
+    "can",
+    "will",
+    "just",
+    "don",
+    "should",
+    "now",
+]
 
 
 class RenderVariable(BaseModel):
@@ -27,6 +154,8 @@ class TemplateOptions(BaseModel):
     write_to: list[Annotated[str, Field(pattern=r"[a-zA-Z0-9.\-_~]*")]] = []
     file_extension: str = Field(default="", pattern=r"^$|^\..*")
     variables: list[RenderVariable] = []
+    slug_from: str = "title"
+    clear_previous: bool = False
 
 
 def load_from_path(path: str) -> str:
@@ -69,9 +198,20 @@ def render_template(
         with open(entry, "r", encoding="utf-8") as file:
             var.update(json.load(file))
 
-        filename = os.path.splitext(os.path.basename(entry))[0] + options.file_extension
+        filename = (
+            slugify(
+                var[options.slug_from],
+                stopwords=STOPWORDS,
+            )
+            + options.file_extension
+        )
         output = env.get_template(template_path).render(**var)
         os.makedirs(os.path.join(output_dir, *options.write_to), exist_ok=True)
+        if options.clear_previous:
+            for entry in os.scandir(os.path.join(output_dir, *options.write_to)):
+                if entry.is_file():
+                    os.remove(entry)
+
         with Path(output_dir, *options.write_to, filename).open(
             "w", encoding="utf-8"
         ) as file:
@@ -100,15 +240,14 @@ def censor_addresses(html: str) -> str:
     soup = BeautifulSoup(html, "html5lib")
     for address in soup.find_all("address"):
         inner_html = address.encode_contents(encoding="utf-8")
-        scrambled = bytes(
-            a ^ b for a, b in zip(RANDOM.randBytes(len(inner_html)), inner_html)
-        )
         address.string = (
             "Contact information is protected. Please enable JavaScript to view."
         )
-        address["enc-addr"] = base64.b64encode(scrambled).decode("utf-8")
+        address["enc-addr"] = base64.b64encode(base64.b64encode(inner_html)).decode(
+            "utf-8"
+        )
 
-    return soup.prettify()
+    return str(soup)
 
 
 if __name__ == "__main__":
