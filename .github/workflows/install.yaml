@@ -18,3 +18,21 @@ jobs:
           sh install.sh
           echo '~/context/tex/texmf-linux-64/bin:$PATH' >> $GITHUB_PATH
           rm context-linux-64.zip
+      
+      - name: Download Fonts
+        uses: actions/checkout@v6
+      
+      - name: Move Fonts into ConTeXt
+        run: |
+          unzip $GITHUB_WORKSPACE/fonts.zip
+          cp -r $GITHUB_WORKSPACE/Source_Code_Pro/static/* ~/context/tex/texmf-fonts
+          cp -r $GITHUB_WORKSPACE/Source_Sans_3/static/* ~/context/tex/texmf-fonts
+
+      - name: Generate ConTeXt Cache
+        run: mtxrun --generate
+      
+      - name: Cache Output
+        uses: actions/cache/save@v4
+        with:
+          key: context
+          path: ~/context
