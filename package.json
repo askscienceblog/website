@@ -3,7 +3,7 @@
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {
-		"deploy": "npm run build && wrangler deploy",
+		"deploy": "npm run build && wrangler deploy --env=''",
 		"dev": "wrangler dev -e dev",
 		"build": "node scripts/min.mjs"
 	},
