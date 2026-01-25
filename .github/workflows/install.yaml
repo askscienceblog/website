@@ -17,6 +17,7 @@ jobs:
           unzip context-linux-64.zip
           sh install.sh
           echo '~/context/tex/texmf-linux-64/bin:$PATH' >> $GITHUB_PATH
+          export PATH="~/context/tex/texmf-linux-64/bin:$PATH"
           mtxrun --generate
           rm context-linux-64.zip
           sh install.sh
