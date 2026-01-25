@@ -39,12 +39,14 @@ jobs:
           node-version: 24
       - name: Install Dependencies
         run: |
+          npm install -g sass
           cd $GITHUB_WORKSPACE
           npm install
 
       - name: Generate Website
         run: |
           cd $GITHUB_WORKSPACE
+          sass sass:public/static
           python generate.py
 
       - name: Deploy Website
