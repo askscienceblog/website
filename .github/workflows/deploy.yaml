@@ -20,12 +20,18 @@ jobs:
           key: ${{ runner.os }}-context-${{ github.run_id }}
           restore-keys: |
             ${{ runner.os }}-context
-
       - name: Set Up ConTeXt
         run: echo "$HOME/context/tex/texmf-linux-64/bin" >> $GITHUB_PATH
 
       - name: Install Dependencies
         run: |
           sudo apt install pandoc
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
           pip install -r $GITHUB_WORKSPACE/requirements.txt
+      - name: Install Dependencies
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      - name: Install Dependencies
+        run: |
+          cd $GITHUB_WORKSPACE
+          npm install
