@@ -1,10 +1,10 @@
-async function initMap() {
-    await google.maps.importLibrary("maps3d");
-}
-
-window.initMap = initMap;
-
 (() => {
+    async function initMap() {
+        await google.maps.importLibrary("maps3d");
+    }
+
+    window.initMap = initMap;
+
     const map = document.querySelector("gmp-map-3d");
     let globeSpin = false;
 
