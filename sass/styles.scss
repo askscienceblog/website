@@ -294,6 +294,12 @@ div.center {
     * {
         text-align: center;
     }
+    p {
+        margin-bottom: 1lh;
+    }
+    p+p {
+        text-indent: 0;
+    }
 }
 
 ol.authors {
