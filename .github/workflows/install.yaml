@@ -14,7 +14,9 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: ~/context
-          key: ${{ runner.os }}-context
+          key: ${{ runner.os }}-context-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-context-
       
       - name: Install ConTeXt
         if: steps.cache.outputs.cache-hit != 'true'
@@ -53,5 +55,5 @@ jobs:
       - name: Cache Output
         uses: actions/cache/save@v4
         with:
-          key: ${{ runner.os }}-context
+          key: ${{ runner.os }}-context-${{ github.run_id }}
           path: ~/context
