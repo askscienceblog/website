@@ -14,7 +14,6 @@ $header-height: 2rem;
 :root {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 
     text-wrap: pretty;
 
@@ -27,6 +26,7 @@ $header-height: 2rem;
 
 * {
     scroll-margin-top: $header-height;
+    box-sizing: border-box;
 }
 
 .monospace {
@@ -111,9 +111,8 @@ header>div {
     margin: 0 auto;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: stretch;
     gap: 4px;
-    padding-right: 12px;
 
     a {
         height: 100%;
@@ -124,7 +123,11 @@ header>div {
     }
 
     a#search {
-        height: 60%;
+        padding: 4px;
+
+        img {
+            object-fit: contain;
+        }
     }
 }
 
@@ -132,14 +135,48 @@ nav {
     flex-grow: 1;
     display: flex;
     flex-direction: row;
-    min-width: 0;
-    gap: 8px;
+    align-items: stretch;
 
-    select {
-        border: none;
-        flex: 0 1 6rem;
-        min-width: 0;
-        background-color: transparent;
+    a:link,
+    a:visited {
+        color: black;
+    }
+
+    details {
+        flex: 0 1 20ch;
+
+        >* {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            padding: 4px;
+            line-height: 200%;
+        }
+
+        summary::before {
+            content: "🡫\00A0"
+        }
+
+        summary {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    details[open] {
+        summary {
+            @include invert-colors()
+        }
+
+        summary::before {
+            content: "🡩\00A0"
+        }
+
+        >* {
+            background-color: white;
+        }
+
     }
 }
 

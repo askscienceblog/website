@@ -17,7 +17,6 @@
     <link rel="icon" href="/static/logo.svg">
     <link rel="stylesheet" href="/static/styles.css">
     <script src="/address.js" defer></script>
-    <script src="/nav.js" defer></script>
     {% endblock %}
 </head>
 
@@ -29,27 +28,35 @@
             <a href="/"><img src="/static/logo.svg" alt="ASEAN Young Researchers' Journal Logo"></a>
 
             <nav aria-label="Site navigation">
-                <select onchange="change_nav(this)" aria-label="Content-related navigation options">
-                    <option selected hidden>Content</option>
-                    <option>Articles</option>
-                    <option>Announcments</option>
-                </select>
-                <select onchange="change_nav(this)" aria-label="About-us-related navigation options">
-                    <option selected hidden>About</option>
-                    <option>Story & Team</option>
-                    <option>Contact Us</option>
-                </select>
-                <select onchange="change_nav(this)" aria-label="Publication-related navigation options">
-                    <option selected hidden>Publish</option>
-                    <option>For Authors</option>
+                <details name="nav">
+                    <summary>Content</summary>
+                    <ul>
+                        <li><a>Articles</a></li>
+                        <li><a>Announcments</a></li>
+                    </ul>
+                </details>
+                <details name="nav">
+                    <summary>About</summary>
+                    <ul>
+                        <li><a>Story & Team</a></li>
+                        <li><a href="#footer">Contact Us</a></li>
+                    </ul>
+                </details>
+                <details name="nav">
+                    <summary>Publish</summary>
+                    {# <option>For Authors</option>
                     <option>For Referees</option>
-                    <option>Guidelines</option>
-                </select>
-                <select onchange="change_nav(this)" aria-label="SHRO-related navigation options">
-                    <option selected hidden>SHRO</option>
-                    <option>Mentee Sign-up</option>
-                    <option>Mentor Sign-up</option>
-                </select>
+                    <option>Guidelines</option> #}
+                    <p>Coming soon…</p>
+                </details>
+                <details name="nav">
+                    <summary>SHRO</summary>
+                    <ul>
+                    <li><a>About</a></li>
+                    <li><a>Mentee Sign-up</a></li>
+                    </ul>
+                    {# <option>Mentor Sign-up</option> #}
+                </details>
             </nav>
 
             <a href="/articles" id="search"><img src="/static/magnifying_glass_icon.svg"
@@ -61,7 +68,7 @@
     {%block main%}{%endblock%}
 
     {% block page_bottom%}
-    <footer>
+    <footer id="footer">
         <div>
             <figure>
                 <figcaption>Socials</figcaption>
