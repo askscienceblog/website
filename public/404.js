@@ -1,7 +1,7 @@
 (() => {
     const div = document.createElement("div");
     let para = document.createElement('p');
-    para.innerHTML = `The server could not find <a href="${window.location.href}">${window.location.href}</a>.`;
+    para.innerHTML = `The server could not find <span style="text-decoration:underline">${window.location.href}</span>.`;
     para.setAttribute("style", "text-wrap:balance")
     div.appendChild(para);
 
@@ -11,5 +11,6 @@ Please head back to our <a href="/">homepage</a>.`;
     para.setAttribute("style", "text-wrap:balance")
     div.appendChild(para);
 
+    div.setAttribute("style","display:flex;flex-direction:column;align-items:center")
     document.getElementById("notfound-msg").replaceWith(div)
 })()
