@@ -155,6 +155,7 @@ class TemplateOptions(BaseModel):
     file_extension: str = Field(default="", pattern=r"^$|^\..*")
     variables: list[RenderVariable] = []
     slug_from: str = "title"
+    raw_slug: bool = True
     clear_previous: bool = False
 
 
@@ -203,8 +204,9 @@ def render_template(
                 var[options.slug_from],
                 stopwords=STOPWORDS,
             )
-            + options.file_extension
-        )
+            if not options.raw_slug
+            else var[options.slug_from]
+        ) + options.file_extension
         output = env.get_template(template_path).render(**var)
         os.makedirs(os.path.join(output_dir, *options.write_to), exist_ok=True)
         if options.clear_previous:

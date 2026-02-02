@@ -6,13 +6,15 @@
 "read_from": "page_vars/articles",
 "write_to": ["articles"],
 "file_extension": ".html",
-"clear_previous": true
+"clear_previous": true,
+"raw_slug": false
 }
 #}
 
 {% block head %}
 {{super()}}
 <title>{{title | pandoc(["-f", "markdown", "-t", "plain"])}} ∈ AYRJ</title>
+<meta name="description" content='{{abstract| pandoc(["-f", "markdown", "-t", "plain"])}}' />
 <script src="/articles.js" defer></script>
 {%endblock%}
 
