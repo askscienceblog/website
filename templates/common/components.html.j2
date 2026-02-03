@@ -1,23 +1,16 @@
 {%macro card(article)%}
-<a href="/{{article.id}}">
-    <article class="card">
-        <span>
-            <h3>{{article.title}}</h3>
-            <ol class="authors">
-                {%for author in article.authors%}
-                <li>{{author}}</li>
-                {%endfor%}
-            </ol>
-        </span>
-
-        <p class="abstract">{{article.abstract}}</p>
-
-        {%if article.img is not none%}
-        <img src="{{article.img}}">
-        {%else%}
-        <div></div>
-        {%endif%}
-        <time datetime="{{article.date}}">{{article.date}}</time>
+<a href="/articles/{{article.title | slugify}}">
+    <article>
+        <h3>{{article.title | trim | pandoc}}</h3>
+        <ol class="authors">
+            {%for author in article.authors%}
+            <li>{{author}}</li>
+            {%endfor%}
+        </ol>
+        <div class="abstract">
+            {{article.abstract | trim | pandoc}}
+        </div>
+        <time datetime="{{article.modified}}"><em>{{article.modified | parse_iso_date("%B %d, %Y")}}</em></time>
     </article>
 </a>
 {%endmacro%}

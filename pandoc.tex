@@ -1,0 +1,217 @@
+\widowpenalty=10000
+\clubpenalty=10000
+
+$if(tagging)$
+\setupbackend[format=pdf/ua-2]
+\enabledirectives[backend.usetags=mkiv]
+\setuptagging[state=start]
+$endif$
+$if(context-lang)$
+\mainlanguage[$context-lang$]
+$endif$
+$if(context-dir)$
+\setupalign[$context-dir$]
+\setupdirections[bidi=on,method=two]
+$endif$
+
+\definecolor[unvisited][r=0,g=0,b=0.93333]
+\definecolor[visited][r=0.33333,g=0.10196,b=0.54510]
+\definebar[linkbar][underbar]
+% Enable hyperlinks
+\setupinteraction
+  [state=start,
+$if(title)$
+  title={$title$},
+$endif$
+$if(subtitle)$
+  subtitle={$subtitle$},
+$endif$
+$if(author)$
+  author={$for(author)$$author$$sep$; $endfor$},
+$endif$
+$if(keywords)$
+  keyword={$for(keywords)$$keywords$$sep$; $endfor$},
+$endif$
+  style=\linkbar,
+  color=unvisited,
+  contrastcolor=visited]
+\setupurl[style=\ss]
+
+% make chapter, section bookmarks visible when opening document
+\placebookmarks[chapter, section, subsection, subsubsection, subsubsubsection, subsubsubsubsection][chapter, section]
+\setupinteractionscreen[option={bookmark,title}]
+
+\setuppapersize[A4]
+\setuplayout[
+  topspace=10mm,
+  backspace=27.5mm,
+  width=middle,
+  height=fit]
+
+$if(pdfa)$
+% attempt to generate PDF/A
+\setupbackend
+  [format=PDF/A-$pdfa$,
+   profile={$if(pdfaiccprofile)$$for(pdfaiccprofile)$$pdfaiccprofile$$sep$,$endfor$$else$sRGB.icc$endif$},
+   intent=$if(pdfaintent)$$pdfaintent$$else$sRGB IEC61966-2.1$endif$]
+$endif$
+\setupstructure[state=start,method=auto]
+
+% use microtypography
+\definefontfeature[default][default][script=latn, protrusion=quality, expansion=quality, itlc=yes, textitalics=yes, onum=yes, pnum=yes]
+\definefontfeature[default:charter][default][cv01=yes]
+\definefontfeature[default:lnum][default][onum=no]
+\definefontfeature[default:tnum][default][tnum=yes, pnum=no, onum=no]
+\definefontfeature[smallcaps][script=latn, protrusion=quality, expansion=quality, smcp=yes, onum=yes, pnum=yes]
+\setupalign[hz,hanging]
+\setupitaliccorrection[global, always]
+
+\setupbodyfontenvironment[default][em=italic] % use italic as em, not slanted
+\setuppagenumbering[location={footer,middle},style={\feature[+][default:tnum]}]
+
+\definefallbackfamily[mainface][rm][stixtwotext][range={0x00000-0x0FFFFF}]
+\definefontfamily[mainface][rm][xcharter][features=default:charter]
+\definefontfamily[mainface][mm][stixtwomath]
+\definefontfamily[mainface][tt][sourcecodepro][features=default:lnum]
+\definefontfamily[mainface][ss][sourcesans3][features=default:lnum]
+
+\definefontfamily[title][rm][ebgaramond]
+  [rscale=1.2]
+
+\setupbodyfont[mainface,8pt]
+
+\setupwhitespace[none]
+\setupindenting[yes,medium,next]
+\setupinterlinespace[big]
+
+\setuphead[chapter]            [style=\switchtobodyfont[title]\bfc,header=empty]
+\setuphead[section]            [style=\switchtobodyfont[title]\bfb]
+\setuphead[subsection]         [style=\switchtobodyfont[title]\bfa]
+\setuphead[subsubsection]      [style=\switchtobodyfont[title]\bf]
+\setuphead[subsubsubsection]   [style=\switchtobodyfont[title]\tf]
+\setuphead[subsubsubsubsection][style=\switchtobodyfont[title]\it]
+
+\setuphead[chapter, section, subsection, subsubsection, subsubsubsection, subsubsubsubsection]
+[number=no,
+ before={\blank[big,fixed]},
+ after={\blank[small,fixed]\pagebreak[no]\blank[disable]}]
+
+\definesectionlevels
+   [default]
+   [section, subsection, subsubsection, subsubsubsection, subsubsubsubsection]
+
+$if(headertext)$
+\setupheadertexts$for(headertext)$[$headertext$]$endfor$
+$endif$
+$if(footertext)$
+\setupfootertexts$for(footertext)$[$footertext$]$endfor$
+$endif$
+
+\definedescription
+  [description]
+  [headstyle=bold, style=normal, location=hanging, width=broad, margin=1cm, alternative=hanging]
+
+\setupitemize[autointro]    % prevent orphan list intro
+\setupitemize[indentnext=no]
+
+\defineitemgroup[enumerate]
+\setupenumerate[each][fit][itemalign=left,distance=.5em,style={\feature[+][default:tnum]}]
+
+\setupfloat[figure][default={here,tblr,nonumber}]
+\setupfloat[table][default={here,tblr,nonumber}]
+\setupexternalfigure[maxwidth=.95\hsize]
+\setupxtable[maxwidth=.95\hsize]
+\setupcaption[figure][style=\tx]
+\setupcaption[table][style=\tx]
+
+\setupxtable[frame=off,foregroundstyle={\feature[+][default:tnum]}]
+\setupxtable[head][topframe=on,bodyfont=bf]
+\setupxtable[body][]
+\setupxtable[foot][]
+\setupxtable[lastrow][bottomframe=on]
+
+$if(csl-refs)$
+\definemeasure[cslhangindent][1.5em]
+\definenarrower[hangingreferences][left=\measure{cslhangindent}]
+\definestartstop [cslreferences] [
+	$if(csl-hanging-indent)$
+	before={%
+	  \starthangingreferences[left]
+      \setupindenting[-\leftskip,yes,first]
+      \doindentation
+  	},
+  	after=\stophangingreferences,
+	$endif$
+]
+$endif$
+$if(includesource)$
+$for(sourcefile)$
+\attachment[file=$curdir$/$sourcefile$,method=hidden]
+$endfor$
+$endif$
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+\definecolumnset[main][n=2,balance=yes,distance=10mm]
+\definecolumnsetspan[wide][n=2]
+
+\starttext
+\startcolumnset[main]
+\startcolumnsetspan[wide]
+$if(title)$
+\startalignment[right]
+  {\switchtobodyfont[title]\bfd\setupinterlinespace $title$}
+$if(subtitle)$
+  \blank[small]
+  {\switchtobodyfont[title]\bfa\setupinterlinespace $subtitle$}
+$endif$
+$if(author_with_affiliation)$
+  \blank[small]
+  {\tfa\setupinterlinespace 
+  $for(author_with_affiliation)$
+  $author_with_affiliation.name$
+  \high{$for(author_with_affiliation.id)$$author_with_affiliation.id/roman$$sep$, $endfor$}
+  $sep$, $endfor$}
+  \blank[small]
+  {\tfa\setupinterlinespace
+  $for(affiliation)$\high{$affiliation.id/roman$}$affiliation.name$$sep$, $endfor$}
+$endif$
+$if(contact)$
+  \blank[small]
+  {\tfa\setupinterlinespace Contact\colon{} {\ss $contact$}}
+$endif$
+  \blank[big]
+  \thinrule
+\stopalignment
+$endif$
+$if(abstract)$
+\startsectionlevel[title=Abstract]
+\startnarrow[left=5cm,right=0cm][left,right]
+$abstract$
+\stopnarrow
+\stopsectionlevel
+\thinrule
+\blank[big]
+$endif$
+$for(include-before)$
+$include-before$
+$endfor$
+$if(toc)$
+\completecontent
+$endif$
+$if(lof)$
+\completelistoffigures
+$endif$
+$if(lot)$
+\completelistoftables
+$endif$
+\stopcolumnsetspan
+
+$body$
+
+$for(include-after)$
+$include-after$
+$endfor$
+\stopcolumnset
+\stoptext

@@ -5,7 +5,8 @@
 {
 "read_from": "page_vars/home",
 "write_to": [],
-"file_extension": ".html"
+"file_extension": ".html",
+"variables": [{"namespace": "featured", "path": "page_vars/specials/featured-articles.json"}]
 }
 #}
 
@@ -37,7 +38,8 @@
                 ASEAN Young Researchers’ Journal is a student-led academic journal
                 dedicated to publishing research by students of any age and all backgrounds.
                 We firmly believe that reading and conducting research should be open to everyone.
-            </p><p>
+            </p>
+            <p>
                 Through our flagship mentorship programme, SHRO,
                 we support secondary and pre-university students in developing original research
                 by connecting them with professionals in their fields.
@@ -52,11 +54,10 @@
             <h2>Recent Publications</h2>
         </div>
         <ul class="article-list">
-            {# {%for index in featured%}
-            <li>
-                <div>{{components.card(articles[index])}}</div>
-            </li>
-            {%endfor%} #}
+            {%for article in (featured.articles)%}
+            {% set article_data = article | load_json%}
+            <li>{{components.card(article_data)}}</li>
+            {%endfor%}
         </ul>
     </section>
 </main>

@@ -170,6 +170,9 @@ dist
 **/*.html
 !pandoc.html
 __pycache__
+*.pdf
+*.log
+*.tuc
 
 
 # ignore static assets
