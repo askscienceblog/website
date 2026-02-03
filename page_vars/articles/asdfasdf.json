@@ -1,0 +1,19 @@
+{
+  "title": "asdfasdf",
+  "contact": "asdf",
+  "abstract": "adsf",
+  "full_text": "adsf",
+  "contributors": [
+    {
+      "surname": "adsf",
+      "name_style": "western",
+      "affil": [
+        {
+          "inst": "dasf",
+          "inst_acro": "adsf"
+        }
+      ],
+      "sequence": 1
+    }
+  ]
+}
