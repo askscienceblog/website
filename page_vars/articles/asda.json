@@ -1,13 +1,13 @@
 {
   "contact": "adsf",
   "abstract": "asdf",
-  "path": "",
+  "path": "page_vars/articles/asda.json",
   "authors": [
     "adsf"
   ],
-  "modified": "2026-02-03T05:16:01.524Z",
-  "markdown": "",
-  "title": "asda",
+  "modified": "2026-02-03T05:17:05.492Z",
+  "markdown": "---\ntitle: 'asd'\nauthor:\n  - adsf\nauthor_with_affiliation:\n  - name: adsf\n    id:\n      - 1\naffiliation:\n  - name: asd\n    id: 1\n\ndate: 'Feb 3, 2026'\nabstract: |\n  asdf\nreferences: []\n\nreference-section-title: References\ncontact: 'adsf'\ninclude-before: |\n  ```{=html}\n  <style>\n  body {\n  counter-reset: pandoc-fn;\n  }\n  \n  a.footnote-ref {\n  counter-increment: pandoc-fn;\n  }\n  \n  a.footnote-ref > sup {\n  display: none;\n  }\n  \n  a.footnote-ref::after {\n  content: counter(pandoc-fn, lower-roman);\n  vertical-align: super;\n  font-size: smaller;\n  }\n  #footnotes ol {\n      list-style-type: lower-roman;\n  }\n  </style>\n  ```\n---\nasdf",
+  "title": "asd",
   "contributors": [
     {
       "surname": "adsf",
