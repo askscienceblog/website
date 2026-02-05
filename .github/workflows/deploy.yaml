@@ -48,7 +48,7 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE
           sass sass:public/static
-          ./pdf.sh
+          sudo ./pdf.sh
           python generate.py
 
       - name: Deploy Website
