@@ -2,12 +2,10 @@ import base64
 import json
 import os
 import re
-import shutil
 import subprocess
 from datetime import datetime
 from functools import partial
 from pathlib import Path
-from tempfile import TemporaryDirectory
 from typing import Annotated, Any, Callable
 
 from bs4 import BeautifulSoup
@@ -148,42 +146,6 @@ STOPWORDS = [
 ]
 
 
-def render_pdfs(articles_folder: str):
-    with TemporaryDirectory() as temp_dir:
-        for entry in os.scandir(articles_folder):
-            if not entry.is_file() or os.path.splitext(entry)[1] != ".json":
-                continue
-
-            with open(entry, "r", encoding="utf-8") as file:
-                md = json.load(file)["markdown"]
-
-            with open(
-                os.path.join(temp_dir, "markdown"), "w", encoding="utf-8"
-            ) as file:
-                file.write(md)
-            res = subprocess.run(
-                [
-                    "pandoc",
-                    "-f",
-                    "markdown",
-                    "-t",
-                    "context",
-                    "--citeproc",
-                    "--csl=apa.csl",
-                    "--template=pandoc.tex",
-                    f"{os.path.join(temp_dir, 'markdown')}",
-                ],
-                capture_output=True,
-                text=True,
-                encoding="utf-8",
-            )
-            with open(
-                os.path.join(temp_dir, "main.tex"), "w", encoding="utf-8"
-            ) as file:
-                file.write(res.stdout)
-            subprocess.run(["context", f"{os.path.join(temp_dir, 'main.tex')}"])
-
-
 class RenderVariable(BaseModel):
     namespace: str
     path: Path
@@ -305,7 +267,6 @@ def censor_addresses(html: str) -> str:
 
 
 if __name__ == "__main__":
-    render_pdfs("page_vars/articles")
     for entry in os.scandir("templates"):
         if entry.is_file():
             render_template(entry.path, "public", censor_addresses)

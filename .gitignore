@@ -168,7 +168,9 @@ dist
 
 # ignore generated files
 **/*.html
+**/*.tex
 !pandoc.html
+!pandoc.tex
 __pycache__
 *.pdf
 *.log
@@ -177,3 +179,4 @@ __pycache__
 
 # ignore static assets
 public/static
+static

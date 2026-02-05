@@ -32,6 +32,7 @@ jobs:
       - name: Install Dependencies
         run: |
           sudo apt install pandoc
+          sudo apt install jq
           pip install -r $GITHUB_WORKSPACE/requirements.txt
       - name: Install Dependencies
         uses: actions/setup-node@v6
@@ -47,6 +48,7 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE
           sass sass:public/static
+          ./pdf.sh
           python generate.py
 
       - name: Deploy Website
