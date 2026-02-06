@@ -1,6 +1,14 @@
 \widowpenalty=10000
 \clubpenalty=10000
 
+\def\IfLastPageTF#1#2{%
+  \ifnum\realpageno=\lastpagenumber\relax
+    #1%
+  \else
+    #2%
+  \fi
+}
+
 $if(tagging)$
 \setupbackend[format=pdf/ua-2]
 \enabledirectives[backend.usetags=mkiv]
@@ -47,7 +55,7 @@ $endif$
   header=5mm,
   headerdistance=5mm,
   footer=5mm,
-  footerdistance=5mm,
+  footerdistance=10mm,
   backspace=27.5mm,
   width=middle,
   height=fit]
@@ -87,7 +95,7 @@ $endif$
 \setupheadertexts[\dontleavehmode
    \setbox0\hbox{\externalfigure[/static/line-logo.png][height=5mm]}%
    \raise\dimexpr(\strutht-\strutdp-\ht0+\dp0)/2\relax\box0\ ASEAN Young Researcher's Journal][]
-\setupfootertexts[][\externalfigure[/static/ccby.png][height=5mm]]
+\setupfootertexts[][\IfLastPageTF{This work is licensed under CC BY 4.0.}{}]
 
 \setupwhitespace[none]
 \setupindenting[yes,medium,next]
