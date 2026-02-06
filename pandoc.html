@@ -29,7 +29,9 @@ $endfor$
       $if(date)$
       <div>Published:&nbsp;$date$</div>
       $endif$
+      $if(slug)$
       <a id="pdfDownload" href="/static/$slug$.pdf" target="_blank">Download Full-Text PDF</a>
+      $endif$
     </div>
 
     $if(abstract)$

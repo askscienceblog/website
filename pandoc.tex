@@ -44,6 +44,10 @@ $endif$
 \setuppapersize[A4]
 \setuplayout[
   topspace=10mm,
+  header=5mm,
+  headerdistance=5mm,
+  footer=5mm,
+  footerdistance=5mm,
   backspace=27.5mm,
   width=middle,
   height=fit]
@@ -69,7 +73,7 @@ $endif$
 \setupbodyfontenvironment[default][em=italic] % use italic as em, not slanted
 \setuppagenumbering[location={footer,middle},style={\feature[+][default:tnum]}]
 
-\definefallbackfamily[mainface][rm][stixtwotext][range={0x00000-0x0FFFFF}]
+\definefallbackfamily[mainface][rm][stixtwotext][range={0x000000-0x10FFFF}]
 \definefontfamily[mainface][rm][xcharter][features=default:charter]
 \definefontfamily[mainface][mm][stixtwomath]
 \definefontfamily[mainface][tt][sourcecodepro][features=default:lnum]
@@ -79,6 +83,11 @@ $endif$
   [rscale=1.2]
 
 \setupbodyfont[mainface,8pt]
+
+\setupheadertexts[\dontleavehmode
+   \setbox0\hbox{\externalfigure[/static/line-logo.png][height=5mm]}%
+   \raise\dimexpr(\strutht-\strutdp-\ht0+\dp0)/2\relax\box0\ ASEAN Young Researcher's Journal][]
+\setupfootertexts[][\externalfigure[/static/ccby.png][height=5mm]]
 
 \setupwhitespace[none]
 \setupindenting[yes,medium,next]
@@ -99,13 +108,6 @@ $endif$
 \definesectionlevels
    [default]
    [section, subsection, subsubsection, subsubsubsection, subsubsubsubsection]
-
-$if(headertext)$
-\setupheadertexts$for(headertext)$[$headertext$]$endfor$
-$endif$
-$if(footertext)$
-\setupfootertexts$for(footertext)$[$footertext$]$endfor$
-$endif$
 
 \definedescription
   [description]
@@ -180,6 +182,10 @@ $endif$
 $if(contact)$
   \blank[small]
   {\tfa\setupinterlinespace Contact\colon{} {\ss $contact$}}
+$endif$
+$if(date)$
+  \blank[small]
+  {\tfa\setupinterlinespace Published\colon{} $date$}
 $endif$
   \blank[big]
   \thinrule

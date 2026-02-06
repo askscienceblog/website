@@ -4,8 +4,8 @@ for FILE in "page_vars/articles"/*; do
     echo "Processing file: $FILE"
     jq ".markdown" $FILE -r | pandoc -f markdown -t context --citeproc --csl=apa.csl --template=pandoc.tex > main.tex
     mkdir -p static
-    grep -oP "(?<=[\(\[\{\"']/)(static/.*?)(?=[\)\]\}\"'])" main.tex | while IFS= read -r line; do
-        echo "$line" | sed "s/^/https:\/\/cms.ayrj.org\//" | xargs -P 30 -I {} curl -o $line {}
+    grep -oP "(?<=[\(\[\{\"']/static/)(.*?)(?=[\)\]\}\"'])" main.tex | while IFS= read -r line; do
+        echo "$line" | jq -rR @uri | sed "s/^/https:\/\/cms.ayrj.org\/static\//" | xargs -P 30 -I {} curl -o "static/$line" {}
     done
     sed -i "s/\/static\//.\/static\//g" main.tex
     context main.tex
