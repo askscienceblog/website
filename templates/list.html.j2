@@ -10,13 +10,20 @@
 }
 #}
 
+{% block head %}
+{{super()}}
+<title>Articles ∈ AYRJ</title>
+<meta name="description" content="List of published articles" />
+{%endblock%}
+
+
 {%block main%}
 <main>
     <section>
         <div>
             <h2>Search</h2>
             <div id="search-bar">
-                <input id="search-q" type="text" disabled value="Coming soon...">
+                <input class="sans" id="search-q" type="text" disabled value="Search feature coming soon…">
             </div>
         </div>
     </section>

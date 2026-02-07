@@ -85,6 +85,10 @@ a:active {
     color: #FF0000;
 }
 
+address {
+    display: inline;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -461,13 +465,16 @@ button {
     margin-bottom: 1lh;
     font-variant-numeric: lining-nums proportional-nums;
     font-size: $font-series*1em;
+    position: relative;
 
     >div {
         margin: 1em 0;
     }
 
-    address {
-        display: inline;
+    img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
     }
 }
 
@@ -544,6 +551,7 @@ a.button:focus {
 
 div#search-bar {
     position: relative;
+
     input {
         width: 100%;
         height: $header-height;
