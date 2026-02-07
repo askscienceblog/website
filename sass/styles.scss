@@ -199,6 +199,10 @@ section>div {
     @include invert-colors();
     text-align: center;
 
+    img {
+        max-width: $text-max-width;
+    }
+
     p {
         margin: 0 auto;
         text-align: justify;
@@ -562,13 +566,11 @@ div#search-bar {
     background-color: lightpink;
 
     >div {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 1rem;
     }
 
-    svg {
+    img {
         width: 1rem;
         height: 1rem;
     }
@@ -581,4 +583,13 @@ div#search-bar {
         border: none;
         cursor: pointer;
     }
+}
+
+#about-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: $page-max-width;
+    margin: 0 auto;
+    flex-wrap: wrap;
 }

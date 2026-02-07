@@ -1,0 +1,40 @@
+{% extends "templates/common/base.html.j2" %}
+
+{#
+{
+"read_from": "page_vars/shro",
+"write_to": ["shro"],
+"file_extension": ".html"
+}
+#}
+
+{% block head %}
+{{super()}}
+<title>SHRO ∈ AYRJ</title>
+<meta name="description"
+    content="The Science and Humanities Reserach Olympiad is our flagship research mentorship programme. Secondary and pre-university students are given the chance to work with professional researchers in over 24 different fields.">
+{%endblock%}
+
+{%block main%}
+<main>
+    <section id="hero" style="background-color: transparent;color:black;">
+        <div>
+            <h1>Science and Humanities Research Olympiad</h1>
+            <h2>AYRJ's flagship research mentorship programme</h2>
+            <div>
+                <img src="/static/shro.svg">
+            </div>
+            <p>
+                The Science and Humanities Reserach Olympiad is our
+                flagship research mentorship programme.
+                Secondary and pre-university students are given the chance
+                to work with professional researchers in over 24 different fields.
+            </p>
+        </div>
+    </section>
+    <div id="about-div">
+        <section>
+        </section>
+    </div>
+</main>
+{%endblock%}

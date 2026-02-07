@@ -177,7 +177,7 @@ def render_template(
     post_processing: Mapping[str, Callable[[str], str]] = {},
 ) -> None:
     # load config
-    with open(template_path, "r") as file:
+    with open(template_path, "r", encoding="utf-8") as file:
         template = file.read()
     mat = CONFIG_JSON.search(template)
     if mat is None:

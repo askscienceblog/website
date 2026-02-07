@@ -27,11 +27,10 @@
         <div>
             {% set announcements = "page_vars/specials/announcements.json" | load_json%}
             <div><strong>Announcment:</strong> {{announcements.text}}</div>
-            <button onclick="hideAnnounce()" value="Close announcements"><svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round"
-                    stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="m12 10.93 5.719-5.72c.146-.146.339-.219.531-.219.404 0 .75.324.75.749 0 .193-.073.385-.219.532l-5.72 5.719 5.719 5.719c.147.147.22.339.22.531 0 .427-.349.75-.75.75-.192 0-.385-.073-.531-.219l-5.719-5.719-5.719 5.719c-.146.146-.339.219-.531.219-.401 0-.75-.323-.75-.75 0-.192.073-.384.22-.531l5.719-5.719-5.72-5.719c-.146-.147-.219-.339-.219-.532 0-.425.346-.749.75-.749.192 0 .385.073.531.219z" />
-                </svg></button>
+            <button onclick="hideAnnounce()"><img
+                    src="data:image/svg+xml;base64,PHN2ZyBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjIiIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtMTIgMTAuOTMgNS43MTktNS43MmMuMTQ2LS4xNDYuMzM5LS4yMTkuNTMxLS4yMTkuNDA0IDAgLjc1LjMyNC43NS43NDkgMCAuMTkzLS4wNzMuMzg1LS4yMTkuNTMybC01LjcyIDUuNzE5IDUuNzE5IDUuNzE5Yy4xNDcuMTQ3LjIyLjMzOS4yMi41MzEgMCAuNDI3LS4zNDkuNzUtLjc1Ljc1LS4xOTIgMC0uMzg1LS4wNzMtLjUzMS0uMjE5bC01LjcxOS01LjcxOS01LjcxOSA1LjcxOWMtLjE0Ni4xNDYtLjMzOS4yMTktLjUzMS4yMTktLjQwMSAwLS43NS0uMzIzLS43NS0uNzUgMC0uMTkyLjA3My0uMzg0LjIyLS41MzFsNS43MTktNS43MTktNS43Mi01LjcxOWMtLjE0Ni0uMTQ3LS4yMTktLjMzOS0uMjE5LS41MzIgMC0uNDI1LjM0Ni0uNzQ5Ljc1LS43NDkuMTkyIDAgLjM4NS4wNzMuNTMxLjIxOXoiLz48L3N2Zz4="
+                    alt="Hide announcements section">
+            </button>
         </div>
     </section>
     <header id="header">
@@ -49,7 +48,7 @@
                 <details name="nav">
                     <summary>About</summary>
                     <ul>
-                        <li><a>Story & Team</a></li>
+                        <li><a href="/about">Story & Team</a></li>
                         <li><a href="#footer">Contact Us</a></li>
                     </ul>
                 </details>
@@ -63,8 +62,8 @@
                 <details name="nav">
                     <summary>SHRO</summary>
                     <ul>
-                        <li><a>About</a></li>
-                        <li><a>Sign Up</a></li>
+                        <li><a href="/shro/">About</a></li>
+                        <li><a href="/shro/#sign">Sign Up</a></li>
                     </ul>
                     {# <option>Mentor Sign-up</option> #}
                 </details>
