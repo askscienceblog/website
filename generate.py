@@ -191,8 +191,18 @@ def render_template(
 
     var = {}
     for vars in options.variables:
-        with vars.path.open("r", encoding="utf-8") as file:
-            var[vars.namespace] = json.load(file)
+        if vars.path.is_file():
+            with vars.path.open("r", encoding="utf-8") as file:
+                var[vars.namespace] = json.load(file)
+        if vars.path.is_dir():
+            var[vars.namespace] = {}
+            for entry in os.scandir(str(vars.path)):
+                if entry.is_file():
+                    try:
+                        with open(entry, "r", encoding="utf-8") as file:
+                            var[vars.namespace][entry.name] = json.load(file)
+                    except json.JSONDecodeError:
+                        pass
 
     for entry in os.scandir(options.read_from):
         if not entry.is_file():

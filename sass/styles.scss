@@ -94,7 +94,7 @@ body {
 
 main {
     flex-grow: 1;
-    position: relative;
+    position: relative
 }
 
 
@@ -113,7 +113,7 @@ header>div {
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    gap: 4px;
+    overflow: clip visible;
 
     a {
         height: 100%;
@@ -125,10 +125,6 @@ header>div {
 
     a#search {
         padding: 4px;
-
-        img {
-            object-fit: contain;
-        }
     }
 }
 
@@ -137,6 +133,7 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: stretch;
+    min-width: fit-content;
 
     a:link,
     a:visited {
@@ -256,7 +253,12 @@ ul.article-list {
     padding: 0;
 
     h3 {
-        margin: 0
+        margin: 0;
+        margin-bottom: 4px;
+
+        p {
+            line-height: 100%;
+        }
     }
 
     p {
@@ -276,6 +278,7 @@ ul.article-list {
 
     >li {
         border-top: 1px solid black;
+        padding: 4px 0;
     }
 
     >li:last-child {
@@ -309,10 +312,9 @@ ul.article-list {
 div.center {
     position: absolute;
     inset: 0;
-    height: 100%;
     max-width: $page-max-width;
-    margin: auto auto;
     padding: 0 4px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -467,22 +469,21 @@ button {
     address {
         display: inline;
     }
-
-    #pdfDownload {
-        width: fit-content;
-        display: block;
-        padding: 12px;
-        border: 1px solid black;
-        @include invert-colors();
-    }
-
-    #pdfDownload:hover,
-    #pdfDownload:focus {
-        color: black;
-        background-color: transparent;
-    }
 }
 
+a.button {
+    width: fit-content;
+    display: block;
+    padding: 12px;
+    border: 1px solid black;
+    @include invert-colors();
+}
+
+a.button:hover,
+a.button:focus {
+    color: black;
+    background-color: transparent;
+}
 
 #content {
     margin: 0 auto;
@@ -538,5 +539,13 @@ button {
     #body {
         max-width: $text-max-width;
         margin: 0 auto;
+    }
+}
+
+div#search-bar {
+    position: relative;
+    input {
+        width: 100%;
+        height: $header-height;
     }
 }

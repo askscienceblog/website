@@ -1,0 +1,31 @@
+{% extends "templates/common/base.html.j2" %}
+{%import "templates/common/components.html.j2" as components%}
+
+{#
+{
+"read_from": "page_vars/list",
+"write_to": ["articles"],
+"file_extension": ".html",
+"variables": [{"namespace":"articles","path":"page_vars/articles"}]
+}
+#}
+
+{%block main%}
+<main>
+    <section>
+        <div>
+            <h2>Search</h2>
+            <div id="search-bar">
+                <input id="search-q" type="text" disabled value="Coming soon...">
+            </div>
+        </div>
+    </section>
+    <section>
+        <ul class="article-list">
+            {%for article in articles.values()%}
+            <li>{{components.card(article)}}</li>
+            {%endfor%}
+        </ul>
+    </section>
+</main>
+{%endblock%}
