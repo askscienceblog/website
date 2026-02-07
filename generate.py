@@ -6,7 +6,7 @@ import subprocess
 from datetime import datetime
 from functools import partial
 from pathlib import Path
-from typing import Annotated, Any, Callable
+from typing import Annotated, Any, Callable, Mapping
 
 from bs4 import BeautifulSoup
 from jinja2 import Environment, FunctionLoader, StrictUndefined
@@ -174,7 +174,7 @@ env = Environment(
 def render_template(
     template_path: str,
     output_dir: str,
-    post_processing: Callable[[str], str] = lambda x: x,
+    post_processing: Mapping[str, Callable[[str], str]] = {},
 ) -> None:
     # load config
     with open(template_path, "r") as file:
@@ -229,7 +229,7 @@ def render_template(
         with Path(output_dir, *options.write_to, filename).open(
             "w", encoding="utf-8"
         ) as file:
-            file.write(post_processing(output))
+            file.write(post_processing[options.file_extension](output))
 
 
 def pandoc(
@@ -279,4 +279,4 @@ def censor_addresses(html: str) -> str:
 if __name__ == "__main__":
     for entry in os.scandir("templates"):
         if entry.is_file():
-            render_template(entry.path, "public", censor_addresses)
+            render_template(entry.path, "public", {".html": censor_addresses})

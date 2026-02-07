@@ -6,7 +6,8 @@
 "read_from": "page_vars/home",
 "write_to": [],
 "file_extension": ".html",
-"variables": [{"namespace": "featured", "path": "page_vars/specials/featured-articles.json"}]
+"variables": [{"namespace": "featured", "path": "page_vars/specials/featured-articles.json"},
+{"namespace": "announcements", "path": "page_vars/specials/announcements.json"}]
 }
 #}
 
@@ -24,6 +25,9 @@
 {%endblock%}
 
 {% block main %}
+<script defer>
+    document.getElementById("announcements").removeAttribute("style")
+</script>
 <main>
     <section id="hero">
         <div>
@@ -51,7 +55,7 @@
 
     <section>
         <div>
-            <h2>Recent Publications</h2>
+            <h2>Featured Publications</h2>
         </div>
         <ul class="article-list">
             {%for article in (featured.articles)%}
