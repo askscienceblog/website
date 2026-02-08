@@ -201,7 +201,7 @@ section>div {
     text-align: center;
 
     img {
-        max-width: $text-max-width;
+        max-width: 100%;
         margin: 1lh 0;
     }
 
@@ -602,6 +602,6 @@ div#search-bar {
     flex-wrap: wrap;
 
     img {
-        width: $text-max-width;
+        max-width: $text-max-width;
     }
 }
