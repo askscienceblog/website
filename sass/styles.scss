@@ -41,7 +41,6 @@ $header-height: 2rem;
 
 p {
     margin: 0 auto;
-    text-align: justify;
     hyphens: auto;
     margin-bottom: 1lh;
     max-width: $text-max-width;
@@ -194,6 +193,10 @@ section>div {
     @include invert-colors();
     text-align: center;
 
+    p {
+        text-wrap: balance;
+    }
+
     img {
         max-width: min($text-max-width, 100%);
         margin: 1lh 0;
@@ -345,7 +348,6 @@ article#main {
 
     p {
         margin: 0;
-        text-align: left;
         text-wrap: pretty;
         line-height: 150%;
         hyphens: none;
