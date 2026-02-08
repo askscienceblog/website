@@ -597,5 +597,10 @@ div#search-bar {
     justify-content: space-around;
     max-width: $page-max-width;
     margin: 0 auto;
+    margin-bottom: 1lh;
     flex-wrap: wrap;
+
+    img {
+        width: $text-max-width;
+    }
 }
