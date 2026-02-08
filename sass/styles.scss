@@ -201,6 +201,7 @@ section>div {
 
     img {
         max-width: $text-max-width;
+        margin: 1lh 0;
     }
 
     p {
@@ -208,6 +209,11 @@ section>div {
         text-align: justify;
         hyphens: auto;
         line-height: initial;
+        margin-bottom: 1lh;
+    }
+
+    p+p {
+        text-indent: 0;
     }
 
     h2 {
