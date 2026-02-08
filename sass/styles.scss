@@ -40,17 +40,12 @@ $header-height: 2rem;
 }
 
 p {
+    margin: 0 auto;
+    text-align: justify;
+    hyphens: auto;
+    line-height: initial;
+    margin-bottom: 1lh;
     max-width: $text-max-width;
-    margin: 0;
-    line-height: 150%;
-}
-
-p+p {
-    text-indent: 1.5em;
-}
-
-p:has(+:is(h1, h2, h3, h4)) {
-    margin-bottom: 1rem;
 }
 
 h1 {
@@ -201,20 +196,8 @@ section>div {
     text-align: center;
 
     img {
-        max-width: 100%;
+        max-width: min($text-max-width, 100%);
         margin: 1lh 0;
-    }
-
-    p {
-        margin: 0 auto;
-        text-align: justify;
-        hyphens: auto;
-        line-height: initial;
-        margin-bottom: 1lh;
-    }
-
-    p+p {
-        text-indent: 0;
     }
 
     h2 {
@@ -368,6 +351,22 @@ article#main {
     max-width: $page-max-width;
     margin: 0 auto;
     padding: 0 12px;
+
+    p {
+        margin: 0;
+        text-align: left;
+        text-wrap: pretty;
+        line-height: 150%;
+        hyphens: none;
+    }
+
+    p+p {
+        text-indent: 1.5em;
+    }
+
+    p:has(+:is(h1, h2, h3, h4)) {
+        margin-bottom: 1rem;
+    }
 }
 
 figure {
