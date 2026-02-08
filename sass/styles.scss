@@ -43,7 +43,6 @@ p {
     margin: 0 auto;
     text-align: justify;
     hyphens: auto;
-    line-height: initial;
     margin-bottom: 1lh;
     max-width: $text-max-width;
 }
@@ -253,6 +252,10 @@ ul.article-list {
     h3 {
         margin: 0;
         margin-bottom: 4px;
+        p {
+            margin: 0;
+            line-height: 100%;
+        }
     }
 
     p {
