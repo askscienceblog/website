@@ -10,6 +10,12 @@
 	"observability": {
 		"enabled": true
 	},
+	"routes": [
+		{
+			"pattern": "ayrj.org",
+			"custom_domain": true
+		}
+	],
 	"r2_buckets": [
 		{
 			"binding": "STATIC",
