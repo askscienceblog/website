@@ -253,10 +253,6 @@ ul.article-list {
     h3 {
         margin: 0;
         margin-bottom: 4px;
-
-        p {
-            line-height: 100%;
-        }
     }
 
     p {
@@ -319,14 +315,6 @@ div.center {
 
     * {
         text-align: center;
-    }
-
-    p {
-        margin-bottom: 1lh;
-    }
-
-    p+p {
-        text-indent: 0;
     }
 }
 
