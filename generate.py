@@ -267,7 +267,7 @@ env.filters["parse_iso_date"] = parse_iso_date_string
 
 
 def censor_addresses(html: str) -> str:
-    soup = BeautifulSoup(html, "lxml")
+    soup = BeautifulSoup(html, "html5lib")
     for address in soup.find_all("address"):
         inner_html = address.encode_contents(encoding="utf-8")
         address.string = (
