@@ -229,7 +229,11 @@ def render_template(
         with Path(output_dir, *options.write_to, filename).open(
             "w", encoding="utf-8"
         ) as file:
-            file.write(post_processing[options.file_extension](output))
+            if options.file_extension in post_processing:
+                out = post_processing[options.file_extension](output)
+            else:
+                out = output
+            file.write(out)
 
 
 def pandoc(
@@ -263,7 +267,7 @@ env.filters["parse_iso_date"] = parse_iso_date_string
 
 
 def censor_addresses(html: str) -> str:
-    soup = BeautifulSoup(html, "html5lib")
+    soup = BeautifulSoup(html, "lxml")
     for address in soup.find_all("address"):
         inner_html = address.encode_contents(encoding="utf-8")
         address.string = (

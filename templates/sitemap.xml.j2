@@ -1,0 +1,38 @@
+{#-
+{
+"read_from": "page_vars/sitemap",
+"write_to": [],
+"file_extension": ".xml",
+"variables": [{"namespace":"articles","path":"page_vars/articles"}]
+}
+-#}
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+  <loc>https://ayrj.org/</loc>
+  <priority>1.0</priority>
+</url>
+<url>
+  <loc>https://ayrj.org/articles/</loc>
+  <priority>1.0</priority>
+</url>
+<url>
+  <loc>https://ayrj.org/about</loc>
+  <priority>1.0</priority>
+</url>
+<url>
+  <loc>https://ayrj.org/shro/</loc>
+  <priority>1.0</priority>
+</url>
+{%for article in articles.values()%}
+<url>
+    <loc>https://ayrj.org/articles/{{article.title | slugify}}</loc>
+    <lastmod>{{article.modified}}</lastmod>
+</url>
+<url>
+    <loc>https://ayrj.org/static/{{article.slug}}.pdf</loc>
+    <lastmod>{{article.modified}}</lastmod>
+</url>
+{%endfor%}
+</urlset>

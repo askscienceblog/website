@@ -1,5 +1,5 @@
 Jinja2
 pydantic
 beautifulsoup4
-html5lib
+lxml
 python-slugify
