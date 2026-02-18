@@ -519,7 +519,6 @@ a.button:focus {
         z-index: 10;
         margin-right: auto;
         padding: 4px;
-        @include fonts.sans(1rem, 500, normal);
 
         button {
             position: sticky;
