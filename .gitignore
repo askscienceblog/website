@@ -175,6 +175,7 @@ __pycache__
 *.pdf
 *.log
 *.tuc
+**/*.xml
 
 
 # ignore static assets

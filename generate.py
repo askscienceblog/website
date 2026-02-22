@@ -262,8 +262,7 @@ def parse_iso_date_string(string: str, format: str = ""):
 
 
 def cmd(cmd: str):
-    res = subprocess.run(cmd, shell=True, capture_output=True, text=True)
-    print(res.stdout)
+    subprocess.call(cmd, shell=True)
     return ""
 
 
