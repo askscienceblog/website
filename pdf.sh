@@ -2,7 +2,7 @@
 if [ -z "$PDF_DEV_MODE" ]; then
   echo "Processing file: $1"
 else
-  echo "PDF_DEV_MODE is set, skipping pdf generation and upload"
+  echo "PDF_DEV_MODE is set. Skipping pdf generation and upload"
   exit 0
 fi
 

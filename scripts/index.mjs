@@ -18,5 +18,5 @@ const searcher = new MiniSearch({
 
 const data = JSON.parse(await fs.readFile("search-index.json", "utf8"))
 searcher.addAll(data)
-const output = JSON.stringify(searcher.toJSON())
+const output = JSON.stringify(searcher)
 await fs.writeFile("public/search-index.json", output, "utf8")
