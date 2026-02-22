@@ -43,13 +43,13 @@ jobs:
           npm install -g sass
           cd $GITHUB_WORKSPACE
           npm install
+          npm audit fix
 
       - name: Generate Website
         run: |
           cd $GITHUB_WORKSPACE
           sass sass:public/static
           sudo chmod u+x pdf.sh
-          ./pdf.sh
           python generate.py
 
       - name: Deploy Website

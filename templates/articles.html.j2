@@ -24,7 +24,7 @@
     {{markdown | pandoc( ["-f",
     "markdown",
     "-t",
-    "html",
+    "html5",
     "--citeproc",
     "--mathml",
     "--shift-heading-level-by=1",
@@ -34,3 +34,5 @@
 
 </main>
 {% endblock %}
+
+{{"./pdf.sh page_vars/articles/"~slug~".json" | cmd}}

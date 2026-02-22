@@ -238,7 +238,7 @@ def render_template(
 
 def pandoc(
     value,
-    arguments=["-f", "markdown", "-t", "html"],
+    arguments=["-f", "markdown", "-t", "html5"],
 ):
     res = subprocess.run(
         ["pandoc"] + arguments,
@@ -246,6 +246,7 @@ def pandoc(
         text=True,
         encoding="utf-8",
         input=value,
+        check=True,
     )
     print(res.stderr)
     return Markup(res.stdout)
@@ -260,10 +261,17 @@ def parse_iso_date_string(string: str, format: str = ""):
     return datetime.fromisoformat(string).strftime(format)
 
 
+def cmd(cmd: str):
+    res = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+    print(res.stdout)
+    return ""
+
+
 env.filters["pandoc"] = pandoc
 env.filters["load_json"] = load_json
 env.filters["slugify"] = partial(slugify, stopwords=STOPWORDS)
 env.filters["parse_iso_date"] = parse_iso_date_string
+env.filters["cmd"] = cmd
 
 
 def censor_addresses(html: str) -> str:
