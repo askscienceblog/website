@@ -169,6 +169,7 @@ def load_from_path(path: str) -> str:
 env = Environment(
     loader=FunctionLoader(load_from_path), autoescape=True, undefined=StrictUndefined
 )
+cmd_queue = []
 
 
 def render_template(
@@ -262,7 +263,7 @@ def parse_iso_date_string(string: str, format: str = ""):
 
 
 def cmd(cmd: str):
-    subprocess.call(cmd, shell=True)
+    cmd_queue.append(cmd)
     return ""
 
 
@@ -274,7 +275,7 @@ env.filters["pandoc"] = pandoc
 env.filters["load_json"] = load_json
 env.filters["slugify"] = partial(slugify, stopwords=STOPWORDS)
 env.filters["parse_iso_date"] = parse_iso_date_string
-env.filters["cmd"] = cmd
+env.filters["cmd-later"] = cmd
 env.filters["json_escape"] = json_escape
 
 
@@ -296,3 +297,5 @@ if __name__ == "__main__":
     for entry in os.scandir("templates"):
         if entry.is_file():
             render_template(entry.path, "public", {".html": censor_addresses})
+    for cmmd in cmd_queue:
+        subprocess.call(cmmd, shell=True)
