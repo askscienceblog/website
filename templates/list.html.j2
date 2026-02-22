@@ -5,8 +5,7 @@
 {
 "read_from": "page_vars/list",
 "write_to": ["articles"],
-"file_extension": ".html",
-"variables": [{"namespace":"articles","path":"page_vars/articles"}]
+"file_extension": ".html"
 }
 #}
 
@@ -14,6 +13,8 @@
 {{super()}}
 <title>Articles ∈ AYRJ</title>
 <meta name="description" content="List of published articles" />
+<script src="https://cdn.jsdelivr.net/npm/minisearch@7.2.0/dist/umd/index.min.js"></script>
+<script src="/search.js" defer></script>
 {%endblock%}
 
 
@@ -29,9 +30,9 @@
     </section>
     <section>
         <ul class="article-list">
-            {%for article in articles.values()%}
+            {# {%for article in articles.values()%}
             <li>{{components.card(article)}}</li>
-            {%endfor%}
+            {%endfor%} #}
         </ul>
     </section>
 </main>

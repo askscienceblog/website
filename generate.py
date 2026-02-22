@@ -266,11 +266,16 @@ def cmd(cmd: str):
     return ""
 
 
+def json_escape(js: Any):
+    return Markup(json.dumps(js))
+
+
 env.filters["pandoc"] = pandoc
 env.filters["load_json"] = load_json
 env.filters["slugify"] = partial(slugify, stopwords=STOPWORDS)
 env.filters["parse_iso_date"] = parse_iso_date_string
 env.filters["cmd"] = cmd
+env.filters["json_escape"] = json_escape
 
 
 def censor_addresses(html: str) -> str:

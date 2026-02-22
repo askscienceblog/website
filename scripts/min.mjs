@@ -113,6 +113,13 @@ async function main() {
       continue;
     }
 
+    if (ext === ".json") {
+      const json = await fs.readFile(inPath, "utf8");
+      const result = JSON.stringify(JSON.parse(json));
+      await writeFileEnsuringDir(outPath, result);
+      continue;
+    }
+
     // Everything else: copy as-is (images, fonts, etc.)
     await copyFileEnsuringDir(inPath, outPath);
   }

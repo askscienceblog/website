@@ -1,0 +1,26 @@
+{%import "templates/common/components.html.j2" as components%}
+
+{#
+{
+"read_from": "page_vars/search",
+"write_to": [".."],
+"file_extension": ".json",
+"variables": [{"namespace":"articles","path":"page_vars/articles"}]
+}
+#}
+
+[
+{%for article in articles.values()%}
+{
+"id":{{loop.index}},
+"title": {{article.title | pandoc(["-f", "markdown", "-t", "plain"]) | json_escape}},
+"abstract": {{article.abstract | pandoc(["-f", "markdown", "-t", "plain"]) | json_escape}},
+"authors": {{article.authors | join("; ") | json_escape}},
+"html" : {{components.card(article) | json_escape}}
+{%- if not loop.last -%}
+,
+{%endif%}
+}
+{%endfor%}
+]
+{{"node scripts/index.mjs" | cmd}}
