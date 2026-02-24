@@ -269,6 +269,7 @@ ul.article-list {
     mark {
         background-color: transparent;
         text-decoration: underline;
+        font-weight: bold;
         color: inherit;
     }
 
@@ -298,6 +299,7 @@ ul.article-list {
         cursor: help;
         >div {
             padding: 0 4px;
+            width: fit-content;
             margin-left: calc((100vw - $page-max-width)/2 - 1rem)
         }
     }
