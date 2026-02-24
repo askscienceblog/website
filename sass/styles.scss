@@ -2,7 +2,7 @@
 @use 'sass:math';
 
 @mixin invert-colors {
-    color: white;
+    color: #eee;
     background-color: black;
 }
 
@@ -10,6 +10,8 @@ $page-max-width: 80rem;
 $text-max-width: 55ch;
 $font-series: 1.2;
 $header-height: 2rem;
+$dark-black: #222;
+$light-white: #ffffff;
 
 :root {
     margin: 0;
@@ -84,6 +86,8 @@ address {
 }
 
 body {
+    color: $dark-black;
+    background-color: $light-white;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -100,7 +104,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 20;
-    background-color: #ffffffe0;
+    background-color: rgba($light-white, 87.5%);
     @include fonts.sans(1rem, 400, normal);
 }
 
@@ -135,48 +139,55 @@ nav {
 
     a:link,
     a:visited {
-        color: black;
+        color: $dark-black;
     }
 
     details {
         flex: 0 1 20ch;
-        min-width: fit-content;
-
-        >* {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            padding: 4px;
-            line-height: 200%;
-        }
-
-        $half-width: 0.5em;
-
-        summary::before {
-            content: "⏷\00A0";
-        }
-
         summary {
-            height: 100%;
-            display: flex;
-            align-items: center;
+            cursor: pointer;
         }
     }
+}
 
-    details[open] {
-        summary {
-            @include invert-colors()
-        }
+details {
+    min-width: fit-content;
 
-        summary::before {
-            content: "⏶\00A0"
-        }
-
-        >* {
-            background-color: white;
-        }
-
+    >* {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        padding: 4px;
+        line-height: 1.5;
     }
+
+    summary::before {
+        content: "⏷";
+    }
+
+    summary {
+        height: 100%;
+        line-height: normal;
+        display: grid;
+        gap: 4px;
+        grid-template-columns: 1rem 1fr;
+        align-items: center;
+    }
+}
+
+details[open] {
+    summary {
+        @include invert-colors()
+    }
+
+    summary::before {
+        content: "⏶"
+    }
+
+    >* {
+        background-color: $light-white;
+    }
+
 }
 
 section {
@@ -218,7 +229,7 @@ section>div {
         right: 0;
         bottom: 0;
         left: 0;
-        background: radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.25) 50%, black 100%);
+        background: radial-gradient(ellipse closest-side, rgba(black, 0) 0, rgba(black, 0.25) 50%, black 100%);
     }
 }
 
@@ -237,6 +248,7 @@ footer {
 
         figure {
             width: fit-content;
+            border: none;
         }
 
         figcaption {
@@ -254,13 +266,24 @@ ul.article-list {
     list-style: none;
     padding: 0;
 
+    mark {
+        background-color: transparent;
+        text-decoration: underline;
+        color: inherit;
+    }
+
     h3 {
         margin: 0;
         margin-bottom: 4px;
+
         p {
             margin: 0;
-            line-height: 100%;
+            line-height: normal;
         }
+    }
+
+    time {
+        line-height: 1.5;
     }
 
     p {
@@ -269,45 +292,33 @@ ul.article-list {
 
     a {
         color: inherit;
-        text-decoration: inherit;
     }
 
-    article {
-        max-width: $page-max-width;
-        margin: 0 auto;
-        padding: 0 4px;
+    summary {
+        cursor: help;
+        >div {
+            padding: 0 4px;
+            margin-left: calc((100vw - $page-max-width)/2 - 1rem)
+        }
     }
 
     >li {
-        border-top: 1px solid black;
-        padding: 4px 0;
+        border-top: 1px solid $dark-black;
+        padding: 0;
     }
 
     >li:last-child {
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid $dark-black;
     }
 
     div.abstract {
-        display: none;
+        max-width: $page-max-width;
+        margin: 0 auto;
 
         p {
             max-width: 80ch;
             margin: 0 1.5rem;
         }
-    }
-
-    >li:hover,
-    >li:focus-within {
-        @include invert-colors();
-
-        div {
-            display: block;
-            margin: 1lh 0;
-        }
-    }
-
-    .authors {
-        margin-bottom: 1lh;
     }
 }
 
@@ -351,7 +362,7 @@ article#main {
     p {
         margin: 0;
         text-wrap: pretty;
-        line-height: 150%;
+        line-height: 1.5;
         hyphens: none;
     }
 
@@ -367,7 +378,7 @@ article#main {
 figure {
     margin: 4px 0;
     padding: 4px;
-    border: 1px solid black;
+    border: 1px solid $dark-black;
 
     figcaption {
         font-size: 1em;
@@ -385,7 +396,7 @@ em {
 table {
     margin: 4px 0;
     padding: 4px;
-    border: 1px solid black;
+    border: 1px solid $dark-black;
     width: 100%;
 
     :not(caption) * {
@@ -394,7 +405,7 @@ table {
 
     thead {
         font-weight: bolder;
-        box-shadow: 0 2px 0 black;
+        box-shadow: 0 2px 0 $dark-black;
     }
 
     td {
@@ -453,7 +464,7 @@ button {
     align-items: start;
     margin-bottom: 1lh;
     padding-bottom: 1lh;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $dark-black;
 }
 
 #abstract {
@@ -487,13 +498,13 @@ a.button {
     width: fit-content;
     display: block;
     padding: 12px;
-    border: 1px solid black;
+    border: 1px solid $dark-black;
     @include invert-colors();
 }
 
 a.button:hover,
 a.button:focus {
-    color: black;
+    color: $dark-black;
     background-color: transparent;
 }
 
@@ -515,7 +526,7 @@ a.button:focus {
 
         max-height: 80vh;
         overflow: auto;
-        background-color: #ffffffe0;
+        background-color: rgba($light-white, 87.5%);
         z-index: 10;
         margin-right: auto;
         padding: 4px;
@@ -527,7 +538,7 @@ a.button:focus {
 
         li {
             list-style: none;
-            line-height: 150%;
+            line-height: 1.5;
         }
 
         a {
