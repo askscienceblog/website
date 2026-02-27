@@ -4,6 +4,18 @@
 @mixin invert-colors {
     color: #eee;
     background-color: black;
+
+    a:link {
+        color: #306BFF
+    }
+
+    a:visited {
+        color: #9b68db;
+    }
+
+    a:active {
+        color: #7e0100;
+    }
 }
 
 $page-max-width: 80rem;
@@ -290,14 +302,6 @@ ul.article-list {
 
     p {
         max-width: none;
-    }
-
-    a {
-        >* {
-            mix-blend-mode: difference;
-            filter: invert(1);
-
-        }
     }
 
     summary {
