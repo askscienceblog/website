@@ -144,6 +144,7 @@ nav {
 
     details {
         flex: 0 1 20ch;
+
         summary {
             cursor: pointer;
         }
@@ -292,11 +293,16 @@ ul.article-list {
     }
 
     a {
-        color: inherit;
+        >* {
+            mix-blend-mode: difference;
+            filter: invert(1);
+
+        }
     }
 
     summary {
         cursor: help;
+
         >div {
             padding: 0 4px;
             width: fit-content;
