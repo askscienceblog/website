@@ -42,7 +42,8 @@
   font-style: normal;
   font-weight: normal;
   font-stretch: normal;
-  src: url('/static/XCharter-Roman.woff2') format("woff2");
+  src: url('/static/XCharter-Roman.otf') format("opentype");
+  font-display: swap;
 }
 
 @font-face {
@@ -50,7 +51,7 @@
   font-style: italic;
   font-weight: normal;
   font-stretch: normal;
-  src: url('/static/XCharter-Italic.woff2') format("woff2");
+  src: url('/static/XCharter-Italic.otf') format("opentype");
   font-display: swap;
 }
 
@@ -59,7 +60,7 @@
   font-style: oblique;
   font-weight: normal;
   font-stretch: normal;
-  src: url('/static/XCharter-Slanted.woff2') format("woff2");
+  src: url('/static/XCharter-Slanted.otf') format("opentype");
   font-display: swap;
 }
 
@@ -68,7 +69,7 @@
   font-style: normal;
   font-weight: bold;
   font-stretch: normal;
-  src: url('/static/XCharter-Bold.woff2') format("woff2");
+  src: url('/static/XCharter-Bold.otf') format("opentype");
   font-display: swap;
 }
 
@@ -77,7 +78,7 @@
   font-style: italic;
   font-weight: bold;
   font-stretch: normal;
-  src: url('/static/XCharter-BoldItalic.woff2') format("woff2");
+  src: url('/static/XCharter-BoldItalic.otf') format("opentype");
   font-display: swap;
 }
 
@@ -86,6 +87,6 @@
   font-style: oblique;
   font-weight: bold;
   font-stretch: normal;
-  src: url('/static/XCharter-BoldSlanted.woff2') format("woff2");
+  src: url('/static/XCharter-BoldSlanted.otf') format("opentype");
   font-display: swap;
 }
