@@ -28,18 +28,18 @@
 
 <body>
     {%block page_top%}
+    {% set announcements = "page_vars/specials/announcements.json" | load_json%}
+    {%if announcements.text%}
     <section id="announcements" style="display:none">
-        {% set announcements = "page_vars/specials/announcements.json" | load_json%}
-        {%if announcements.text%}
         <div>
             <div><strong>Announcment:</strong> {{announcements.text}}</div>
-            <button onclick="hideAnnounce()"><img
+            <button onclick="window.hideAnnounce()"><img
                     src="data:image/svg+xml;base64,PHN2ZyBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjIiIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtMTIgMTAuOTMgNS43MTktNS43MmMuMTQ2LS4xNDYuMzM5LS4yMTkuNTMxLS4yMTkuNDA0IDAgLjc1LjMyNC43NS43NDkgMCAuMTkzLS4wNzMuMzg1LS4yMTkuNTMybC01LjcyIDUuNzE5IDUuNzE5IDUuNzE5Yy4xNDcuMTQ3LjIyLjMzOS4yMi41MzEgMCAuNDI3LS4zNDkuNzUtLjc1Ljc1LS4xOTIgMC0uMzg1LS4wNzMtLjUzMS0uMjE5bC01LjcxOS01LjcxOS01LjcxOSA1LjcxOWMtLjE0Ni4xNDYtLjMzOS4yMTktLjUzMS4yMTktLjQwMSAwLS43NS0uMzIzLS43NS0uNzUgMC0uMTkyLjA3My0uMzg0LjIyLS41MzFsNS43MTktNS43MTktNS43Mi01LjcxOWMtLjE0Ni0uMTQ3LS4yMTktLjMzOS0uMjE5LS41MzIgMC0uNDI1LjM0Ni0uNzQ5Ljc1LS43NDkuMTkyIDAgLjM4NS4wNzMuNTMxLjIxOXoiLz48L3N2Zz4="
                     alt="Hide announcements section">
             </button>
         </div>
-        {%endif%}
     </section>
+    {%endif%}
     <header id="header">
         <div>
             <a href="/"><img src="/static/logo.svg" alt="ASEAN Young Researchers' Journal Logo"></a>
@@ -51,7 +51,7 @@
                         <a href="/articles/">
                             <li>Articles</li>
                         </a>
-                        <a href="javascript:showAnnounce()">
+                        <a href="javascript:window.showAnnounce()">
                             <li>Announcments</li>
                         </a>
                     </ul>

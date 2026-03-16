@@ -1,9 +1,14 @@
-const announce = document.getElementById("announcements");
+try {
+    const announce = document.getElementById("announcements");
 
-function showAnnounce() {
-    announce.removeAttribute("style")
-}
+    function showAnnounce() {
+        announce.removeAttribute("style")
+    }
 
-function hideAnnounce() {
-    announce.setAttribute("style", "display:none")
-}
+    function hideAnnounce() {
+        announce.setAttribute("style", "display:none")
+    }
+
+    window.showAnnounce = showAnnounce
+    window.hideAnnounce = hideAnnounce
+} catch {}
