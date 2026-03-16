@@ -12,9 +12,12 @@
 		"html-minifier-terser": "^7.2.0",
 		"lightningcss": "^1.30.2",
 		"terser": "^5.44.1",
-		"wrangler": "^4.54.0"
+		"wrangler": "^4.35.0"
 	},
 	"dependencies": {
 		"minisearch": "^7.2.0"
+	},
+	"overrides": {
+		"undici": "^7.24.0"
 	}
 }
