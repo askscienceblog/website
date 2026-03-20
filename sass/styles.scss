@@ -304,6 +304,10 @@ ul.article-list {
         max-width: none;
     }
 
+    summary::before {
+        font-size: 1.41rem;
+    }
+
     summary {
         cursor: help;
 
