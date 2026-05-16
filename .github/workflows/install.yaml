@@ -15,7 +15,7 @@ jobs:
 
       - name: Restore Cache
         id: cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: ~/context
           key: ${{ runner.os }}-context-${{ github.run_id }}
@@ -56,7 +56,7 @@ jobs:
           context --make
 
       - name: Cache Output
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           key: ${{ runner.os }}-context-${{ github.run_id }}
           path: ~/context
