@@ -5,12 +5,11 @@ on:
     branches:
       - main
   workflow_dispatch:
-  workflow_call:
 
 jobs:
   set-up-context:
     uses: ./.github/workflows/install.yaml
-    
+
   run:
     needs: set-up-context
     runs-on: ubuntu-latest
