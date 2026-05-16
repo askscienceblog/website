@@ -8,7 +8,11 @@ on:
   workflow_call:
 
 jobs:
+  set-up-context:
+    uses: ./.github/workflows/install.yaml
+    
   run:
+    needs: set-up-context
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -20,8 +24,6 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v6
 
-      - name: Set Up ConTeXt
-        uses: askscienceblog/website/.github/workflows/install.yaml@main
       - name: Set Up ConTeXt
         uses: actions/cache/restore@v5
         with:
