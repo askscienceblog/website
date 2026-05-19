@@ -48,7 +48,6 @@ jobs:
           npm install -g sass
           cd $GITHUB_WORKSPACE
           npm install
-          npm audit fix
 
       - name: Generate Website
         run: |
