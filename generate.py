@@ -261,8 +261,11 @@ def parse_iso_date_string(string: str, format: str = ""):
     return datetime.fromisoformat(string).strftime(format)
 
 
-def cmd(cmd: str):
-    subprocess.run(cmd, shell=True, check=True)
+cmd_q = []
+
+
+def cmd(cmds):
+    cmd_q.append(cmds)
     return ""
 
 
@@ -296,3 +299,6 @@ if __name__ == "__main__":
     for entry in os.scandir("templates"):
         if entry.is_file():
             render_template(entry.path, "public", {".html": censor_addresses})
+
+    for cmds in cmd_q:
+        subprocess.run(cmds, shell=True, check=True)
