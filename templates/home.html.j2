@@ -51,18 +51,6 @@
     {%set articles = featured.articles | map("load_json") | list%}
     {%set preprints = articles | rejectattr("article_type") | list%}
     {%set published = articles | selectattr("article_type") | list%}
-    {%if preprints%}
-    <section>
-        <div>
-            <h2>Featured Pre-Prints</h2>
-        </div>
-        <ul class="article-list">
-            {%for article in preprints%}
-            <li>{{components.card(article)}}</li>
-            {%endfor%}
-        </ul>
-    </section>
-    {%endif%}
 
     {%if published%}
     <section>
@@ -71,6 +59,19 @@
         </div>
         <ul class="article-list">
             {%for article in published%}
+            <li>{{components.card(article)}}</li>
+            {%endfor%}
+        </ul>
+    </section>
+    {%endif%}
+
+    {%if preprints%}
+    <section>
+        <div>
+            <h2>Featured Preprints</h2>
+        </div>
+        <ul class="article-list">
+            {%for article in preprints%}
             <li>{{components.card(article)}}</li>
             {%endfor%}
         </ul>

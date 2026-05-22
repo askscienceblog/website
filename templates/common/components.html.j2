@@ -8,7 +8,19 @@
                 <li>{{author}}</li>
                 {%endfor%}
             </ol>
-            <time datetime="{{article.modified}}"><em>{{article.modified | parse_iso_date("%B %d, %Y")}}</em></time>
+            <span>
+                <strong>
+                    {%if article.article_type%}
+                    Publication
+                    {%else%}
+                    Preprint
+                    {%endif%}
+                </strong>
+                |
+                <time datetime="{{article.modified}}">
+                    <em>{{article.modified | parse_iso_date("%B %d, %Y")}}</em>
+                </time>
+            </span>
         </div>
     </summary>
     <div class="abstract">
