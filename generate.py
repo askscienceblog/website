@@ -248,7 +248,6 @@ def pandoc(
         input=value,
         check=True,
     )
-    print(res.stderr)
     return Markup(res.stdout)
 
 
