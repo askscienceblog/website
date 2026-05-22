@@ -27,7 +27,7 @@ $endfor$
       </div>
       $endif$
       $if(date)$
-      <div>Published:&nbsp;$date$</div>
+      <div>$if(published)$Published$else$Preprint Uploaded$endif$:&nbsp;$date$</div>
       $endif$
       $if(slug)$
       <a class="button" href="/static/$slug$.pdf" target="_blank">Download Full-Text PDF</a>

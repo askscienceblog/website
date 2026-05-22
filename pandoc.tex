@@ -95,7 +95,7 @@ $endif$
 \setupheadertexts[\dontleavehmode
    \setbox0\hbox{\externalfigure[/static/line-logo.png][height=5mm]}%
    \raise\dimexpr(\strutht-\strutdp-\ht0+\dp0)/2\relax\box0\ ASEAN Young Researcher's Journal][]
-\setupfootertexts[][\IfLastPageTF{This work is licensed under CC BY 4.0.}{}]
+\setupfootertexts[$if(published)$$else$This work has not yet been peer-reviewed.$endif$][\IfLastPageTF{This work is licensed under CC BY 4.0.}{}]
 
 \setupwhitespace[none]
 \setupindenting[yes,medium,next]
