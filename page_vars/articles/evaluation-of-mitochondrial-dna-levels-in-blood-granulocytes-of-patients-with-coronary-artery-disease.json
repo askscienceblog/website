@@ -146,6 +146,83 @@
       "type": "doi_cite",
       "key": "19",
       "doi": "10.1038/s41556-022-00842-x"
+    },
+    {
+      "type": "doi_cite",
+      "key": "20",
+      "doi": "10.3389/fragi.2025.1541127"
+    },
+    {
+      "type": "doi_cite",
+      "doi": "10.1007/s12015-022-10370-8",
+      "key": "21"
+    },
+    {
+      "type": "doi_cite",
+      "key": "22",
+      "doi": "10.1038/nrm3352"
+    },
+    {
+      "type": "doi_cite",
+      "key": "23",
+      "doi": "10.1111/acel.13513"
+    },
+    {
+      "type": "doi_cite",
+      "key": "24",
+      "doi": "10.1007/s00125-017-4342-z"
+    },
+    {
+      "type": "doi_cite",
+      "key": "25",
+      "doi": "10.1002/1873-3468.12989"
+    },
+    {
+      "type": "doi_cite",
+      "key": "26",
+      "doi": "10.3390/jcdd12090341"
+    },
+    {
+      "type": "doi_cite",
+      "key": "27",
+      "doi": "10.1111/j.1574-6941.2008.00629.x"
+    },
+    {
+      "type": "doi_cite",
+      "key": "28",
+      "doi": "10.1021/acsomega.1c02971"
+    },
+    {
+      "type": "ndoi_cite",
+      "key": "29",
+      "cite_type": "webpage",
+      "title": "Advantages of NGS over other molecular methods",
+      "authors": [
+        {
+          "type": "org",
+          "literal": "illumina"
+        }
+      ],
+      "URL": "https://sapac.illumina.com/science/technology/next-generation-sequencing/beginners/advantages.html"
+    },
+    {
+      "cite_type": "article-journal",
+      "authors": [
+        {
+          "type": "person",
+          "family": "Ferguson",
+          "given": "Emily"
+        }
+      ],
+      "container-title": "Inspire Student Journal",
+      "URL": "https://inspirestudentjournal.co.uk/wp-content/uploads/2026/03/Inspire-Autumn-2020.pdf",
+      "page": "4-6",
+      "issued_year": 2020,
+      "title": "The strengths and weaknesses of whole-genome sequencing",
+      "issue": "2",
+      "volume": "3",
+      "type": "ndoi_cite",
+      "key": "30"
     }
   ],
   "title": "Evaluation of Mitochondrial DNA Levels in Blood Granulocytes of Patients  with Coronary Artery Disease",
