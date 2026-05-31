@@ -7,7 +7,7 @@ else
 fi
 
 if [ -f "$1" ]; then
-  jq ".markdown" "$1" -r | pandoc -f markdown -t context --citeproc --csl=apa.csl --lua-filters=tbl.lua --template=pandoc.tex > main.tex
+  jq ".markdown" "$1" -r | pandoc -f markdown -t context --citeproc --csl=apa.csl --lua-filter=tbl.lua --template=pandoc.tex > main.tex
   mkdir -p static
   grep -oP "(?<=[\(\[\{\"']/static/)(.*?)(?=[\)\]\}\"'])" main.tex | while IFS= read -r line; do
       echo "$line" | jq -rR @uri | sed "s/^/https:\/\/cms.ayrj.org\/static\//" | xargs -P 30 -I {} curl -o "static/$line" {}
