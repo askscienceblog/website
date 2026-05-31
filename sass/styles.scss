@@ -414,6 +414,7 @@ table {
     padding: 4px;
     border: 1px solid $dark-black;
     width: 100%;
+    border-spacing: 2em 0px;
 
     :not(caption) * {
         font-variant-numeric: lining-nums tabular-nums;
