@@ -15,6 +15,9 @@ if [ -f "$1" ]; then
   sed -i "s/\/static\//.\/static\//g" main.tex
   context main.tex
   pdfname=$(basename "$1" .json)
-  npx wrangler r2 object put "static-assets/$pdfname.pdf" --file=main.pdf --remote
+  if [ -z "$PDF_NO_UPLOAD" ]; then
+    echo "PDF_NO_UPLOAD is set. Skipping upload of $1."
+    npx wrangler r2 object put "static-assets/$pdfname.pdf" --file=main.pdf --remote
+  fi
   echo "Uploaded $pdfname.pdf"
 fi
