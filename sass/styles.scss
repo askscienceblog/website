@@ -399,6 +399,7 @@ figure {
 
     figcaption {
         font-size: 1em;
+        margin-top: 1lh;
     }
 
     img {
@@ -411,11 +412,8 @@ em {
 }
 
 table {
-    margin: 4px 0;
-    padding: 4px;
-    border: 1px solid $dark-black;
-    width: 100%;
     border-spacing: 2em 0px;
+    margin: 0 -2em;
 
     :not(caption) * {
         font-variant-numeric: lining-nums tabular-nums;
@@ -428,10 +426,6 @@ table {
 
     td {
         padding-top: 1lh;
-    }
-
-    caption {
-        font-size: 1em;
     }
 }
 
