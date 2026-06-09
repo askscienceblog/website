@@ -30,7 +30,8 @@
     "--csl=apa.csl",
     "--lua-filter=tbl.lua",
     "--template=pandoc.html",
-    "--toc"])}}
+    "--toc",
+    "--toc-depth=4"])}}
 
 </main>
 {{("bash ./pdf.sh page_vars/articles/"~slug~".json") | cmd_later}}
