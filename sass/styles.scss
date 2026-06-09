@@ -396,6 +396,7 @@ figure {
     margin: 4px 0;
     padding: 4px;
     border: 1px solid $dark-black;
+    overflow-x: scroll;
 
     figcaption {
         font-size: 1em;
