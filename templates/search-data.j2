@@ -17,10 +17,10 @@
 "abstract": {{article.abstract | pandoc(["-f", "markdown", "-t", "plain"]) | json_escape}},
 "authors": {{article.authors | join("; ") | json_escape}},
 "html" : {{components.card(article) | json_escape}}
+}
 {%- if not loop.last -%}
 ,
 {%endif%}
-}
 {%endfor%}
 ]
 {{"node scripts/index.mjs" | cmd_later}}
