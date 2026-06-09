@@ -36,6 +36,7 @@ $light-white: #ffffff;
     font-style: inherit;
     font-size: inherit;
     font-variant-numeric: oldstyle-nums proportional-nums;
+    scroll-behavior: smooth;
 }
 
 * {
@@ -56,7 +57,7 @@ $light-white: #ffffff;
 p {
     margin: 0 auto;
     hyphens: auto;
-    margin-bottom: 1lh;
+    margin-bottom: .75lh;
     max-width: $text-max-width;
 }
 
@@ -104,7 +105,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
     max-width: 100vw;
-    scroll-behavior: smooth;
 }
 
 main {
@@ -397,10 +397,13 @@ figure {
     padding: 4px;
     border: 1px solid $dark-black;
     overflow-x: scroll;
+    position: relative;
 
     figcaption {
         font-size: 1em;
         margin-top: 1lh;
+        position: sticky;
+        left: 0;
     }
 
     img {
@@ -473,7 +476,6 @@ button {
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: wrap;
-    text-wrap: balance;
     align-items: start;
     margin-bottom: 1lh;
     padding-bottom: 1lh;
@@ -486,6 +488,8 @@ button {
 
     p {
         max-width: 1.3*$text-max-width;
+        text-indent: 0 !important;
+        margin-bottom: .75lh !important;
     }
 }
 
