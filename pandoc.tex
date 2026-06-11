@@ -1,5 +1,6 @@
-\widowpenalty=10000
+\usemodule[oldcolumnsets]
 \clubpenalty=10000
+\widowpenalty=10000
 
 \def\IfLastPageTF#1#2{%
   \ifnum\realpageno=\lastpagenumber\relax
@@ -129,8 +130,7 @@ $endif$
 
 \setupfloat[figure][default={here,tblr,nonumber}]
 \setupfloat[table][default={here,tblr,nonumber}]
-\setupexternalfigure[maxwidth=.95\hsize]
-\setupxtable[maxwidth=.95\hsize]
+\setupxtable[maxwidth=.95\textwidth]
 \setupcaption[figure][style=\tx]
 \setupcaption[table][style=\tx]
 
@@ -170,12 +170,14 @@ $endfor$
 \startcolumnset[main]
 \startcolumnsetspan[wide]
 $if(title)$
-\startalignment[right]
+\startalignment[right, nothyphenated]
   {\switchtobodyfont[title]\bfd\setupinterlinespace $title$}
 $if(subtitle)$
   \blank[small]
   {\switchtobodyfont[title]\bfa\setupinterlinespace $subtitle$}
 $endif$
+\stopalignment
+\startalignment[right]
 $if(author_with_affiliation)$
   \blank[small]
   {\tfa\setupinterlinespace 
