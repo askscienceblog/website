@@ -32,7 +32,7 @@ function Div(el)
   if el.classes:includes('wide') then
     return flank(el.content, '\\startcolumnsetspan[wide]', '\\stopcolumnsetspan')
 
-  elseif el.classes:includes('landscape') then
+  elseif el.classes:includes('page') then
     -- render the inner table, then turn its float into a rotated page float
     local s = pandoc.write(pandoc.Pandoc(el.content), 'context')
     s = s:gsub('\\startplacetable%[', '\\startplacetable[location={90,page},', 1)
