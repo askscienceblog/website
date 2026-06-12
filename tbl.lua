@@ -35,8 +35,8 @@ function Div(el)
   elseif el.classes:includes('page') then
     -- render the inner table, then turn its float into a rotated page float
     local s = pandoc.write(pandoc.Pandoc(el.content), 'context')
-    s = s:gsub('\\startplacetable%[', '\\startplacetable[location={90,page},', 1)
-    return pandoc.RawBlock('context', s)
+    s = s:gsub('\\startplacetable%[', '\\startplacetable[location={90,page,nonumber},', 1)
+    return flank({pandoc.RawBlock('context', s)}, '\\stopcolumnset','\\page\\startcolumnset[main]')
   end
 end
 
