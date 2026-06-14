@@ -1,0 +1,56 @@
+{
+  "contact": "NYZRoyden@gmail.com",
+  "abstract": "The Israel-Palestine conflict, while spanning more than seven decades, entered a\ndistinct escalation in 2023. Unlike conflicts from preceding decades, the 2023 Gaza War has\nremarkably different conditions due to the advent of the social media landscape, which\ndrastically alters how narratives are constructed, disseminated, and consumed by global\naudiences. Social media wields considerable influence on the understanding and reception of\ngeopolitical conflicts in today’s world. As such, understanding the workings of social media\nvirality is crucial in the construction of public narratives and opinions in times of conflict.\nThe hypotheses are that Humanitarian Framing videos are the most effective and influential,\nand Emotional Intensity of a post correlates positively with its influence. Categorisation of\nthe frame packages was used with reference to the relevant framing theory frameworks.\nZeeschuimer was used for data collection of the Tiktok posts. Z-score normalisation was used\nto normalise the influence metric. *VADER* Python library was used for sentiment analysis of\nthe comments. Google Sheets API was used to allow Python to access the Google Sheets data.\nRStudios was used for the linear regression analysis and the data visualization was done\nusing the *ggplot2* library. Humanitarian Framing was found to increase influence score the\nmost consistently. Emotional Intensity metric used in this paper is not a reliable predictor of\ninfluence.",
+  "article_type": false,
+  "path": "page_vars/articles/frames-that-go-viral-an-analysis-of-how-the-framing-of-the-israel-palestine-conflict-affects-its-performance-on-tiktok.json",
+  "authors": [
+    "Royden Neoh",
+    "Chew Aidan"
+  ],
+  "modified": "2026-05-29T05:17:35.122Z",
+  "markdown": "---\ntitle: 'Frames That Go Viral: An Analysis of How the Framing of the Israel-Palestine Conflict  Affects its Performance on TikTok'\nauthor:\n  - Royden Neoh\n  - Chew Aidan\nauthor_with_affiliation:\n  - name: Royden Neoh\n    id:\n      - 1\n  - name: Chew Aidan\n    id:\n      - 1\naffiliation:\n  - name: Eunoia Junior College\n    id: 1\n\ndate: 'May 29, 2026'\npublished: false\nabstract: |\n  The Israel-Palestine conflict, while spanning more than seven decades, entered a\n  distinct escalation in 2023. Unlike conflicts from preceding decades, the 2023 Gaza War has\n  remarkably different conditions due to the advent of the social media landscape, which\n  drastically alters how narratives are constructed, disseminated, and consumed by global\n  audiences. Social media wields considerable influence on the understanding and reception of\n  geopolitical conflicts in today’s world. As such, understanding the workings of social media\n  virality is crucial in the construction of public narratives and opinions in times of conflict.\n  The hypotheses are that Humanitarian Framing videos are the most effective and influential,\n  and Emotional Intensity of a post correlates positively with its influence. Categorisation of\n  the frame packages was used with reference to the relevant framing theory frameworks.\n  Zeeschuimer was used for data collection of the Tiktok posts. Z-score normalisation was used\n  to normalise the influence metric. *VADER* Python library was used for sentiment analysis of\n  the comments. Google Sheets API was used to allow Python to access the Google Sheets data.\n  RStudios was used for the linear regression analysis and the data visualization was done\n  using the *ggplot2* library. Humanitarian Framing was found to increase influence score the\n  most consistently. Emotional Intensity metric used in this paper is not a reliable predictor of\n  influence.\nreferences:\n  - type: book\n    title: The Birth of the Palestinian Refugee Problem Revisited\n    author:\n      - type: person\n        family: Morris\n        given: Benny\n    issued:\n      date-parts:\n        - - 2004\n    accessed:\n      date-parts:\n        - null\n    id: \"1\"\n\nreference-section-title: References\ncontact: 'NYZRoyden@gmail.com'\nslug: 'frames-that-go-viral-an-analysis-of-how-the-framing-of-the-israel-palestine-conflict-affects-its-performance-on-tiktok'\ninclude-before: |\n  ```{=html}\n  <style>\n  body {\n  counter-reset: pandoc-fn;\n  }\n  \n  a.footnote-ref {\n  counter-increment: pandoc-fn;\n  }\n  \n  a.footnote-ref > sup {\n  display: none;\n  }\n  \n  a.footnote-ref::after {\n  content: counter(pandoc-fn, lower-roman);\n  vertical-align: super;\n  font-size: smaller;\n  }\n  #footnotes ol {\n      list-style-type: lower-roman;\n  }\n  </style>\n  ```\n---\n# Introduction\nThe Israel-Palestine conflict, one of the most enduring and contested geopolitical\nstruggles of the modern era, has been increasingly prominent in the realm of digital discourse.\nContemporary tensions originated in the ashes of the 1948 Arab-Israeli War, which resulted\nin the large-scale displacement of the Palestinian Arabs from the lands that constituted the\nnewly formed state of Israel.[@1] This foundational event–termed the “War of Independence” in\nIsraeli historiography and the “*Nakba*” (“catastrophe”) by many Palestinians, established the\nconflict’s foundational narratives.2",
+  "citation_list": [
+    {
+      "type": "ndoi_cite",
+      "key": "1",
+      "cite_type": "book",
+      "title": "The Birth of the Palestinian Refugee Problem Revisited",
+      "authors": [
+        {
+          "type": "person",
+          "family": "Morris",
+          "given": "Benny"
+        }
+      ],
+      "issued_year": 2004
+    }
+  ],
+  "title": "Frames That Go Viral: An Analysis of How the Framing of the Israel-Palestine Conflict  Affects its Performance on TikTok",
+  "contributors": [
+    {
+      "surname": "Neoh",
+      "given_name": "Royden",
+      "name_style": "western",
+      "affil": [
+        {
+          "inst": "Eunoia Junior College",
+          "inst_acro": "EJC"
+        }
+      ],
+      "sequence": 1
+    },
+    {
+      "surname": "Aidan",
+      "given_name": "Chew",
+      "name_style": "western",
+      "affil": [
+        {
+          "inst": "Eunoia Junior College",
+          "inst_acro": "EJC"
+        }
+      ],
+      "sequence": 2
+    }
+  ],
+  "full_text": "# Introduction\nThe Israel-Palestine conflict, one of the most enduring and contested geopolitical\nstruggles of the modern era, has been increasingly prominent in the realm of digital discourse.\nContemporary tensions originated in the ashes of the 1948 Arab-Israeli War, which resulted\nin the large-scale displacement of the Palestinian Arabs from the lands that constituted the\nnewly formed state of Israel.[@1] This foundational event–termed the “War of Independence” in\nIsraeli historiography and the “*Nakba*” (“catastrophe”) by many Palestinians, established the\nconflict’s foundational narratives.2"
+}
