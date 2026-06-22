@@ -100,12 +100,12 @@ $endif$
 
 \setupwhitespace[none]
 \setupindenting[yes,medium,next]
-\setupinterlinespace[big]
+\defineinterlinespace[main][small]
 
 \setuphead[chapter]            [style=\switchtobodyfont[title]\bfc,header=empty]
 \setuphead[section]            [style=\switchtobodyfont[title]\bfb]
 \setuphead[subsection]         [style=\switchtobodyfont[title]\bfa]
-\setuphead[subsubsection]      [style=\switchtobodyfont[title]\bf]
+\setuphead[subsubsection]      [style=\switchtobodyfont[title]\bi]
 \setuphead[subsubsubsection]   [style=\switchtobodyfont[title]\tf]
 \setuphead[subsubsubsubsection][style=\switchtobodyfont[title]\it]
 
@@ -128,8 +128,8 @@ $endif$
 \defineitemgroup[enumerate]
 \setupenumerate[each][fit][itemalign=left,distance=.5em,style={\feature[+][default:tnum]}]
 
-\setupfloat[figure][default={here,tblr,nonumber}]
-\setupfloat[table][default={here,tblr,nonumber}]
+\setupfloat[figure][default={here,middle,nonumber}]
+\setupfloat[table][default={here,middle,nonumber}]
 \setupxtable[maxwidth=.95\textwidth]
 \setupcaption[figure][style=\tx]
 \setupcaption[table][style=\tx]
@@ -163,39 +163,40 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
-\definecolumnset[main][n=2,balance=yes,distance=10mm]
+\definecolumnset[main][n=2,distance=10mm]
 \definecolumnsetspan[wide][n=2]
 
 \starttext
 \startcolumnset[main]
-\startcolumnsetspan[wide]
+\startcolumnsetspan[wide][default=fixd]
+\start
 $if(title)$
 \startalignment[right, nothyphenated]
-  {\switchtobodyfont[title]\bfd\setupinterlinespace $title$}
+  {\switchtobodyfont[title]\bfd\setupinterlinespace[main] $title$}
 $if(subtitle)$
   \blank[small]
-  {\switchtobodyfont[title]\bfa\setupinterlinespace $subtitle$}
+  {\switchtobodyfont[title]\bfa\setupinterlinespace[main] $subtitle$}
 $endif$
 \stopalignment
 \startalignment[right]
 $if(author_with_affiliation)$
   \blank[small]
-  {\tfa\setupinterlinespace 
+  {\tfa\setupinterlinespace[main] 
   $for(author_with_affiliation)$
   $author_with_affiliation.name$
   \high{$for(author_with_affiliation.id)$$author_with_affiliation.id/roman$$sep$, $endfor$}
   $sep$, $endfor$}
   \blank[small]
-  {\tfa\setupinterlinespace
+  {\tfa\setupinterlinespace[main]
   $for(affiliation)$\high{$affiliation.id/roman$}$affiliation.name$$sep$, $endfor$}
 $endif$
 $if(contact)$
   \blank[small]
-  {\tfa\setupinterlinespace Contact\colon{} {\ss $contact$}}
+  {\tfa\setupinterlinespace[main] Contact\colon{} {\ss $contact$}}
 $endif$
 $if(date)$
   \blank[small]
-  {\tfa\setupinterlinespace Published\colon{} $date$}
+  {\tfa\setupinterlinespace[main] Published\colon{} $date$}
 $endif$
   \blank[big]
   \thinrule
@@ -203,6 +204,7 @@ $endif$
 $endif$
 $if(abstract)$
 \startsectionlevel[title=Abstract]
+\setupinterlinespace[main]
 \startnarrow[left=5cm,right=0cm][left,right]
 \setupwhitespace[medium]
 \setupindenting[no]
@@ -224,7 +226,9 @@ $endif$
 $if(lot)$
 \completelistoftables
 $endif$
+\stop
 \stopcolumnsetspan
+\setupinterlinespace[main]
 
 $body$
 

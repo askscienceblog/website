@@ -21,28 +21,21 @@ function Table(tbl)
   return pandoc.Figure({ tbl }, { long = long, short = short })
 end
 
-local function flank(blocks, before, after)
-  local out = pandoc.List{ pandoc.RawBlock('context', before) }
-  out:extend(blocks)
-  out:insert(pandoc.RawBlock('context', after))
-  return out
-end
-
-function Div(el)
-  if el.classes:includes('wide') then
-    return flank(el.content, '\\startcolumnsetspan[wide]', '\\stopcolumnsetspan')
-
-  elseif el.classes:includes('page') then
-    -- render the inner table, then turn its float into a rotated page float
-    local s = pandoc.write(pandoc.Pandoc(el.content), 'context')
-    s = s:gsub('\\startplacetable%[', '\\startplacetable[location={90,page,nonumber},', 1)
-    return flank({pandoc.RawBlock('context', s)}, '\\stopcolumnset','\\page\\startcolumnset[main]')
-  end
-end
-
 if FORMAT:match('context') then
+  function Div(el)
+    if el.classes:includes('wide') then
+      local s = pandoc.write(pandoc.Pandoc(el.content), 'context')
+      return pandoc.RawBlock('context', s:gsub('\\startxtable', '\\startxtable[width=31mm]', 1))
+    elseif el.classes:includes('page') then
+      -- render the inner table, then turn its float into a rotated page float
+      local s = pandoc.write(pandoc.Pandoc(el.content), 'context')
+      s = s:gsub('\\startplacetable%[', '\\startplacetable[location={90,page,nonumber},', 1)
+      return flank({ pandoc.RawBlock('context', s) }, '\\stopcolumnset', '\\page\\startcolumnset[main]')
+    end
+  end
+
   function Figure(fig)
-    return fig:walk{
+    return fig:walk {
       Image = function(img)
         img.attributes.width = '95%'
         return img
