@@ -30,7 +30,7 @@ if FORMAT:match('context') then
       -- render the inner table, then turn its float into a rotated page float
       local s = pandoc.write(pandoc.Pandoc(el.content), 'context')
       s = s:gsub('\\startplacetable%[', '\\startplacetable[location={90,page,nonumber},', 1)
-      return flank({ pandoc.RawBlock('context', s) }, '\\stopcolumnset', '\\page\\startcolumnset[main]')
+      return pandoc.RawBlock('context', '\\stopcolumnset\n' ..s.. '\n\\page\\startcolumnset[main]')
     end
   end
 
