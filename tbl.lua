@@ -25,7 +25,14 @@ if FORMAT:match('context') then
   function Div(el)
     if el.classes:includes('wide') then
       local s = pandoc.write(pandoc.Pandoc(el.content), 'context')
-      return pandoc.RawBlock('context', s:gsub('\\startxtable', '\\startxtable[width=31mm]', 1))
+      local num_cols
+      for _, block in ipairs(el.content) do
+        if block.t =='Table' then
+          num_cols = #block.colspecs
+          break
+        end
+      end
+      return pandoc.RawBlock('context', s:gsub('\\startxtable', '\\startxtable[width='..150/num_cols..'mm]', 1))
     elseif el.classes:includes('pagewide') then
       -- render the inner table, then turn its float into a rotated page float
       local s = pandoc.write(pandoc.Pandoc(el.content), 'context')
