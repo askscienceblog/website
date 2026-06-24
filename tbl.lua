@@ -26,11 +26,16 @@ if FORMAT:match('context') then
     if el.classes:includes('wide') then
       local s = pandoc.write(pandoc.Pandoc(el.content), 'context')
       return pandoc.RawBlock('context', s:gsub('\\startxtable', '\\startxtable[width=31mm]', 1))
-    elseif el.classes:includes('page') then
+    elseif el.classes:includes('pagewide') then
       -- render the inner table, then turn its float into a rotated page float
       local s = pandoc.write(pandoc.Pandoc(el.content), 'context')
       s = s:gsub('\\startplacetable%[', '\\startplacetable[location={90,page,nonumber},', 1)
-      return pandoc.RawBlock('context', '\\stopcolumnset\n' ..s.. '\n\\page\\startcolumnset[main]')
+      return pandoc.RawBlock('context', '\\stopcolumnset\n' .. s .. '\n\\page\\startcolumnset[main]')
+    elseif el.classes:includes('page') then
+      -- render the inner table, then turn its float into a rotated page float
+      local s = pandoc.write(pandoc.Pandoc(el.content), 'context')
+      s = s:gsub('\\startplacetable%[', '\\startplacetable[location={page,nonumber},', 1)
+      return pandoc.RawBlock('context', '\\stopcolumnset\n' .. s .. '\n\\page\\startcolumnset[main]')
     end
   end
 
