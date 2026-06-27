@@ -300,4 +300,4 @@ if __name__ == "__main__":
             render_template(entry.path, "public", {".html": censor_addresses})
 
     for cmds in cmd_q:
-        subprocess.run(cmds, shell=True, check=True)
+        subprocess.run(cmds, shell=True, check=True, timeout=None)

@@ -1,10 +1,5 @@
 #!/bin/bash
-if [ -z "$PDF_DEV_MODE" ]; then
-  echo "Processing file: $1"
-else
-  echo "PDF_DEV_MODE is set. Skipping pdf generation and upload"
-  exit 0
-fi
+echo "Processing file: $1"
 
 if [ -f "$1" ]; then
   jq ".markdown" "$1" -r | pandoc -f markdown -t context --citeproc --csl=apa.csl --lua-filter=tbl.lua --template=pandoc.tex > main.tex
@@ -15,6 +10,10 @@ if [ -f "$1" ]; then
   sed -i "s/\/static\//.\/static\//g" main.tex
   context main.tex
   pdfname=$(basename "$1" .json)
-  npx wrangler r2 object put "static-assets/$pdfname.pdf" --file=main.pdf --remote
-  echo "Uploaded $pdfname.pdf"
+  if [ -z "$PDF_DEV_MODE" ]; then
+    echo "PDF_DEV_MODE is set. Skipping upload of $1"
+  else
+    npx wrangler r2 object put "static-assets/$pdfname.pdf" --file=main.pdf --remote
+    echo "Uploaded $pdfname.pdf"
+  fi
 fi
