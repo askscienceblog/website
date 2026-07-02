@@ -140,6 +140,8 @@ $endif$
 \setupxtable[foot][]
 \setupxtable[lastrow][bottomframe=on]
 
+\setupdelimitedtext[blockquote][style={\setupwhitespace[small]\setupindenting[none]},after=\blank[small]]
+
 $if(csl-refs)$
 \definemeasure[cslhangindent][1.5em]
 \definenarrower[hangingreferences][left=\measure{cslhangindent}]

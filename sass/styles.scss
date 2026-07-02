@@ -390,6 +390,11 @@ article#main {
     p:has(+:is(h1, h2, h3, h4)) {
         margin-bottom: 1rem;
     }
+
+    blockquote>p {
+        margin-bottom: 0.75lh;
+        text-indent: 0;
+    }
 }
 
 figure {
