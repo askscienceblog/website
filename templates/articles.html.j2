@@ -34,5 +34,5 @@
     "--toc-depth=4"])}}
 
 </main>
-{{("bash ./pdf.sh page_vars/articles/"~slug~".json") | cmd_later}}
+{{("bash ./pdf.sh "~path) | cmd_later}}
 {% endblock %}

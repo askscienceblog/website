@@ -16,4 +16,6 @@ if [ -f "$1" ]; then
     npx wrangler r2 object put "static-assets/$pdfname.pdf" --file=main.pdf --remote
     echo "Uploaded $pdfname.pdf"
   fi
+else
+  echo "File: $1 not found"
 fi
