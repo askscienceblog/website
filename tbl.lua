@@ -21,18 +21,42 @@ function Table(tbl)
   return pandoc.Figure({ tbl }, { long = long, short = short })
 end
 
+function CodeBlock(cb)
+  local caption = cb.attributes.caption
+  if not caption then
+    return nil
+  end
+  cb.attributes.caption = nil
+
+  -- Parse the caption as Markdown so inline formatting / math survive.
+  local caption_inlines = pandoc.utils.blocks_to_inlines(
+    pandoc.read(caption, "markdown").blocks
+  )
+
+  -- Move any identifier onto the Figure so cross-references target the
+  -- float rather than the bare code block.
+  local id = cb.identifier
+  cb.identifier = ""
+
+  return pandoc.Figure(
+    { cb },
+    pandoc.Caption(caption_inlines),
+    { id = id }
+  )
+end
+
 if FORMAT:match('context') then
   function Div(el)
     if el.classes:includes('wide') then
       local s = pandoc.write(pandoc.Pandoc(el.content), 'context')
       local num_cols
       for _, block in ipairs(el.content) do
-        if block.t =='Table' then
+        if block.t == 'Table' then
           num_cols = #block.colspecs
           break
         end
       end
-      return pandoc.RawBlock('context', s:gsub('\\startxtable', '\\startxtable[width='..150/num_cols..'mm]', 1))
+      return pandoc.RawBlock('context', s:gsub('\\startxtable', '\\startxtable[width=' .. 150 / num_cols .. 'mm]', 1))
     elseif el.classes:includes('pagewide') then
       -- render the inner table, then turn its float into a rotated page float
       local s = pandoc.write(pandoc.Pandoc(el.content), 'context')
