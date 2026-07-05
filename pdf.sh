@@ -11,10 +11,10 @@ if [ -f "$1" ]; then
   context main.tex
   pdfname=$(basename "$1" .json)
   if [ -z "$PDF_DEV_MODE" ]; then
-    echo "PDF_DEV_MODE is set. Skipping upload of $1"
-  else
     npx wrangler r2 object put "static-assets/$pdfname.pdf" --file=main.pdf --remote
     echo "Uploaded $pdfname.pdf"
+  else
+    echo "PDF_DEV_MODE is set. Skipping upload of $1"
   fi
 else
   echo "File: $1 not found"
