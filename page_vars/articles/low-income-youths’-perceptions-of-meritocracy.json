@@ -1,0 +1,41 @@
+{
+  "contact": "2025.giselle.yap@ejc.edu.sg, 2025.seah.kai.en@ejc.edu.sg ",
+  "abstract": "Meritocracy is foundational to Singapore's high ranking education system. However, it has its limitations. Unconditional support for meritocratic systems can make it challenging to discuss structural inequities, depriving students from families reporting lower incomes. Understanding the perspectives of students from families reporting lower incomes on meritocracy can enable educators and policy makers to respond to their needs. Thus, this study explores how youths from low socioeconomic backgrounds in Singapore perceive meritocracy and define success within the education system. A mixed-methods approach was employed for this research. Data was collected in two phases. In Phase 1, data were gathered through a survey with 32 respondents, investigating their perceptions of fairness, barriers, and motivation. In Phase 2, data were generated through interviews with four participants. This provided deeper insight into participants’ lived experiences. All participants were students aged 17 to 19, from junior colleges, polytechnics, and institutes of technical education (ITEs). Survey data were summarized using descriptive statistics while interview data were analysed thematically. \n\nIn response to the research question, four findings emerged: \n\n* striving to “move up” coexists with emotional fatigue; \n* redefining success beyond academics; \n* recognising but rarely challenging inequality; and \n* the sense of belonging as a “buffer”. \n\nThe wider implications of this study are that policies supporting lower income students should focus less on motivational messaging --- which may reinforce the self-blame cycle --- and more on systemic stress reduction and the provision of high-quality social capital networks.",
+  "article_type": false,
+  "authors": [
+    "Seah Kai En",
+    "Yap Keat Mien Giselle"
+  ],
+  "modified": "2026-07-07T06:22:24.422Z",
+  "slug": "",
+  "markdown": "---\ntitle: 'Low Income Youths’ Perceptions of Meritocracy'\nauthor:\n  - Seah Kai En\n  - Yap Keat Mien Giselle\nauthor_with_affiliation:\n  - name: Seah Kai En\n    id:\n      - 1\n  - name: Yap Keat Mien Giselle\n    id:\n      - 1\naffiliation:\n  - name: Junior College 1, Eunoia Junior College\n    id: 1\n\ndate: 'Jul 7, 2026'\npublished: false\nabstract: |\n  Meritocracy is foundational to Singapore's high ranking education system. However, it has its limitations. Unconditional support for meritocratic systems can make it challenging to discuss structural inequities, depriving students from families reporting lower incomes. Understanding the perspectives of students from families reporting lower incomes on meritocracy can enable educators and policy makers to respond to their needs. Thus, this study explores how youths from low socioeconomic backgrounds in Singapore perceive meritocracy and define success within the education system. A mixed-methods approach was employed for this research. Data was collected in two phases. In Phase 1, data were gathered through a survey with 32 respondents, investigating their perceptions of fairness, barriers, and motivation. In Phase 2, data were generated through interviews with four participants. This provided deeper insight into participants’ lived experiences. All participants were students aged 17 to 19, from junior colleges, polytechnics, and institutes of technical education (ITEs). Survey data were summarized using descriptive statistics while interview data were analysed thematically. \n  \n  In response to the research question, four findings emerged: \n  \n  * striving to “move up” coexists with emotional fatigue; \n  * redefining success beyond academics; \n  * recognising but rarely challenging inequality; and \n  * the sense of belonging as a “buffer”. \n  \n  The wider implications of this study are that policies supporting lower income students should focus less on motivational messaging --- which may reinforce the self-blame cycle --- and more on systemic stress reduction and the provision of high-quality social capital networks.\nreferences: []\n\nreference-section-title: References\ncontact: '2025.giselle.yap@ejc.edu.sg, 2025.seah.kai.en@ejc.edu.sg '\nslug: ''\ninclude-before: |\n  ```{=html}\n  <style>\n  body {\n  counter-reset: pandoc-fn;\n  }\n  \n  a.footnote-ref {\n  counter-increment: pandoc-fn;\n  }\n  \n  a.footnote-ref > sup {\n  display: none;\n  }\n  \n  a.footnote-ref::after {\n  content: counter(pandoc-fn, lower-roman);\n  vertical-align: super;\n  font-size: smaller;\n  }\n  #footnotes ol {\n      list-style-type: lower-roman;\n  }\n  </style>\n  ```\n---\n",
+  "title": "Low Income Youths’ Perceptions of Meritocracy",
+  "contributors": [
+    {
+      "surname": "Yap",
+      "given_name": "Keat Mien Giselle",
+      "name_style": "eastern",
+      "affil": [
+        {
+          "inst": "Eunoia Junior College",
+          "inst_acro": "EJC",
+          "dept": "Junior College 1"
+        }
+      ],
+      "sequence": 1
+    },
+    {
+      "surname": "Seah",
+      "given_name": "Kai En",
+      "name_style": "eastern",
+      "affil": [
+        {
+          "inst": "Eunoia Junior College",
+          "inst_acro": "EJC",
+          "dept": "Junior College 1"
+        }
+      ],
+      "sequence": 1
+    }
+  ]
+}
