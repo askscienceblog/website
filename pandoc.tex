@@ -1,4 +1,4 @@
-\usemodule[oldcolumnsets]
+% \usemodule[oldcolumnsets]
 \clubpenalty=10000
 \widowpenalty=10000
 
@@ -127,6 +127,13 @@ $endif$
 
 \defineitemgroup[enumerate]
 \setupenumerate[each][fit][itemalign=left,distance=.5em,style={\feature[+][default:tnum]}]
+
+\setuptyping[
+  margin=no,
+  style={\tt\tfx\setupinterlinespace[small]},
+  before={\blank},
+  after={\blank}
+]
 
 \setupfloat[figure][default={here,middle,nonumber}]
 \setupfloat[table][default={here,middle,nonumber}]

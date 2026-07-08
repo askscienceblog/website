@@ -33,14 +33,27 @@ function CodeBlock(cb)
     pandoc.read(caption, "markdown").blocks
   )
 
+  if FORMAT == "context" then
+    -- Code block as-is, caption paragraph after it.
+    return {
+      cb,
+      pandoc.RawBlock('context', '\\start\n\\setupindenting[no]\\tfx\\setupinterlinespace'),
+      pandoc.Para(caption_inlines),
+      pandoc.RawBlock('context', '\\stop')
+    }
+  end
+
   -- Move any identifier onto the Figure so cross-references target the
   -- float rather than the bare code block.
   local id = cb.identifier
   cb.identifier = ""
 
+  -- Wrap the inlines in a SINGLE Plain block: passing a bare inline list
+  -- makes pandoc coerce each inline into its own Plain block, which the
+  -- writer later rejoins with LineBreaks.
   return pandoc.Figure(
     { cb },
-    pandoc.Caption(caption_inlines),
+    pandoc.Caption({ pandoc.Plain(caption_inlines) }),
     { id = id }
   )
 end
@@ -60,12 +73,14 @@ if FORMAT:match('context') then
     elseif el.classes:includes('pagewide') then
       -- render the inner table, then turn its float into a rotated page float
       local s = pandoc.write(pandoc.Pandoc(el.content), 'context')
-      s = s:gsub('\\startplacetable%[', '\\startplacetable[location={90,page,nonumber},', 1)
+      s = s:gsub('\\startplacetable%[', '\\startplacetable[location={90,page,nonumber},', 1):gsub('\\startplacefigure%[',
+        '\\startplacefigure[location={90,page,nonumber}', 1)
       return pandoc.RawBlock('context', '\\stopcolumnset\n' .. s .. '\n\\page\\startcolumnset[main]')
     elseif el.classes:includes('page') then
       -- render the inner table, then turn its float into a rotated page float
       local s = pandoc.write(pandoc.Pandoc(el.content), 'context')
-      s = s:gsub('\\startplacetable%[', '\\startplacetable[location={page,nonumber},', 1)
+      s = s:gsub('\\startplacetable%[', '\\startplacetable[location={page,nonumber},', 1):gsub('\\startplacefigure%[',
+        '\\startplacefigure[location={page,nonumber}', 1)
       return pandoc.RawBlock('context', '\\stopcolumnset\n' .. s .. '\n\\page\\startcolumnset[main]')
     end
   end
