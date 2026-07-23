@@ -23,6 +23,11 @@ $if(context-dir)$
 \setupdirections[bidi=on,method=two]
 $endif$
 
+\definebreakpoints[verbcode]
+\definebreakpoint [verbcode] [/] [nleft=3,nright=3]
+\definebreakpoint [verbcode] [.] [nleft=3,nright=3]
+\definebreakpoint [verbcode] [_] [nleft=3,nright=3]
+
 \definecolor[unvisited][r=0,g=0,b=0.93333]
 \definecolor[visited][r=0.33333,g=0.10196,b=0.54510]
 \definebar[linkbar][underbar]
@@ -130,9 +135,10 @@ $endif$
 
 \setuptyping[
   margin=no,
+  lines=hyphenated,
   style={\tt\tfx\setupinterlinespace[small]},
-  before={\blank},
-  after={\blank}
+  before={\blank\setbreakpoints[verbcode]},
+  after={\resetbreakpoints\blank}
 ]
 
 \setupfloat[figure][default={here,middle,nonumber}]
