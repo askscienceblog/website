@@ -116,7 +116,7 @@ main {
 header {
     position: sticky;
     top: 0;
-    z-index: 20;
+    z-index: 30;
     background-color: rgba($light-white, 87.5%);
     @include fonts.sans(1rem, 400, normal);
 }
@@ -261,7 +261,7 @@ footer {
         justify-content: space-around;
 
         figure {
-            width: fit-content;
+            background-color: transparent;
             border: none;
         }
 
@@ -403,6 +403,10 @@ figure {
     border: 1px solid $dark-black;
     overflow-x: auto;
     position: relative;
+    width: fit-content;
+    max-width: min($page-max-width, 90vw);
+    z-index: 20;
+    background-color: $light-white;
 
     figcaption {
         font-size: 1em;
@@ -540,11 +544,13 @@ a.button:focus {
     align-items: start;
     position: relative;
 
-    nav {
+    nav#TOC {
         position: sticky;
         top: $header-height;
         justify-content: start;
         flex-grow: 0;
+        min-width: 0;
+        max-width: 100%;
 
         max-height: 80vh;
         overflow: auto;
