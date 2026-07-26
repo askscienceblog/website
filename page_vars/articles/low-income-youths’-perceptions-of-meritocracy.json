@@ -6,9 +6,70 @@
     "Seah Kai En",
     "Yap Keat Mien Giselle"
   ],
-  "modified": "2026-07-07T06:22:24.422Z",
-  "slug": "",
-  "markdown": "---\ntitle: 'Low Income Youths’ Perceptions of Meritocracy'\nauthor:\n  - Seah Kai En\n  - Yap Keat Mien Giselle\nauthor_with_affiliation:\n  - name: Seah Kai En\n    id:\n      - 1\n  - name: Yap Keat Mien Giselle\n    id:\n      - 1\naffiliation:\n  - name: Junior College 1, Eunoia Junior College\n    id: 1\n\ndate: 'Jul 7, 2026'\npublished: false\nabstract: |\n  Meritocracy is foundational to Singapore's high ranking education system. However, it has its limitations. Unconditional support for meritocratic systems can make it challenging to discuss structural inequities, depriving students from families reporting lower incomes. Understanding the perspectives of students from families reporting lower incomes on meritocracy can enable educators and policy makers to respond to their needs. Thus, this study explores how youths from low socioeconomic backgrounds in Singapore perceive meritocracy and define success within the education system. A mixed-methods approach was employed for this research. Data was collected in two phases. In Phase 1, data were gathered through a survey with 32 respondents, investigating their perceptions of fairness, barriers, and motivation. In Phase 2, data were generated through interviews with four participants. This provided deeper insight into participants’ lived experiences. All participants were students aged 17 to 19, from junior colleges, polytechnics, and institutes of technical education (ITEs). Survey data were summarized using descriptive statistics while interview data were analysed thematically. \n  \n  In response to the research question, four findings emerged: \n  \n  * striving to “move up” coexists with emotional fatigue; \n  * redefining success beyond academics; \n  * recognising but rarely challenging inequality; and \n  * the sense of belonging as a “buffer”. \n  \n  The wider implications of this study are that policies supporting lower income students should focus less on motivational messaging --- which may reinforce the self-blame cycle --- and more on systemic stress reduction and the provision of high-quality social capital networks.\nreferences: []\n\nreference-section-title: References\ncontact: '2025.giselle.yap@ejc.edu.sg, 2025.seah.kai.en@ejc.edu.sg '\nslug: ''\ninclude-before: |\n  ```{=html}\n  <style>\n  body {\n  counter-reset: pandoc-fn;\n  }\n  \n  a.footnote-ref {\n  counter-increment: pandoc-fn;\n  }\n  \n  a.footnote-ref > sup {\n  display: none;\n  }\n  \n  a.footnote-ref::after {\n  content: counter(pandoc-fn, lower-roman);\n  vertical-align: super;\n  font-size: smaller;\n  }\n  #footnotes ol {\n      list-style-type: lower-roman;\n  }\n  </style>\n  ```\n---\n",
+  "modified": "2026-07-26T10:09:51.414Z",
+  "slug": "page_vars/articles/low-income-youths’-perceptions-of-meritocracy.json",
+  "markdown": "---\ntitle: 'Low Income Youths’ Perceptions of Meritocracy'\nauthor:\n  - Seah Kai En\n  - Yap Keat Mien Giselle\nauthor_with_affiliation:\n  - name: Seah Kai En\n    id:\n      - 1\n  - name: Yap Keat Mien Giselle\n    id:\n      - 1\naffiliation:\n  - name: Junior College 1, Eunoia Junior College\n    id: 1\n\ndate: 'Jul 26, 2026'\npublished: false\nabstract: |\n  Meritocracy is foundational to Singapore's high ranking education system. However, it has its limitations. Unconditional support for meritocratic systems can make it challenging to discuss structural inequities, depriving students from families reporting lower incomes. Understanding the perspectives of students from families reporting lower incomes on meritocracy can enable educators and policy makers to respond to their needs. Thus, this study explores how youths from low socioeconomic backgrounds in Singapore perceive meritocracy and define success within the education system. A mixed-methods approach was employed for this research. Data was collected in two phases. In Phase 1, data were gathered through a survey with 32 respondents, investigating their perceptions of fairness, barriers, and motivation. In Phase 2, data were generated through interviews with four participants. This provided deeper insight into participants’ lived experiences. All participants were students aged 17 to 19, from junior colleges, polytechnics, and institutes of technical education (ITEs). Survey data were summarized using descriptive statistics while interview data were analysed thematically. \n  \n  In response to the research question, four findings emerged: \n  \n  * striving to “move up” coexists with emotional fatigue; \n  * redefining success beyond academics; \n  * recognising but rarely challenging inequality; and \n  * the sense of belonging as a “buffer”. \n  \n  The wider implications of this study are that policies supporting lower income students should focus less on motivational messaging --- which may reinforce the self-blame cycle --- and more on systemic stress reduction and the provision of high-quality social capital networks.\nreferences:\n  - type: chapter\n    title: The Forms of Capital\n    author:\n      - type: person\n        family: Bourdieu\n        given: Pierre\n    issued:\n      date-parts:\n        - - 1986\n    accessed:\n      date-parts:\n        - null\n    container-title: Handbook of Theory and Research for the Sociology of Education\n    page: 241-258\n    id: \"1\"\n  - indexed:\n      date-parts:\n        - - 2026\n          - 7\n          - 26\n      date-time: 2026-07-26T09:47:15Z\n      timestamp: 1785059235283\n      version: 3.55.0\n    reference-count: 70\n    publisher: Informa UK Limited\n    issue: \"2\"\n    content-domain:\n      domain: []\n      crossmark-restriction: false\n    published-print:\n      date-parts:\n        - - 2006\n          - 1\n    DOI: 10.1191/1478088706qp063oa\n    type: journal-article\n    created:\n      date-parts:\n        - - 2006\n          - 4\n          - 6\n      date-time: 2006-04-06T09:35:45Z\n      timestamp: 1144316145000\n    page: 77-101\n    source: Crossref\n    is-referenced-by-count: 150979\n    title: Using thematic analysis in psychology\n    prefix: \"10.1080\"\n    volume: \"3\"\n    author:\n      - given: Virginia\n        family: Braun\n        sequence: first\n        affiliation:\n          - name: University of Auckland\n        role:\n          - vocabulary: crossref\n            role: author\n      - given: Victoria\n        family: Clarke\n        sequence: additional\n        affiliation:\n          - name: University of the West of England\n        role:\n          - vocabulary: crossref\n            role: author\n    member: \"301\"\n    published-online:\n      date-parts:\n        - - 2008\n          - 7\n          - 21\n    container-title: Qualitative Research in Psychology\n    original-title: []\n    language: en\n    link:\n      - URL: https://www.tandfonline.com/doi/pdf/10.1191/1478088706qp063oa\n        content-type: unspecified\n        content-version: vor\n        intended-application: similarity-checking\n    deposited:\n      date-parts:\n        - - 2025\n          - 9\n          - 1\n      date-time: 2025-09-01T10:00:50Z\n      timestamp: 1756720850000\n    score: 1\n    resource:\n      primary:\n        URL: https://www.tandfonline.com/doi/full/10.1191/1478088706qp063oa\n    subtitle: []\n    short-title: []\n    issued:\n      date-parts:\n        - - 2006\n          - 1\n    references-count: 70\n    journal-issue:\n      issue: \"2\"\n      published-print:\n        date-parts:\n          - - 2006\n            - 1\n    alternative-id:\n      - 10.1191/1478088706qp063oa\n    URL: http://dx.doi.org/10.1191/1478088706qp063oa\n    relation: {}\n    ISSN:\n      - 1478-0887\n      - 1478-0895\n    subject: []\n    container-title-short: Qualitative Research in Psychology\n    published:\n      date-parts:\n        - - 2006\n          - 1\n    id: \"2\"\n  - type: book\n    title: \"Liberalism Disavowed: Communitarianism and State Capitalism in Singapore\"\n    author:\n      - type: person\n        family: Chua\n        given: Beng Huat\n    issued:\n      date-parts:\n        - - 2017\n    URL: https://www.jstor.org/stable/10.7591/j.ctt1zkjz35\n    accessed:\n      date-parts:\n        - null\n    publisher: Cornell University Press\n    id: \"3\"\n  - type: article-journal\n    title: Attributional style, academic self-efficacy, and attempts to influence\n      the study environment\n    author:\n      - type: person\n        family: Jungert\n        given: Tomas\n      - type: person\n        family: Gustafson\n        given: Stefan\n    issued:\n      date-parts:\n        - - 2009\n    accessed:\n      date-parts:\n        - null\n    container-title: \"Dynamics within and outside the lab: Proceedings from the 6th\n      GRASP conference\"\n    page: 131-146\n    publisher: LiU-Tryck\n    id: \"4\"\n\nreference-section-title: References\ncontact: '2025.giselle.yap@ejc.edu.sg, 2025.seah.kai.en@ejc.edu.sg '\nslug: 'low-income-youths’-perceptions-of-meritocracy'\ninclude-before: |\n  ```{=html}\n  <style>\n  body {\n  counter-reset: pandoc-fn;\n  }\n  \n  a.footnote-ref {\n  counter-increment: pandoc-fn;\n  }\n  \n  a.footnote-ref > sup {\n  display: none;\n  }\n  \n  a.footnote-ref::after {\n  content: counter(pandoc-fn, lower-roman);\n  vertical-align: super;\n  font-size: smaller;\n  }\n  #footnotes ol {\n      list-style-type: lower-roman;\n  }\n  </style>\n  ```\n---\n[@4]",
+  "citation_list": [
+    {
+      "type": "ndoi_cite",
+      "key": "1",
+      "cite_type": "chapter",
+      "title": "The Forms of Capital",
+      "authors": [
+        {
+          "type": "person",
+          "family": "Bourdieu",
+          "given": "Pierre"
+        }
+      ],
+      "issued_year": 1986,
+      "container-title": "Handbook of Theory and Research for the Sociology of Education",
+      "page": "241-258"
+    },
+    {
+      "type": "doi_cite",
+      "key": "2",
+      "doi": "10.1191/1478088706qp063oa"
+    },
+    {
+      "type": "ndoi_cite",
+      "key": "3",
+      "cite_type": "book",
+      "title": "Liberalism Disavowed: Communitarianism and State Capitalism in Singapore",
+      "authors": [
+        {
+          "type": "person",
+          "family": "Chua",
+          "given": "Beng Huat"
+        }
+      ],
+      "issued_year": 2017,
+      "URL": "https://www.jstor.org/stable/10.7591/j.ctt1zkjz35",
+      "publisher": "Cornell University Press"
+    },
+    {
+      "cite_type": "article-journal",
+      "authors": [
+        {
+          "type": "person",
+          "family": "Jungert",
+          "given": "Tomas"
+        },
+        {
+          "type": "person",
+          "family": "Gustafson",
+          "given": "Stefan"
+        }
+      ],
+      "container-title": "Dynamics within and outside the lab: Proceedings from the 6th GRASP conference",
+      "page": "131-146",
+      "issued_year": 2009,
+      "title": "Attributional style, academic self-efficacy, and attempts to influence the study environment",
+      "type": "ndoi_cite",
+      "publisher": "LiU-Tryck",
+      "key": "4"
+    }
+  ],
   "title": "Low Income Youths’ Perceptions of Meritocracy",
   "contributors": [
     {
@@ -37,5 +98,6 @@
       ],
       "sequence": 1
     }
-  ]
+  ],
+  "full_text": "[@4]"
 }
