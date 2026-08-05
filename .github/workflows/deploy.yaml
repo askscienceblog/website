@@ -48,7 +48,7 @@ jobs:
           npm install -g sass
           cd $GITHUB_WORKSPACE
           npm install
-          npm approve-scripts -A
+          npm approve-scripts --all
 
       - name: Generate Website
         run: |
