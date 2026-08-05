@@ -3,10 +3,11 @@ import json
 import os
 import re
 import subprocess
+from collections.abc import Callable, Mapping
 from datetime import datetime
 from functools import partial
 from pathlib import Path
-from typing import Annotated, Any, Callable, Mapping
+from typing import Annotated, Any
 
 from bs4 import BeautifulSoup
 from jinja2 import Environment, FunctionLoader, StrictUndefined
@@ -238,16 +239,21 @@ def render_template(
 
 def pandoc(
     value,
-    arguments=["-f", "markdown", "-t", "html5"],
+    arguments=("-f", "markdown", "-t", "html5"),
 ):
-    res = subprocess.run(
-        ["pandoc"] + arguments,
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-        input=value,
-        check=True,
-    )
+    try:
+        res = subprocess.run(
+            ["pandoc"] + arguments,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            input=value,
+            check=True,
+        )
+    except subprocess.CalledProcessError as e:
+        print(e.stderr)
+        raise
+
     return Markup(res.stdout)
 
 
@@ -300,4 +306,8 @@ if __name__ == "__main__":
             render_template(entry.path, "public", {".html": censor_addresses})
 
     for cmds in cmd_q:
-        subprocess.run(cmds, shell=True, check=True, timeout=None)
+        try:
+            subprocess.run(cmds, shell=True, check=True, timeout=None)
+        except subprocess.CalledProcessError as e:
+            print(e.stderr)
+            raise
