@@ -243,7 +243,7 @@ def pandoc(
 ):
     try:
         res = subprocess.run(
-            ["pandoc"] + arguments,
+            ["pandoc"] + list(arguments),
             capture_output=True,
             text=True,
             encoding="utf-8",
