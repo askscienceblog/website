@@ -36,6 +36,7 @@ jobs:
       - name: Install Dependencies
         run: |
           sudo apt update
+          sudo apt upgrade
           sudo apt install pandoc
           sudo apt install jq
           pip install -r $GITHUB_WORKSPACE/requirements.txt
@@ -48,6 +49,7 @@ jobs:
           npm install -g sass
           cd $GITHUB_WORKSPACE
           npm install
+          npm approve-scripts -A
 
       - name: Generate Website
         run: |
