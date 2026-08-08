@@ -96,6 +96,10 @@ a:active {
 address {
     display: inline;
     font-style: normal;
+
+    a {
+        hyphens: none;
+    }
 }
 
 body {

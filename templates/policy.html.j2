@@ -1,0 +1,175 @@
+{% extends "templates/common/base.html.j2" %}
+
+{#
+{
+"read_from": "page_vars/policy",
+"write_to": ["policy"],
+"file_extension": ".html"
+}
+#}
+
+{% block head %}
+{{super()}}
+<title>Editorial Policy ∈ ASEAN Young Researchers’ Journal</title>
+<meta name="description" content="AYRJ's editorial process, criteria for submission, and guidelines for reviewers" />
+{%endblock%}
+
+
+{%block main%}
+<main>
+    <section id="hero" style="background-color: transparent;color:black;">
+        <div>
+            <h1>Editorial Policy</h1>
+            <div>
+                <img src="/static/line-logo.png" alt="Logo of ASEAN Young Researchers' Journal">
+            </div>
+            <p>
+                AYRJ strives to be open and accessible to all. To that end, we detail our
+                <a href="#process">editorial process</a>,
+                <a href="#submit">criteria for submission</a>, and
+                <a href="#review">guidelines for reviewers</a> here.
+            </p>
+            <address>
+                <p>
+                    Plese reach out to the editor-in-cheif, at
+                    <a href="mailto:wang.chen@ayrj.org">wang.chen@ayrj.org</a>, for specific questions and
+                    clarifications about our editorial policy.
+                </p>
+            </address>
+        </div>
+    </section>
+    <div id="about-div">
+        <div>
+            <section id="submit">
+                <h2>For Authors</h2>
+                <h3>Submission Content Requirements</h3>
+                <p>
+                    To keep AYRJ accessible to student authors, we place no requirements on a manuscript's field of
+                    study or
+                    the magnitude of its impact. We ask only that manuscripts be factually accurate and present novel
+                    work
+                    that does not duplicate research already published in the literature.
+                </p>
+                <p>
+                    If your work was produced under the guidance of a mentor, you should disclose this. Mentors who
+                    contributed substantially to the work may be listed as co-authors; otherwise, you may thank them in
+                    an
+                    acknowledgements section.
+                </p>
+                <h3>Submission Format Requirements</h3>
+                <p>
+                    Manuscripts should be written in English and kept as free from grammatical and typographical errors
+                    as
+                    possible. Format your manuscript plainly, in a single column and in a legible font. Ensure that your
+                    manuscript clearly states the title, abstract and the names of all authors.
+                </p>
+                <h3>Submission Procedure</h3>
+                <address>
+                    <p>
+                        Submit your manuscript as a .doc, .docx or .pdf file to
+                        <a href="mailto:submissions@ayrj.org">submissions@ayrj.org</a>.
+                    </p>
+                </address>
+                <p>
+                    Our editors reserve the right to decline any manuscript that does not meet the criteria above.
+                </p>
+                <p>
+                    Please refer to our <a href="#process">Editorial Process</a> for what happens after submission, from
+                    initial editing
+                    through peer review to publication.
+                </p>
+            </section>
+            <section id="process">
+                <h2>Editorial Process</h2>
+                <h3>Preprint preparation</h3>
+                <p>
+                    After authors submit their manuscript to the ASEAN Young Researchers' Journal (AYRJ), our editors
+                    assess
+                    it against our criteria for publication. Manuscripts that meet these criteria are then proofread for
+                    grammatical and typographical errors, and our editors reserve the right to make minor edits to
+                    ensure
+                    consistency and correctness in tone and language.
+                </p>
+                <p>
+                    Our editors also verify that every citation in the manuscript is available and relevant. We may
+                    contact
+                    the authors to request supplementary citations, or to clarify any that cannot be readily accessed.
+                </p>
+                <p>
+                    Once a manuscript clears this initial round of editing, it is typeset and sent to the authors for
+                    approval. The authors should confirm that every edit remains faithful to their original intent.
+                </p>
+                <h3>Preprint Publication</h3>
+                <p>
+                    Once the authors have approved the typeset manuscript, we publish it on this website as a preprint.
+                    From
+                    submission to preprint publication, the process typically takes about a month.
+                </p>
+                <h3>Peer Review</h3>
+                <p>
+                    A preprint enters peer review if no issues are brought to our attention within one week of its
+                    publication. We consult at least two external, independent experts in the relevant field, and the
+                    authors should continue to revise the preprint until the reviewers raise no further concerns.
+                </p>
+                <p>Please refer to our <a href="#review">Peer Review Guidelines</a> for more details.</p>
+                <h3>Article Publication</h3>
+                <p>
+                    When a preprint passes peer review, its status on this website changes from preprint to published
+                    article, and the disclaimer noting that the work has not yet been peer reviewed is removed.
+                </p>
+            </section>
+        </div>
+        <section id="review">
+            <h2>For Reviewers</h2>
+            <p>
+                Every preprint on AYRJ is peer reviewed by at least two external, independent experts before it is
+                published as an article. We first contact relevant subject experts to invite them to review, and
+                typically ask that comments be returned within three weeks.
+            </p>
+            <p>
+                The editors of AYRJ deeply appreciate the effort our peer reviewers put in to ensure the accuracy of the
+                journal. Papers written by students may not be as polished as professional research, but the willingness
+                of field experts to lend their time allows our authors, regardless of their background, to experience
+                the research process in full. We firmly believe that our reviewers' contributions will inspire the next
+                generation of bright young minds in their fields.
+            </p>
+            <h3>Guidelines for Reviewers</h3>
+            <p>
+                <strong>Be objective</strong> — Please declare any conflict of interest that could prevent you from
+                judging a preprint fairly, and decline our invitation to review if you believe you cannot be fully
+                impartial.
+            </p>
+            <p>
+                <strong>Guaranteed anonymity</strong> — Your identity as a reviewer is kept strictly confidential. AYRJ
+                will never disclose it to the authors unless you explicitly ask us to.
+            </p>
+            <p><strong>Please assess preprints on two criteria only:</strong>
+            <ul style="max-width:55ch;">
+                <li>
+                    <strong>Factual accuracy</strong> — the content is correct, and the conclusions drawn are plausible
+                    given the information presented.
+                </li>
+                <li>
+                    <strong>Novelty</strong> — the work does not duplicate any existing publication.
+                </li>
+            </ul>
+            </p>
+            <p>
+                <strong>Constructive comments</strong> — Our authors are students who may lack experience in your field,
+                and we ask for your patience when reviewing their work. Please keep all comments constructive and
+                courteous.
+            </p>
+            <p>
+                <strong>Sharing of work</strong> — Because preprints are already publicly available, you are free to
+                keep or share them.
+                However, we ask that you keep all comments provided to the authors strictly confidential.
+            </p>
+            <p>
+                You may also find it helpful to read our <a href="#process">Editorial Process</a> for a fuller picture
+                of how the
+                editorial process at AYRJ works.
+            </p>
+        </section>
+    </div>
+</main>
+{%endblock%}
