@@ -24,6 +24,7 @@
 	],
 	"env": {
 		"dev": {
+			"routes": [],
 			"assets": {
 				"directory": "./public",
 				"binding": "ASSETS"
@@ -34,7 +35,7 @@
 					"bucket_name": "static-assets",
 					"remote": true
 				}
-			],
-		},
+			]
+		}
 	}
 }
