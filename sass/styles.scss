@@ -508,6 +508,7 @@ button {
 
 #add-info {
     margin-right: auto;
+    max-width: 1.3*$text-max-width;
     margin-bottom: 1lh;
     font-variant-numeric: lining-nums proportional-nums;
     font-size: $font-series*1em;
