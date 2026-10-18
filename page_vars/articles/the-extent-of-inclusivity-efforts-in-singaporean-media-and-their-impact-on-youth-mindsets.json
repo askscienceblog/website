@@ -1,0 +1,42 @@
+{
+  "contact": "regan_preyakshna@students.edu.sg",
+  "abstract": "Stereotypes play a significant role in shaping mindsets and people’s perceptions of themselves as\nwell as others. Such marginalisations portrayed in the media can either influence or reinforce\nsuch harmful ideologies. Youth in particular are highly susceptible to these effects due to their\nfree access to any and all unfiltered media. While significant studies investigate this, there is a\nlack of research into such issues in Singapore, a place where equality and particularly\nmulticulturalism is highly emphasised. This study aims to understand how inclusivity efforts of\nrace, gender or sexuality in Singaporean media impact the ideologies that Singaporean youth\nhave of different groups of people. Six Singaporean youths aged 15-18 years old, of different\ngenders, races and religions, were interviewed about their perceptions of stereotypes and view on\nbiases in Singaporean media.his study finds that while inclusivity efforts in Singaporean media\nare highly visible, youth often perceive them as performative, idealised, and tokenistic.\nRepresentations prioritise racial harmony but oversimplify complex realities, marginalise\nnon-core communities, and lack diversity within groups. Stereotypes persist, and are often\nnormalised through humour or authoritative media, reinforcing existing biases rather than\nchallenging them. Online comment culture further undermines inclusivity by exposing youth to\nunfiltered prejudice. Overall, Singapore’s media demonstrates strong commitment and\naccountability, but greater impact requires more nuanced, authentic, and diverse representations\nthat move beyond symbolic inclusion.",
+  "article_type": false,
+  "path": "",
+  "authors": [
+    "Regan Preyakshna",
+    "Rhea Pandey"
+  ],
+  "modified": "2026-10-18T08:34:30.291Z",
+  "slug": "",
+  "markdown": "---\ntitle: 'The Extent of Inclusivity Efforts in Singaporean Media and Their Impact on Youth Mindsets'\nauthor:\n  - Regan Preyakshna\n  - Rhea Pandey\nauthor_with_affiliation:\n  - name: Regan Preyakshna\n    id:\n      - 1\n  - name: Rhea Pandey\n    id:\n      - 1\naffiliation:\n  - name: Year 3, Cedar Girls’ Secondary School\n    id: 1\n\ndate: 'Oct 18, 2026'\npublished: false\nabstract: |\n  Stereotypes play a significant role in shaping mindsets and people’s perceptions of themselves as\n  well as others. Such marginalisations portrayed in the media can either influence or reinforce\n  such harmful ideologies. Youth in particular are highly susceptible to these effects due to their\n  free access to any and all unfiltered media. While significant studies investigate this, there is a\n  lack of research into such issues in Singapore, a place where equality and particularly\n  multiculturalism is highly emphasised. This study aims to understand how inclusivity efforts of\n  race, gender or sexuality in Singaporean media impact the ideologies that Singaporean youth\n  have of different groups of people. Six Singaporean youths aged 15-18 years old, of different\n  genders, races and religions, were interviewed about their perceptions of stereotypes and view on\n  biases in Singaporean media.his study finds that while inclusivity efforts in Singaporean media\n  are highly visible, youth often perceive them as performative, idealised, and tokenistic.\n  Representations prioritise racial harmony but oversimplify complex realities, marginalise\n  non-core communities, and lack diversity within groups. Stereotypes persist, and are often\n  normalised through humour or authoritative media, reinforcing existing biases rather than\n  challenging them. Online comment culture further undermines inclusivity by exposing youth to\n  unfiltered prejudice. Overall, Singapore’s media demonstrates strong commitment and\n  accountability, but greater impact requires more nuanced, authentic, and diverse representations\n  that move beyond symbolic inclusion.\nreferences: []\n\nreference-section-title: References\ncontact: 'regan_preyakshna@students.edu.sg'\nslug: ''\ninclude-before: |\n  ```{=html}\n  <style>\n  body {\n  counter-reset: pandoc-fn;\n  }\n  \n  a.footnote-ref {\n  counter-increment: pandoc-fn;\n  }\n  \n  a.footnote-ref > sup {\n  display: none;\n  }\n  \n  a.footnote-ref::after {\n  content: counter(pandoc-fn, lower-roman);\n  vertical-align: super;\n  font-size: smaller;\n  }\n  #footnotes ol {\n      list-style-type: lower-roman;\n  }\n  </style>\n  ```\n---\n",
+  "title": "The Extent of Inclusivity Efforts in Singaporean Media and Their Impact on Youth Mindsets",
+  "contributors": [
+    {
+      "surname": "Preyakshna",
+      "given_name": "Regan",
+      "name_style": "western",
+      "affil": [
+        {
+          "inst": "Cedar Girls’ Secondary School",
+          "inst_acro": "CGSS",
+          "dept": "Year 3"
+        }
+      ],
+      "sequence": 1
+    },
+    {
+      "surname": "Pandey",
+      "given_name": "Rhea",
+      "name_style": "western",
+      "affil": [
+        {
+          "inst": "Cedar Girls’ Secondary School",
+          "inst_acro": "CGSS",
+          "dept": "Year 3"
+        }
+      ],
+      "sequence": 2
+    }
+  ]
+}
