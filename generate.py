@@ -2,6 +2,7 @@ import base64
 import json
 import os
 import re
+import shutil
 import subprocess
 from collections.abc import Callable, Mapping
 from datetime import datetime
@@ -286,6 +287,24 @@ def cmd(cmds):
     return ""
 
 
+def find_bash() -> str:
+    # on Windows the bash on PATH is usually the WSL launcher, which runs in a separate Linux environment and
+    # re-parses the command line, so use Git Bash (bin/bash.exe also puts Git's grep, sed and curl on PATH)
+    if os.name == "nt":
+        git = shutil.which("git")
+        if git is not None:
+            for parent in Path(git).resolve().parents:
+                if (parent / "bin" / "bash.exe").is_file():
+                    return str(parent / "bin" / "bash.exe")
+
+    bash = shutil.which("bash")
+    if bash is None or (
+        os.name == "nt" and Path(bash).parent.name.lower() in ("windowsapps", "system32")
+    ):
+        raise RuntimeError("bash is required to run queued commands; install Git for Windows")
+    return bash
+
+
 def json_escape(js: Any):
     return Markup(json.dumps(js))
 
@@ -319,9 +338,8 @@ if __name__ == "__main__":
         if entry.is_file():
             render_template(entry.path, "public", {".html": censor_addresses})
 
+    # queued commands are bash syntax, but shell=True would use cmd.exe on Windows
+    bash = find_bash()
     for cmds in cmd_q:
-        try:
-            subprocess.run(cmds, shell=True, check=True, timeout=None)
-        except subprocess.CalledProcessError as e:
-            print(e.stderr)
-            raise
+        # output is not captured, so errors are already printed to the console
+        subprocess.run([bash, "-c", cmds], check=True, timeout=None)
