@@ -515,11 +515,6 @@ button {
     font-variant-numeric: lining-nums proportional-nums;
     font-size: $font-series*1em;
     position: relative;
-    text-align: right;
-
-    >* {
-        margin-left: auto;
-    }
 
     >div {
         margin: 1em 0;
