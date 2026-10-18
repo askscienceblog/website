@@ -509,11 +509,17 @@ button {
 
 #add-info {
     margin-right: auto;
-    max-width: 1.3*$text-max-width;
+    flex-grow: 1;
+    width: min-content;
     margin-bottom: 1lh;
     font-variant-numeric: lining-nums proportional-nums;
     font-size: $font-series*1em;
     position: relative;
+    text-align: right;
+
+    >* {
+        margin-left: auto;
+    }
 
     >div {
         margin: 1em 0;
