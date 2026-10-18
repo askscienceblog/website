@@ -70,18 +70,15 @@ if FORMAT:match('context') then
         end
       end
       return pandoc.RawBlock('context', s:gsub('\\startxtable', '\\startxtable[width=' .. 150 / num_cols .. 'mm]', 1))
-    elseif el.classes:includes('pagewide') then
-      -- render the inner table, then turn its float into a rotated page float
+    elseif el.classes:includes('pagewide') or el.classes:includes('page') then
+      -- give the inner table/figure a page of its own: `page` upright, `pagewide` rotated 90°.
+      -- A `page` float placed after \stopcolumnset is only saved, and is never output unless
+      -- another float happens to be pending, so instead break the page and place it right there.
+      local loc = el.classes:includes('pagewide') and '90,force,here,nonumber' or 'force,here,nonumber'
       local s = pandoc.write(pandoc.Pandoc(el.content), 'context')
-      s = s:gsub('\\startplacetable%[', '\\startplacetable[location={90,page,nonumber},', 1):gsub('\\startplacefigure%[',
-        '\\startplacefigure[location={90,page,nonumber}', 1)
-      return pandoc.RawBlock('context', '\\stopcolumnset\n' .. s .. '\n\\page\\startcolumnset[main]')
-    elseif el.classes:includes('page') then
-      -- render the inner table, then turn its float into a rotated page float
-      local s = pandoc.write(pandoc.Pandoc(el.content), 'context')
-      s = s:gsub('\\startplacetable%[', '\\startplacetable[location={page,nonumber},', 1):gsub('\\startplacefigure%[',
-        '\\startplacefigure[location={page,nonumber}', 1)
-      return pandoc.RawBlock('context', '\\stopcolumnset\n' .. s .. '\n\\page\\startcolumnset[main]')
+      s = s:gsub('\\startplacetable%[', '\\startplacetable[location={' .. loc .. '},', 1)
+      s = s:gsub('\\startplacefigure%[', '\\startplacefigure[location={' .. loc .. '},', 1)
+      return pandoc.RawBlock('context', '\\stopcolumnset\n\\page\n' .. s .. '\n\\page\n\\startcolumnset[main]')
     end
   end
 
