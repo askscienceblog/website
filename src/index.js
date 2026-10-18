@@ -1,3 +1,18 @@
+const CONTENT_TYPES = {
+  otf: "font/otf",
+  ttf: "font/ttf",
+  woff: "font/woff",
+  woff2: "font/woff2",
+  css: "text/css",
+  js: "text/javascript",
+  svg: "image/svg+xml",
+  png: "image/png",
+  jpg: "image/jpeg",
+  jpeg: "image/jpeg",
+  webp: "image/webp",
+  pdf: "application/pdf",
+};
+
 export default {
   async fetch(request, env) {
     const req_url = new URL(request.url);
@@ -17,6 +32,17 @@ export default {
       if (file != null) {
         const headers = new Headers()
         file.writeHttpMetadata(headers)
+        // objects are uploaded without HTTP metadata; without a content type and validators,
+        // browsers can't reuse <link rel="preload"> responses (e.g. fonts get fetched twice)
+        if (!headers.has("Content-Type")) {
+          const ext = file.key.split(".").pop().toLowerCase();
+          if (ext in CONTENT_TYPES) headers.set("Content-Type", CONTENT_TYPES[ext]);
+        }
+        if (!headers.has("Cache-Control")) {
+          headers.set("Cache-Control", "public, max-age=86400");
+        }
+        headers.set("ETag", file.httpEtag);
+        headers.set("Last-Modified", file.uploaded.toUTCString());
         return new Response(file.body, { headers });
       }
     }

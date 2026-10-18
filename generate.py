@@ -299,9 +299,12 @@ def find_bash() -> str:
 
     bash = shutil.which("bash")
     if bash is None or (
-        os.name == "nt" and Path(bash).parent.name.lower() in ("windowsapps", "system32")
+        os.name == "nt"
+        and Path(bash).parent.name.lower() in ("windowsapps", "system32")
     ):
-        raise RuntimeError("bash is required to run queued commands; install Git for Windows")
+        raise RuntimeError(
+            "bash is required to run queued commands; install Git for Windows"
+        )
     return bash
 
 
