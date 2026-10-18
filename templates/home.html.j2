@@ -48,7 +48,7 @@
             </p>
         </div>
     </section>
-    {%set articles = featured.articles | map("load_json") | list%}
+    {%set articles = featured.articles | map("load_page", "page_vars/articles") | reject("none") | list%}
     {%set preprints = articles | rejectattr("article_type") | list%}
     {%set published = articles | selectattr("article_type") | list%}
 

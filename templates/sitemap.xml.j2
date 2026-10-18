@@ -31,11 +31,11 @@
 </url>
 {%for article in articles.values()%}
 <url>
-    <loc>https://ayrj.org/articles/{{article.title | slugify}}</loc>
+    <loc>https://ayrj.org/articles/{{article.file_name | page_slug}}</loc>
     <lastmod>{{article.modified}}</lastmod>
 </url>
 <url>
-    <loc>https://ayrj.org/static/{{article.slug}}.pdf</loc>
+    <loc>https://ayrj.org/static/{{article.file_name}}.pdf</loc>
     <lastmod>{{article.modified}}</lastmod>
 </url>
 {%endfor%}

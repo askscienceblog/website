@@ -31,8 +31,9 @@
     "--lua-filter=tbl.lua",
     "--template=pandoc.html",
     "--toc",
-    "--toc-depth=4"])}}
+    "--toc-depth=4",
+    "--metadata=slug:" ~ file_name])}}
 
 </main>
-{{("bash ./pdf.sh "~path) | cmd_later}}
+{{("bash ./pdf.sh "~file_path) | cmd_later}}
 {% endblock %}

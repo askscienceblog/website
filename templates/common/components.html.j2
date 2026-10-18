@@ -2,7 +2,7 @@
 <details>
     <summary>
         <div>
-            <h3><a href="/articles/{{article.title | slugify}}">{{article.title | trim | pandoc}}</a></h3>
+            <h3><a href="/articles/{{article.file_name | page_slug}}">{{article.title | trim | pandoc}}</a></h3>
             <ol class="authors">
                 {%for author in article.authors%}
                 <li>{{author}}</li>

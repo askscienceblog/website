@@ -157,7 +157,6 @@ class TemplateOptions(BaseModel):
     write_to: list[Annotated[str, Field(pattern=r"[a-zA-Z0-9.\-_~]*")]] = []
     file_extension: str = Field(default="", pattern=r"^$|^\..*")
     variables: list[RenderVariable] = []
-    slug_from: str = "title"
     raw_slug: bool = True
     clear_previous: bool = False
 
@@ -190,46 +189,39 @@ def render_template(
     if options.read_from is None:  # return if no need to render
         return
 
-    var = {}
+    shared_vars = {}
     for vars in options.variables:
         if vars.path.is_file():
-            with vars.path.open("r", encoding="utf-8") as file:
-                var[vars.namespace] = json.load(file)
+            shared_vars[vars.namespace] = load_json(vars.path)
         if vars.path.is_dir():
-            var[vars.namespace] = {}
+            shared_vars[vars.namespace] = {}
             for entry in os.scandir(str(vars.path)):
                 if entry.is_file():
                     try:
-                        with open(entry, "r", encoding="utf-8") as file:
-                            var[vars.namespace][entry.name] = json.load(file)
+                        shared_vars[vars.namespace][entry.name] = load_json(entry.path)
                     except json.JSONDecodeError:
                         pass
+
+    output_path = Path(output_dir, *options.write_to)
+    output_path.mkdir(parents=True, exist_ok=True)
+    if options.clear_previous:
+        for entry in os.scandir(output_path):
+            if entry.is_file():
+                os.remove(entry)
 
     for entry in os.scandir(options.read_from):
         if not entry.is_file():
             continue
 
-        with open(entry, "r", encoding="utf-8") as file:
-            var.update(json.load(file))
+        # fresh variables per page so keys from one page never leak into the next
+        var = {**shared_vars, **load_json(entry.path)}
 
         filename = (
-            slugify(
-                var[options.slug_from],
-                stopwords=STOPWORDS,
-            )
-            if not options.raw_slug
-            else var[options.slug_from]
+            page_slug(var["file_name"]) if not options.raw_slug else var["file_name"]
         ) + options.file_extension
         output = env.get_template(template_path).render(**var)
-        os.makedirs(os.path.join(output_dir, *options.write_to), exist_ok=True)
-        if options.clear_previous:
-            for entry in os.scandir(os.path.join(output_dir, *options.write_to)):
-                if entry.is_file():
-                    os.remove(entry)
 
-        with Path(output_dir, *options.write_to, filename).open(
-            "w", encoding="utf-8"
-        ) as file:
+        with Path(output_path, filename).open("w", encoding="utf-8") as file:
             if options.file_extension in post_processing:
                 out = post_processing[options.file_extension](output)
             else:
@@ -257,9 +249,29 @@ def pandoc(
     return Markup(res.stdout)
 
 
-def load_json(filepath: str) -> Any:
+def load_json(filepath: str | os.PathLike) -> Any:
     with open(filepath, "r", encoding="utf-8") as file:
-        return json.load(file)
+        data = json.load(file)
+
+    # pages are identified by their file name, which determines their URL
+    if isinstance(data, dict):
+        data["file_path"] = Path(filepath).as_posix()
+        data["file_name"] = Path(filepath).stem
+    return data
+
+
+def load_page(name: str, folder: str) -> Any:
+    # accepts a file name or a whole path (older CMS entries stored paths); skips pages that have since been deleted
+    path = Path(folder, Path(name).stem + ".json")
+    if not path.is_file():
+        print(f"Warning: skipping {name}, {path} does not exist")
+        return None
+    return load_json(path)
+
+
+def page_slug(file_name: str) -> str:
+    # the CMS names files after the title, so this matches the URLs previously generated from slugify(title)
+    return slugify(" ".join(file_name.split("-")), stopwords=STOPWORDS)
 
 
 def parse_iso_date_string(string: str, format: str = ""):
@@ -280,7 +292,9 @@ def json_escape(js: Any):
 
 env.filters["pandoc"] = pandoc
 env.filters["load_json"] = load_json
+env.filters["load_page"] = load_page
 env.filters["slugify"] = partial(slugify, stopwords=STOPWORDS)
+env.filters["page_slug"] = page_slug
 env.filters["parse_iso_date"] = parse_iso_date_string
 env.filters["cmd_later"] = cmd
 env.filters["json_escape"] = json_escape
