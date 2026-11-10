@@ -8,7 +8,7 @@
 		"build": "node scripts/min.mjs"
 	},
 	"devDependencies": {
-		"glob": "^13.0.0",
+		"glob": "^14.0.4",
 		"html-minifier-terser": "^7.2.0",
 		"lightningcss": "^1.30.2",
 		"terser": "^5.44.1",
@@ -23,6 +23,6 @@
 	"allowScripts": {
 		"sharp@0.34.5": true,
 		"esbuild@0.28.2": true,
-		"workerd@1.20261012.1": true
+		"workerd@1.20261110.1": true
 	}
 }
