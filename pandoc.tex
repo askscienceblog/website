@@ -184,6 +184,25 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
+% Columns flush to top: columnsets pack each column to the full column height
+% (vpack "exactly" in page-cst.lmt), so stretchable \blank glue was stretched to fill it,
+% leaving gaps between sections. Add "fixed" to every \blank so its glue keeps its natural
+% size with no stretch or shrink; leftover space then sits at the bottom of the column
+\unprotect
+\def\spac_vspacing_yes_indeed[#1]%
+  {\ifmmode\else\par\ifvmode
+     \clf_injectvspacing
+       \ifgridlinesnapping\plusone\orelse\ifgridsnapping\plusone\else\zerocount\fi
+       {#1,\v!fixed}%
+   \fi\fi}
+\def\spac_vspacing_nop_indeed
+  {\ifmmode\else\par\ifvmode
+     \clf_injectvspacing
+       \ifgridlinesnapping\plusone\orelse\ifgridsnapping\plusone\else\zerocount\fi
+       {\currentvspacing,\v!fixed}%
+   \fi\fi}
+\protect
+
 \definecolumnset[main][n=2,distance=10mm]
 \definecolumnsetspan[wide][n=2]
 
