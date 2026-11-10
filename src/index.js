@@ -36,7 +36,7 @@ export default {
         // browsers can't reuse <link rel="preload"> responses (e.g. fonts get fetched twice)
         if (!headers.has("Content-Type")) {
           const ext = file.key.split(".").pop().toLowerCase();
-          if (ext in CONTENT_TYPES) headers.set("Content-Type", CONTENT_TYPES[ext]);
+          if (Object.hasOwn(CONTENT_TYPES, ext)) headers.set("Content-Type", CONTENT_TYPES[ext]);
         }
         if (!headers.has("Cache-Control")) {
           headers.set("Cache-Control", "public, max-age=86400");

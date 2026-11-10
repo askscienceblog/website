@@ -87,6 +87,7 @@ $endif$
 \setupbodyfontenvironment[default][em=italic] % use italic as em, not slanted
 \setuppagenumbering[location={footer,middle},style={\feature[+][default:tnum]}]
 
+\definefallbackfamily[mainface][rm][stixtwomath][range={0x2200-0x22FF}] % maths operators such as ≈ are missing from STIX Two Text
 \definefallbackfamily[mainface][rm][stixtwotext][range={0x000000-0x10FFFF}]
 \definefontfamily[mainface][rm][xcharter][features=default:charter]
 \definefontfamily[mainface][mm][stixtwomath]
