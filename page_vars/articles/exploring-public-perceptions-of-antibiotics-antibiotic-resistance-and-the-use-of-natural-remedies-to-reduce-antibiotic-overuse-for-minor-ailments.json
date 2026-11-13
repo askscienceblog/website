@@ -1,0 +1,25 @@
+{
+  "contact": "ASDF",
+  "abstract": "ASDF",
+  "article_type": false,
+  "path": "",
+  "authors": [
+    "asDFASF"
+  ],
+  "modified": "2026-11-13T04:13:05.204Z",
+  "slug": "",
+  "markdown": "---\ntitle: 'Exploring Public Perceptions of Antibiotics, Antibiotic Resistance, and the Use of Natural Remedies to Reduce Antibiotic Overuse for Minor Ailments'\nauthor:\n  - asDFASF\nauthor_with_affiliation:\n  - name: asDFASF\n    id:\n      - 1\naffiliation:\n  - name: ASDF\n    id: 1\n\ndate: 'Nov 13, 2026'\npublished: false\nabstract: |\n  ASDF\nreferences: []\n\nreference-section-title: References\ncontact: 'ASDF'\nslug: ''\ninclude-before: |\n  ```{=html}\n  <style>\n  body {\n  counter-reset: pandoc-fn;\n  }\n  \n  a.footnote-ref {\n  counter-increment: pandoc-fn;\n  }\n  \n  a.footnote-ref > sup {\n  display: none;\n  }\n  \n  a.footnote-ref::after {\n  content: counter(pandoc-fn, lower-roman);\n  vertical-align: super;\n  font-size: smaller;\n  }\n  #footnotes ol {\n      list-style-type: lower-roman;\n  }\n  </style>\n  ```\n---\n",
+  "title": "Exploring Public Perceptions of Antibiotics, Antibiotic Resistance, and the Use of Natural Remedies to Reduce Antibiotic Overuse for Minor Ailments",
+  "contributors": [
+    {
+      "surname": "asDFASF",
+      "name_style": "western",
+      "affil": [
+        {
+          "inst": "ASDF"
+        }
+      ],
+      "sequence": 1
+    }
+  ]
+}
