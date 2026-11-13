@@ -1,25 +1,294 @@
 {
-  "contact": "ASDF",
-  "abstract": "ASDF",
-  "article_type": false,
-  "path": "",
-  "authors": [
-    "asDFASF"
-  ],
-  "modified": "2026-11-13T04:13:05.204Z",
-  "slug": "",
-  "markdown": "---\ntitle: 'Exploring Public Perceptions of Antibiotics, Antibiotic Resistance, and the Use of Natural Remedies to Reduce Antibiotic Overuse for Minor Ailments'\nauthor:\n  - asDFASF\nauthor_with_affiliation:\n  - name: asDFASF\n    id:\n      - 1\naffiliation:\n  - name: ASDF\n    id: 1\n\ndate: 'Nov 13, 2026'\npublished: false\nabstract: |\n  ASDF\nreferences: []\n\nreference-section-title: References\ncontact: 'ASDF'\nslug: ''\ninclude-before: |\n  ```{=html}\n  <style>\n  body {\n  counter-reset: pandoc-fn;\n  }\n  \n  a.footnote-ref {\n  counter-increment: pandoc-fn;\n  }\n  \n  a.footnote-ref > sup {\n  display: none;\n  }\n  \n  a.footnote-ref::after {\n  content: counter(pandoc-fn, lower-roman);\n  vertical-align: super;\n  font-size: smaller;\n  }\n  #footnotes ol {\n      list-style-type: lower-roman;\n  }\n  </style>\n  ```\n---\n",
   "title": "Exploring Public Perceptions of Antibiotics, Antibiotic Resistance, and the Use of Natural Remedies to Reduce Antibiotic Overuse for Minor Ailments",
   "contributors": [
     {
-      "surname": "asDFASF",
+      "surname": "Tayab",
+      "given_name": "Hafsah",
       "name_style": "western",
       "affil": [
         {
-          "inst": "ASDF"
+          "inst": "Singapore Polytechnic",
+          "inst_acro": "SP",
+          "dept": "Year 2"
         }
       ],
       "sequence": 1
+    },
+    {
+      "surname": "Kalyana",
+      "given_name": "Damita",
+      "name_style": "western",
+      "affil": [
+        {
+          "inst": "Singapore Polytechnic",
+          "inst_acro": "SP",
+          "dept": "Year 2"
+        }
+      ],
+      "sequence": 2
+    },
+    {
+      "surname": "Smriti",
+      "given_name": "Fahia Alam",
+      "name_style": "western",
+      "affil": [
+        {
+          "inst": "Singapore Polytechnic",
+          "inst_acro": "SP",
+          "dept": "Year 2"
+        }
+      ],
+      "sequence": 3
+    },
+    {
+      "surname": "Abdul Muthaliff",
+      "given_name": "Nazreen",
+      "name_style": "western",
+      "affil": [
+        {
+          "inst": "Singapore Institute of Food and Biotechnology Innovation",
+          "inst_acro": "SIFBI"
+        }
+      ],
+      "sequence": 4
     }
-  ]
+  ],
+  "article_type": false,
+  "contact": "hafsahtayab10@gmail.com",
+  "abstract": "Antibiotic resistance (ABR) is a growing global public health concern, with ABR-associated deaths projected to rise by about 75% between 2021 and 2050. Increasing resistance, largely driven by antibiotic misuse and overuse, has prompted global and national initiatives such as Antimicrobial Stewardship Programmes (ASPs). A central component of these efforts is reducing antibiotic overuse. Overuse, defined as the use of antibiotics when unnecessary, often arises from inappropriate prescribing or misuse, such as reusing leftover antibiotics for minor ailments. As conventional antibiotic options lose effectiveness, evidence-based natural ingredients, such as cinnamon, coconut oil, and Manuka honey, have gained attention for their antibacterial properties. Conducted among 175 participants aged 17 years and above in Singapore, this survey-based study explores public perceptions of antibiotics, ABR, and natural remedies to reduce antibiotic overuse for minor ailments aiming to identify opportunities to promote community-level antibiotic stewardship. Openness to natural remedies was assessed across four dimensions: cultural and familial beliefs related to traditional medicine, perceptions of natural and modern approaches, misconceptions, and concerns. Findings show that while approximately half of respondents demonstrated accurate knowledge of antibiotics and ABR, misconceptions remained common, particularly among younger (\\<24 years old), Institute of Technical Education and Diploma participants. Participants were generally open to natural remedies, but some remained uncertain about their efficacy and safety. These results highlight the need for targeted public education. Additionally, it suggests ASPs could be strengthened by expanding research into evidence-based natural remedies, given public openness to such approaches since current programmes mainly target prescriber behaviour.",
+  "citation_list": [
+    {
+      "type": "doi_cite",
+      "key": "1",
+      "doi": "10.1016/S0140-6736(24)01867-1"
+    },
+    {
+      "type": "ndoi_cite",
+      "key": "2",
+      "cite_type": "report",
+      "title": "The burden of antimicrobial resistance (AMR) in Singapore",
+      "authors": [
+        {
+          "type": "org",
+          "literal": "Institute for Health Metrics and Evaluation"
+        }
+      ],
+      "issued_year": 2024,
+      "URL": "https://www.healthdata.org/antimicrobial-resistance",
+      "publisher": "University of Washington"
+    },
+    {
+      "type": "doi_cite",
+      "key": "3",
+      "doi": "10.1016/S0140-6736(24)01019-5"
+    },
+    {
+      "type": "ndoi_cite",
+      "key": "4",
+      "cite_type": "webpage",
+      "title": "Antimicrobial resistance",
+      "authors": [
+        {
+          "type": "org",
+          "literal": "World Health Organization"
+        }
+      ],
+      "issued_year": 2023,
+      "URL": "https://www.who.int/news-room/fact-sheets/detail/antimicrobial-resistance"
+    },
+    {
+      "type": "doi_cite",
+      "key": "5",
+      "doi": "10.1073/pnas.2411919121"
+    },
+    {
+      "type": "doi_cite",
+      "key": "6",
+      "doi": "10.22207/JPAM.18.1.62"
+    },
+    {
+      "type": "doi_cite",
+      "key": "7",
+      "doi": "10.1371/journal.pone.0214779"
+    },
+    {
+      "type": "doi_cite",
+      "key": "8",
+      "doi": "10.1093/cid/ciaa1372"
+    },
+    {
+      "type": "doi_cite",
+      "key": "9",
+      "doi": "10.3389/fsoc.2020.00007"
+    },
+    {
+      "type": "doi_cite",
+      "key": "10",
+      "doi": "10.1007/s44197-024-00192-x"
+    },
+    {
+      "type": "ndoi_cite",
+      "key": "11",
+      "cite_type": "webpage",
+      "title": "Antibiotic use and antimicrobial resistance facts",
+      "authors": [
+        {
+          "type": "org",
+          "literal": "Centers for Disease Control and Prevention"
+        }
+      ],
+      "issued_year": 2024,
+      "URL": "https://www.cdc.gov/antibiotic-use/data-research/facts-stats/index.html",
+      "publisher": "U.S. Department of Health and Human Services"
+    },
+    {
+      "type": "ndoi_cite",
+      "key": "12",
+      "cite_type": "book",
+      "title": "The WHO AWaRe (Access, Watch, Reserve) antibiotic book",
+      "authors": [
+        {
+          "type": "org",
+          "literal": "World Health Organization"
+        }
+      ],
+      "issued_year": 2022,
+      "URL": "https://www.who.int/publications/i/item/9789240062382",
+      "publisher": "World Health Organization"
+    },
+    {
+      "type": "ndoi_cite",
+      "key": "13",
+      "cite_type": "webpage",
+      "title": "Antimicrobial resistance",
+      "authors": [
+        {
+          "type": "org",
+          "literal": "National Centre for Infectious Diseases"
+        }
+      ],
+      "URL": "https://www.ncid.sg/Health-Professionals/Pages/Antimicrobial-Resistance.aspx",
+      "accessed": "2025-09-18"
+    },
+    {
+      "type": "doi_cite",
+      "key": "14",
+      "doi": "10.7759/cureus.49935"
+    },
+    {
+      "type": "doi_cite",
+      "key": "15",
+      "doi": "10.1177/2049936120945083"
+    },
+    {
+      "type": "doi_cite",
+      "key": "16",
+      "doi": "10.3390/biomedicines8100405"
+    },
+    {
+      "type": "doi_cite",
+      "key": "17",
+      "doi": "10.1007/s42770-024-01410-1"
+    },
+    {
+      "type": "doi_cite",
+      "key": "18",
+      "doi": "10.3934/microbiol.2018.4.655"
+    },
+    {
+      "type": "doi_cite",
+      "key": "19",
+      "doi": "10.1038/s41598-020-70666-y"
+    },
+    {
+      "type": "doi_cite",
+      "key": "20",
+      "doi": "10.2147/RRB.S75754"
+    },
+    {
+      "type": "doi_cite",
+      "key": "21",
+      "doi": "10.1093/jac/dkr340"
+    },
+    {
+      "type": "doi_cite",
+      "key": "22",
+      "doi": "10.1016/j.foodcont.2015.05.032"
+    },
+    {
+      "type": "doi_cite",
+      "key": "23",
+      "doi": "10.3389/fcimb.2022.930624"
+    },
+    {
+      "type": "doi_cite",
+      "key": "24",
+      "doi": "10.33448/rsd-v11i13.35844"
+    },
+    {
+      "type": "doi_cite",
+      "key": "25",
+      "doi": "10.1016/j.heliyon.2019.e02612"
+    },
+    {
+      "type": "doi_cite",
+      "key": "26",
+      "doi": "10.21767/2386-5180.1000170"
+    },
+    {
+      "type": "doi_cite",
+      "key": "27",
+      "doi": "10.29079/qjvms.2023.179347"
+    },
+    {
+      "type": "doi_cite",
+      "key": "28",
+      "doi": "10.1371/journal.pone.0224495"
+    },
+    {
+      "type": "doi_cite",
+      "key": "29",
+      "doi": "10.1016/j.sjbs.2016.08.007"
+    },
+    {
+      "type": "ndoi_cite",
+      "key": "31",
+      "cite_type": "webpage",
+      "title": "Treatment of viral gastroenteritis (“stomach flu”)",
+      "authors": [
+        {
+          "type": "org",
+          "literal": "National Institute of Diabetes and Digestive and Kidney Diseases"
+        }
+      ],
+      "issued_year": 2018,
+      "URL": "https://www.niddk.nih.gov/health-information/digestive-diseases/viral-gastroenteritis/treatment",
+      "publisher": "U.S. Department of Health and Human Services, National Institutes of Health"
+    },
+    {
+      "type": "ndoi_cite",
+      "key": "32",
+      "cite_type": "webpage",
+      "title": "Abdominal pain – Causes, diagnosis & treatment",
+      "authors": [
+        {
+          "type": "org",
+          "literal": "SingHealth"
+        }
+      ],
+      "issued_year": 2025,
+      "URL": "https://www.singhealth.com.sg/symptoms-treatments/abdominal-pain"
+    },
+    {
+      "type": "doi_cite",
+      "key": "33",
+      "doi": "10.47102/annals-acadmedsg.2024321"
+    },
+    {
+      "type": "doi_cite",
+      "key": "34",
+      "doi": "10.9734/BMRJ/2013/4188"
+    }
+  ],
+  "full_text": "# Introduction\nAntibiotic resistance (ABR) is an escalating global health threat, responsible for over one million deaths annually between 1990 and 2021[@1]. Without intensified global action, ABR-attributed and associated deaths are projected to rise by approximately 67% and 75%, respectively, from 2021 to 2050 (Figure 1)[@1]. Between 2021 and 2030, ABR-related deaths in Singapore are expected to exceed the UN's 2030 target of 1,930 deaths by 79.3% if stronger action is not taken[@2]. Failure to intervene will impede progress toward the 10-20-30 Antimicrobial Resistance (AMR) mortality reduction target: aiming for a 10% decrease in AMR deaths, a 20% reduction in inappropriate antibiotic use, and a 30% decline in infection rates[@1; @3].\n\n![**Figure 1** | Global attributable and associated ABR burden in the reference scenario, 1990--2050[@1].](/static/abr_fig1.png)\n\nMisuse and overuse of antibiotics remain the primary drivers of ABR[@4; @5; @6; @7]. Overuse, defined as antibiotic use when unnecessary, commonly arises from inappropriate prescribing or misuse[@8; @9]. In this paper, misuse refers to inappropriate antibiotic use when needed, such as incomplete courses[@10; @11].\n\nTo address growing resistance, Antimicrobial Stewardship Programmes (ASPs) have been implemented globally and nationally as coordinated, evidence-based frameworks promoting rational antimicrobial use, including antibiotics[@12; @13; @14; @15]. ASPs emphasise the five \"Ds\": appropriate drug, dose, route, duration, and de-escalation to minimize resistance[@14]. While effective at optimising clinical care, ASPs primarily target prescriber behaviour, with limited focus on community-level behaviour[@4; @15].\n\nTherefore, broader preventive strategies addressing community behaviour are needed. Effective ABR control requires integrated approaches encompassing infection prevention, responsible antibiotic use across all sectors, and continued research into new therapies[@1].\n\nAmong resistant pathogens, methicillin resistant *S. aureus* (MRSA), has shown the steepest global rise in associated and attributed deaths between 1990 and 2021, highlighting the urgency for adjunctive measures to reduce reliance on conventional antibiotics[@1]. Naturally derived substances, such as cinnamon, coconut oil, and Manuka honey, have therefore gained attention for their antibacterial activity against *S. aureus* and MRSA[@16; @17; @18; @19; @20; @21; @22; @23; @24; @25; @26; @27]. All three demonstrate bactericidal or bacteriostatic activity against *S. aureus* at certain concentrations[@21; @23; @24; @25; @27; @28; @29]. Manuka honey's methylglyoxal and leptosperin disrupt bacterial enzymes and inhibit biofilm formation in *S. aureus* and MRSA[@18; @19; @20; @21]. Cinnamaldehyde in cinnamon oil damages bacterial membranes and suppresses adhesion and biofilm-related genes in *S. aureus* and MRSA respectively[@22; @23; @24]. Lauric acid in coconut oil destabilises cell walls and enhances macrophage phagocytic activity in *S. aureus*[@25; @26].\n\nGiven the growing ABR threat, this study examines public perceptions of antibiotics and ABR. Recognising the antibacterial potential of natural ingredients, it explores how evidence-based use of natural remedies for minor ailments could strengthen community-level stewardship strategies.\n\n# Materials and methods\nThe survey targeted individuals aged 17 years and above residing in Singapore, regardless of citizenship, with eligibility determined by year of birth. It was open to all demographic groups to capture a broad cross section of perspectives from the general population.\n\nParticipants were recruited through convenience, snowball, and voluntary response sampling. The survey link was disseminated via the researchers' professional and personal networks and the SG Research Lobang Telegram channel, a public recruitment platform in Singapore.\n\nA total of 175 responses were collected. Participation was voluntary, anonymous, and preceded by informed consent. To maintain confidentiality, the dataset was accessible only to the research team, and no personally identifiable information was recorded.\n\nData were analysed using Google Sheets. Chi-square ($\\chi^2$) tests were performed to assess associations between categorical variables, as shown in the following section.\n\nThe following operational definitions were used in the survey:\n\n*Natural Medicine/Remedies:* use of plant-based ingredients as treatment (e.g., herbal teas).\n\n*Modern Medicine:* pharmaceutical drugs purchased over the counter or prescribed by a doctor (e.g., painkillers).\n\n*Traditional Medicine:* culturally rooted use of natural, plant-based remedies passed down through generations.\n\n# Results and Discussion\n## Demographics\nFigures 2, 3, and 4 present the demographics of participants by age, race, and highest education level completed respectively.\n\n![**Figure 2** | Age of respondents.](/static/abr_fig2.png)\n\n![**Figure 3** | Race/Ethnicity of respondents.](/static/abr_fig3.png)\n\n![**Figure 4** | Highest education level completed by respondents.](/static/abr_fig4.png)\n\nInformation on race was collected to ensure representation across all major ethnic groups in Singapore. The *South Asian* category included individuals identifying as Indian, Bengali, or Pakistani, while *Others* referred to ethnicities not represented among the three major racial groups.\n\nData on education level and age were collected to examine their influence on participants' responses. The single A-Level respondent was excluded from education analysis as one data point was insufficient for comparison. Of the 175 participants, 66.3% were female and 33.7% male, indicating a female-dominated sample. As all questions were gender-neutral, this imbalance was not expected to affect responses or outcomes.\n\n## Antibiotic Knowledge\nFigure 5 presents the results of a question assessing participants' understanding of what antibiotics are. Participants could select more than one answer; therefore, percentages do not sum to 100%. The correct answer was *\"medicine that targets bacteria\"* only, which was selected by most respondents. The most common misconception was that antibiotics target viruses. To clarify overall understanding, a separate analysis assessed how many respondents answered correctly or incorrectly, as it was a multiple answer question. Only 44.6% of respondents answered fully correctly, while 55.4% answered incorrectly, indicating that antibiotic awareness is roughly evenly split. Among the 175 respondents, 32.6% selected the correct answer alongside other incorrect options, suggesting incomplete understanding or confusion about the distinction between bacteria and other microbes. The most common mixed response combined *\"targets bacteria\"* and *\"targets viruses\"*, reinforcing that the belief that antibiotics act against viruses remains widespread.\n\n![**Figure 5** | Summary of respondents' definitions of antibiotics.](/static/abr_fig5.png)\n\nChi-square tests of independence revealed significant associations between antibiotic knowledge and both age group ($\\chi^2$ (5, $N$ = 175) = 13.7, $p$ = 0.0179) and educational background ($\\chi^2$ (4, $N$ = 174) = 17.4, $p$ = 0.00159). As shown in Table 1, participants aged 35--44 years achieved the highest correct response rate, while those aged 21--24 years had the highest proportion of incorrect answers. By educational level, respondents with postgraduate qualifications performed best, whereas those at the Institute of Technical Education (ITE) and Diploma levels showed the highest inaccuracy.\n\n: **Table 1** | Percentage distribution of respondents for their understanding of what antibiotics are in terms of age and highest education level completed.\n\n+------------+------------------+-----------+-----------+\n| Category\\  | Category         | Correct   | Incorrect |\n| Type       |                  |           |           |\n+============+==================+===========+===========+\n| Age Groups | 17--20 (%)       | 35.2      | 64.8      |\n+------------+------------------+-----------+-----------+\n|            | 21--24 (%)       | 23.5      | 76.5      |\n+------------+------------------+-----------+-----------+\n|            | 25--34 (%)       | 51.7      | 48.3      |\n+------------+------------------+-----------+-----------+\n|            | 35--44 (%)       | 72.2      | 27.8      |\n+------------+------------------+-----------+-----------+\n|            | 45--54 (%)       | 60        | 40        |\n+------------+------------------+-----------+-----------+\n|            | 55 and above (%) | 45        | 55        |\n+------------+------------------+-----------+-----------+\n| Highest\\   | Secondary (%)    | 38.6      | 61.4      |\n| Education\\ |                  |           |           |\n| Level\\     |                  |           |           |\n| Completed  |                  |           |           |\n+------------+------------------+-----------+-----------+\n|            | Institute of\\    | 20        | 80        |\n|            | Technical\\       |           |           |\n|            | Education\\       |           |           |\n|            | (ITE) (%)        |           |           |\n+------------+------------------+-----------+-----------+\n|            | Diploma (%)      | 31.2      | 68.8      |\n+------------+------------------+-----------+-----------+\n|            | University\\      | 50        | 50        |\n|            | Graduate (%)     |           |           |\n+------------+------------------+-----------+-----------+\n|            | Postgraduate (%) | 81        | 19        |\n+------------+------------------+-----------+-----------+\n\nThese findings show that antibiotic literacy differs across demographic groups. Misunderstanding antibiotic use, such as taking them for viral infections, can drive resistance. Higher accuracy among postgraduate and middle-aged respondents suggests greater health literacy, while younger and ITE and Diploma groups appear more prone to misconceptions. Overall, antibiotic literacy is vital to resistance prevention, highlighting the need for targeted education to these groups to promote responsible antibiotic use.\n\n## ABR Knowledge\nBuilding on these findings about general antibiotic awareness, the study also examined participants' understanding of ABR. Out of 175 respondents, 84% reported awareness of the term ABR while 16% had not encountered it. Although overall awareness appears high, about one in six respondents remain uninformed, indicating persistent knowledge gaps. This finding supports the need for continued public education to ensure that awareness of ABR is universal and effectively translated into responsible antibiotic use.\n\nNext, Figure 6 shows the results of a question assessing participants' understanding of what the term ABR means based on their current knowledge. The correct statement was *\"it happens when bacteria become resistant to antibiotics\"*, which was chosen by 54.3% of participants. However, almost half (45.7%) chose the incorrect option *\"it happens when the body becomes resistant to antibiotics\"* or were not sure. This misunderstanding can drive inappropriate antibiotic use, as individuals may assume that stronger or repeated antibiotics are needed to overcome perceived \"body resistance.\"\n\n![**Figure 6** | Responses to \"What do you understand about the ABR problem?\".](/static/abr_fig6.png)\n\nChi-square tests of independence revealed a significant association with educational background ($\\chi^2$ (4, $N$ = 174) = 12.9, $p$ = 0.0120) but not with age ($\\chi^2$ (5, $N$ = 175) = 7.70, $p$ = 0.173; $p$ > 0.05). As shown in Table 2, participants with postgraduate qualifications had the highest correct response rate, while those below the postgraduate level showed similar proportion of incorrect or unsure answers.\n\n: **Table 2** | Percentage distribution of respondents for their understanding of what ABR is in terms of highest education level completed.\n\n+------------+------------------+-----------+-------------+\n| Category\\  | Category         | Correct   | Incorrect/\\ |\n| Type       |                  |           | Not Sure    |\n+============+==================+===========+=============+\n| Highest\\   | Secondary (%)    | 52.6      | 47.4        |\n| Education\\ |                  |           |             |\n| Level\\     |                  |           |             |\n| Completed  |                  |           |             |\n+------------+------------------+-----------+-------------+\n|            | ITE (%)          | 50        | 50          |\n+------------+------------------+-----------+-------------+\n|            | Diploma (%)      | 50        | 50          |\n+------------+------------------+-----------+-------------+\n|            | University\\      | 46.3      | 53.7        |\n|            | Graduate (%)     |           |             |\n+------------+------------------+-----------+-------------+\n|            | Postgraduate (%) | 90.5      | 9.5         |\n+------------+------------------+-----------+-------------+\n\nOverall, these findings show that there remains a fundamental misunderstanding of ABR among almost half of the sample. Higher accuracy among postgraduates suggests stronger health literacy. This highlights the need for early education on the causes of ABR to help reduce resistance.\n\nAdditionally, as part of understanding participants' perceptions of ABR, we assessed their level of concern (Figure 7). Overall, the modal response indicated a low level of concern, with 54.9% of participants selecting *\"somewhat concerned.\"*\n\n![**Figure 7** | Percentage of Respondents to \"How concerned are you about the problem of ABR?\".](/static/abr_fig7.png)\n\nThere were significant associations with both age demographic ($\\chi^2$ (5, $N$ = 175) = 16.7, $p$ = 0.00507) and educational level ($\\chi^2$ (4, $N$ = 174) = 17.8, $p$ = 0.00132). As shown in Table 3, participants aged 55 years and above had the highest proportion of high concern, while those aged 17--20 years had the highest proportion of low concern. Similarly, Table 3 shows that postgraduates displayed the highest proportion of high concern, whereas Diploma, ITE, Secondary graduates had similarly high proportions of low concern.\n\n: **Table 3** | Percentage distribution of respondents for their level of concern for ABR in terms of age and highest education level completed. \\*Low Level of Concern = Somewhat concerned, not very concerned and not concerned at all; \\*\\*High Level of Concern = Very concerned.\n\n+------------+------------------+-------------+-------------+\n| Category\\  | Category         | High\\       | Low\\        |\n| Type       |                  | Level of\\   | Level of\\   |\n|            |                  | Concern\\*\\* | Concern\\*   |\n+============+==================+=============+=============+\n| Age Groups | 17--20 (%)       | 8.5         | 91.5        |\n+------------+------------------+-------------+-------------+\n|            | 21--24 (%)       | 17.6        | 82.4        |\n+------------+------------------+-------------+-------------+\n|            | 25--34 (%)       | 27.6        | 72.4        |\n+------------+------------------+-------------+-------------+\n|            | 35--44 (%)       | 33.3        | 66.7        |\n+------------+------------------+-------------+-------------+\n|            | 45--54 (%)       | 30          | 70          |\n+------------+------------------+-------------+-------------+\n|            | 55 and above (%) | 45          | 55          |\n+------------+------------------+-------------+-------------+\n| Highest\\   | Secondary (%)    | 10.5        | 89.5        |\n| Education\\ |                  |             |             |\n| Level\\     |                  |             |             |\n| Completed  |                  |             |             |\n+------------+------------------+-------------+-------------+\n|            | ITE (%)          | 10          | 90          |\n+------------+------------------+-------------+-------------+\n|            | Diploma (%)      | 12.5        | 87.5        |\n+------------+------------------+-------------+-------------+\n|            | University\\      | 31.5        | 68.5        |\n|            | Graduate (%)     |             |             |\n+------------+------------------+-------------+-------------+\n|            | Postgraduate (%) | 47.6        | 52.4        |\n+------------+------------------+-------------+-------------+\n\nAlthough ABR poses greater risks to immunocompromised individuals, particularly those aged 55 years and above, explaining their higher levels of concern, it remains crucial to enhance awareness among younger populations. Early education is vital, as susceptibility to antibiotic resistant infections and related mortality increase with age[@1]. While those with higher educational attainment may gain more exposure to ABR through professional settings, awareness initiatives should extend beyond these groups. Given the growing prevalence and global impact of ABR, integrating targeted education at the secondary, ITE, and diploma levels is essential to build preventive knowledge early and foster responsible antibiotic practices before adulthood.\n\nSynthesising all findings, the most common misconception was that antibiotics treat viruses. Participants with postgraduate qualifications showed stronger understanding of antibiotics and ABR and expressed greater concern about the issue. Conversely, respondents from ITE and Diploma programmes were more likely to show uncertainty and lower concern. Although overall ABR awareness was fairly widespread, knowledge gaps persisted below the undergraduate level. No consistent age-related pattern was observed, but younger respondents (\\<24 years) generally displayed lower knowledge and concern. These results highlight the need for targeted education among younger individuals and those in ITE and Diploma programmes to promote responsible antibiotic use and awareness of resistance risks.\n\n## Natural Remedy Perceptions\nMoving forward, as our paper explores the potential of natural remedies to reduce antibiotic overuse for minor ailments, we aimed to gauge general openness, identify misconceptions, and understand key influencing factors.\n\nHence, we evaluated participants' responses to a series of statements on a three-point Likert scale (\"agree,\" \"neutral,\" \"disagree\") to gauge views toward modern medicine and natural remedies. Analysis focused on perceptions of natural remedies, as these were most relevant to assessing public openness to such options for reducing antibiotic overuse in minor ailments.\n\nAs seen in Figure 8, most statements showed a tendency toward agreement, except for S5, which recorded the highest level of disagreement. Its absolute phrasing likely influenced this result, prompting participants to draw on personal experiences. Nonetheless, agreement from nearly a third of respondents is notable, reflecting a common misconception that all pharmacologically active substances, natural or synthetic, can be risk-free. Similarly, agreement with S2 indicates misunderstanding of the chemical complexity of natural products. These misconceptions are likely reinforced by the association of natural remedies with familiar household ingredients such as herbs and spices.\n\n![**Figure 8** | Level of Agreement to Each Statement on Natural Remedies.](/static/abr_fig8.png)\n\nStatements showing the strongest agreement included S1, reflecting trust in traditional practices as evidence of effectiveness.\n\nResponses to S3, S4, and S6 clustered between neutrality and agreement, suggesting that cultural traditions, affordability, and personal experiences influence receptiveness. However, affordability varies by practitioner and ingredients, while perceived efficacy relative to modern medicine may explain the observed response pattern.\n\nOverall, the predominance of neutral or positive attitudes suggests general openness to natural remedies for minor ailments, supporting their potential role in reducing antibiotic overuse. Yet, agreement with factually inaccurate statements highlights the need for public education on the limitations of natural remedies. Addressing misconceptions in S2 and S5 is essential to promote informed and safe use within ASPs.\n\n## Cross-cultural and Familial Influence\nFigure 9 shows that parents were the household members most likely to encourage the use of traditional remedies, followed by grandparents. This intergenerational influence suggests that families already promote natural approaches for minor ailments. Public stewardship efforts can build on this by engaging parents and grandparents in campaigns that promote safe, evidence-based use of natural remedies, explain when antibiotics are needed, and encourage sound self-care practices. Leveraging these trusted family figures could improve acceptance of natural remedies and help curb antibiotic overuse for minor conditions.\n\n![**Figure 9** | Household member most likely to encourage the use of traditional remedies.](/static/abr_fig9.png)\n\nThese familial patterns also reflect the cultural transmission of traditional medical practices, where health beliefs and habits pass between generations.\n\nRecognizing respondents' cultural backgrounds helps explain differences in confidence with various traditional medicine systems. From the survey results, 54.9% of participants identified with Traditional Chinese Medicine (TCM), 26.9% with Ayurveda, 13.7% with Jamu, 13.1% with none, and 6.3% with other traditional medicine systems. Percentages exceed 100% as multiple selections were allowed.\n\nParticipants were asked whether they were open to trying cross-cultural traditional medicines. As shown in Figure 10, most expressed willingness, reflecting generally positive attitudes toward cross-cultural health practices. Regardless of their responses, we asked them to explain the reasons behind their willingness or unwillingness to try traditional medicines from other cultures.\n\n![**Figure 10** | Distribution of respondents' willingness to try traditional medicine outside their own cultural background.](/static/abr_fig10.png)\n\nThe most selected reason was recommendations from family and friends, indicating that social endorsement strongly influences acceptance of unfamiliar treatments. Among reasons for being unwilling, the primary reason was lack of familiarity with other cultures' medicines as seen in Figure 11, suggesting that limited exposure or understanding of different traditional medicines reduces openness to their use.\n\n![**Figure 11** | Reasons influencing respondents' willingness or unwillingness to try traditional medicines from other cultures.](/static/abr_fig11.png)\n\nCross-cultural perception is important because acceptance of natural remedies depends on how individuals evaluate medical knowledge from different cultural traditions. As traditional medicines are culturally rooted, limited familiarity or bias may inhibit their use even when they are safe and evidence based. The survey results indicate areas where cross-cultural understanding can be strengthened by increasing familiarity through education and building trust via credible social and professional endorsement. Addressing these factors can improve cross-cultural perceptions, increase confidence in evidence-based natural remedies for minor ailments, expand available treatment options, and help reduce antibiotic overuse.\n\nIn summary, both family and cultural factors shape attitudes toward natural remedies. Involving family networks and fostering intercultural understanding can support acceptance of evidence-based natural treatments and help reduce antibiotic overuse.\n\n## Scenario-Based Questions Exploring Openness to Cinnamon, Coconut Oil and Manuka Honey\nTo better understand how these influences translate into real life decision making, the survey explored treatment choices for minor ailments to gauge both openness to evidence-based natural treatments and antibiotic overuse.\n\nThree scenarios involving common minor ailments that individuals may encounter in daily life, without knowledge of causation, were explored. The purpose was to gauge the potential for antibiotic overuse and the willingness to use natural remedies containing cinnamon, coconut oil & manuka honey as they possess antibacterial properties as stated above and are readily accessible.\n\nParticipants were informed that these natural ingredients have proven antibacterial properties and that antibiotics are medicines used to treat bacterial infections.\n\nIn each scenario, participants were given three choices: an antibiotic, a non-antibiotic modern medicine (e.g., antacid, lozenge, moisturiser), or a natural remedy. Figures 12, 13, and 14 present the responses to the three scenario questions.\n\n![**Figure 12** | Scenario 1.](/static/abr_fig12.png)\n\n![**Figure 13** | Scenario 2.](/static/abr_fig13.png)\n\n![**Figure 14** | Scenario 3.](/static/abr_fig14.png)\n\nClinically, the ailments presented in Scenarios 1 and 2 can occasionally be bacterial in origin but are more often viral or functional and do not require antibiotics[@11; @31; @32; @33]. Respondents were generally unlikely to overuse antibiotics: only 6.9% and 4% selected antibiotics in Scenarios 1 and 2, respectively, as shown in Figures 12 and 13. From an ABR perspective, this behaviour represents a positive finding since it prevents antibiotic overuse.\n\nIn Scenario 1, most participants selected cinnamon tea, followed by a non-antibiotic antacid, with the lowest proportion choosing antibiotics. In Scenario 2, the majority chose a non-antibiotic lozenge, followed by Manuka honey and antibiotics.\n\nTo examine factors influencing the dominant choices, cinnamon tea in Scenario 1 and non-antibiotic lozenge in Scenario 2, responses were grouped into two categories: those selecting a natural remedy and those who did not (i.e., chose a non-antibiotic modern option or an antibiotic). For each group, responses to the 11 statements in Question 11 were classified by agreement level (\"agree,\" \"neutral,\" \"disagree\") for comparison. A chi-square analysis identified statements with significant differences between groups. Table 4 shows the percentages of \"agree,\" \"neutral,\" and \"disagree\" responses for those statements in Scenarios 1 and 2.\n\n::: pagewide\n: **Table 4** | Percentage distribution of responses for significant reasons identified in the chi-square analysis for Scenarios 1 & 2.\n\n+--------------+-------------+--------------+--------------+--------------+\n|              | Scenario    | Scenario 1:\\ | Scenario 2:\\ | Scenario 2:\\ |\n|              | 1:\\         | Non-cinnamon | Manuka Honey | Non-manuka\\  |\n|              | Cinnamon    |              |              | Honey        |\n+==============+=============+==============+==============+==============+\n| Agree (%)    | 76.9        | 48.8         | 64.3         | 83.8         |\n+--------------+-------------+--------------+--------------+--------------+\n| Neutral (%)  | 18.7        | 22.6         | 28.6         | 9.5          |\n+--------------+-------------+--------------+--------------+--------------+\n| Disagree (%) | 4.4         | 28.6         | 7.1          | 6.7          |\n+--------------+-------------+--------------+--------------+--------------+\n:::\n\nIn Scenario 1, a 2 × 3 chi square analysis revealed a highly significant difference between cinnamon tea users and non-users, $\\chi^2$ (2, $N$ = 175) = 21.7, $p$ < 0.001. Cinnamon users were 28.1 percentage points more likely to agree that natural remedies \"contain fewer chemicals,\" while non-users were 6.5 times more likely to disagree. Neutral responses showed little variation. Although this is a misconception, since all remedies are composed of chemicals, it emerged as a decisive factor shaping choice. Addressing such misunderstandings is essential to ensure that support for natural remedies contributes to antibiotic stewardship without reinforcing inaccuracies.\n\nIn Scenario 2, a 2 × 3 chi-square analysis identified a significant association between choice and the perception that modern medicine is more strictly regulated for safety and quality, $\\chi^2$ (2, $N$ = 175) = 11.0, $p$ = 0.00407. Non-manuka honey users were 30.3% more likely to agree with this statement relative to manuka honey users, whereas manuka honey users were about three times more likely to respond neutrally. Levels of disagreement were consistently low. These results indicate that respondents recognised the regulatory oversight of conventional medicines, and those who preferred manuka honey did not necessarily reject this assurance but appeared to consider manuka honey comparably safe. For calculations, please refer to [Derivations of Statistics from Table 4](#derivations-of-statistics-from-table-4).\n\nThese findings suggest participants value the safety and quality of modern medicine while viewing natural remedies, such as Manuka honey, as acceptable. By ranking antibiotics last, their responses align with ABR goals. Incorporating evidence-based natural remedies into education and stewardship efforts could help reduce antibiotic overuse while preserving trust in both modern and natural treatments.\n\nIn Scenario 3, most respondents selected a non-antibiotic modern treatment, such as a moisturiser, followed by an over-the-counter topical antibiotic ointment, and coconut oil, as shown in Figure 14. Clinically, such infections may be caused by bacteria but also commonly by fungi[@34]. Crosslinking treatment choices with Likert perceptions revealed no statistically significant associations ($p$ > 0.05) via a 3 × 3 chi-square analysis, in contrast to Scenarios 1 and 2, where perceptions influenced choice. This difference likely reflects the priming effect of the term *infection*, which evoked associations with antibiotics and may have overridden attitudinal differences. Antibiotic uptake in this scenario was substantially higher than in the first two scenarios, which were below 10%, showing that the term infection itself strongly drives treatment decisions. This observation is noteworthy for ABR efforts, as the overuse of topical antibiotics also contributes to resistance.\n\nThese findings highlight both a risk and an opportunity for intervention. Framing illness as an \"infection\" increases the risk of antibiotic overuse, though most participants (63.5%) still avoided antibiotics. Public education should emphasize that infections may stem from bacteria, fungi, or other agents, with antibiotics effective only against bacteria and antifungals for fungal infections. Promoting accurate diagnosis and evidence-based natural remedies can help curb unnecessary antibiotic use.\n\nTo better understand the perceptions shaping these choices, participants were asked about concerns regarding manuka honey, cinnamon, and coconut oil, with the option to select multiple responses. The results are presented in Figure 15. The most frequent response was *no concerns*, reflecting broad openness to natural remedies. Among those with concerns, efficacy was the main issue: 30.9% viewed these remedies as less effective than antibiotics and 28.6% as less effective than other non-antibiotic medicines, which may also explain the lower preference for coconut oil.\n\n![**Figure 15** | Concerns regarding using natural ingredients, specifically cinnamon, coconut oil or manuka honey.](/static/abr_fig15.png)\n\nFrom an ABR perspective, these findings indicate the need for stewardship strategies that address doubts about effectiveness.\n\nPublic education should highlight the scientifically supported antibacterial properties of remedies such as manuka honey, cinnamon, and coconut oil to normalise their use for minor ailments. This approach can reduce antibiotic overuse and support long term ABR prevention.\n\nAcross the three scenarios, treatment choices varied, but most participants avoided antibiotics, preferring non-antibiotic modern medicines or natural remedies. Strengthening confidence in safe natural options and clarifying when antibiotics are necessary can support stewardship efforts to curb overuse and resistance. Integrating evidence-based natural remedies that reflect existing public practices into stewardship may sustain trust while reducing antibiotic overuse.\n\nBuilding on the overall findings of this whole paper, future research could refine methods to improve generalisability. Although this study's use of convenience, snowball, and voluntary response sampling captured diverse perspectives, larger and more systematically sampled populations would strengthen representativeness. Further research could also examine behaviours such as antibiotic stockpiling and self-medication in greater depth.\n\n# Conclusion\nAlthough about half of the respondents demonstrated accurate knowledge of antibiotics and ABR, misconceptions remained prevalent, particularly among younger individuals (\\<24 years) and those with ITE and Diploma level education. Participants were generally receptive to evidence-based natural remedies such as coconut oil, cinnamon, and Manuka honey, though uncertainty persisted regarding their safety and efficacy. Misconceptions about these remedies were also observed, with cross-cultural and parental influences emerging as potential factors in their use. Targeted education for these demographics, alongside broader antibiotic and ABR awareness, remains necessary. Lastly, clarifying misconceptions and integrating evidence-based natural options within ASPs could help reduce antibiotic overuse for minor ailments and support long-term resistance prevention.\n\n# Acknowledgements and Declarations\nThe authors thank all respondents for their participation and express appreciation to their teacher and mentor for their guidance. The authors declare no conflicts of interest.\n\n# Additional Information\n## Questions Included in Survey\nThe following section includes all the questions included in our survey.\n\nTerms Used:\n\n* Multiple Choice Question (MCQ)\n* Multiple Answer Question (MAQ)\n\n1.  Age (MCQ)\n    * 17--20\n    * 21--24\n    * 25--34\n    * 35--44\n    * 45--54\n    * 55 and above\n2.  Gender at birth (MCQ)\n    * Male\n    * Female\n3.  Race/Ethnicity (MCQ)\n    * Chinese\n    * Malay\n    * Indian\n    * Eurasian\n    * Other:\n4.  Highest Education Level Completed (MCQ)\n    * Primary\n    * Secondary\n    * ITE\n    * Polytechnic Diploma\n    * University Undergraduate\n    * Postgraduate\n    * Other:\n5.  Do you provide care for elderly &/or children? (MCQ)\n    * Yes\n    * No\n6.  What do you think antibiotics are? You may select 1 or multiple (MAQ)\n    * Medicine that targets bacteria\n    * Medicine that targets fungi\n    * Medicine that targets viruses\n    * Painkillers or fever-reducing drugs\n7.  Have you heard of the term \"antibiotic resistance\"? (MCQ)\n    * Yes\n    * No\n8.  What do you understand about the antibiotic resistance problem? (MCQ)\n    * It happens when the body becomes resistant to antibiotics.\n    * It happens when bacteria become resistant to antibiotics.\n    * I'm not sure.\n9.  How concerned are you about the antibiotic resistance problem? (MCQ)\n    * Very concerned\n    * Somewhat concerned\n    * Not very concerned\n    * Not concerned at all\n10. Which type of treatment do you generally trust more for common health issues such as coughs, wound healing, or digestive problems? (MCQ)\n    * Modern\n    * Natural\n    * I trust both equally.\n11. For each of the following statements, please indicate how much you agree or disagree that this reason influences your trust in modern or traditional medicine. (Likert Scale)\n    * Modern medicine is more scientifically tested.\n    * Modern medicine works more quickly.\n    * Modern medicine is more strictly regulated for safety and quality.\n    * *Modern medicine causes more good than harm.*\n    * I have personally had positive experiences with modern medicine.\n    * Natural remedies are tried and tested over generations.\n    * *Natural medicine contains fewer chemicals.*\n    * Natural medicine is part of my culture/family practice.\n    * Natural remedies are more affordable.\n    * *Natural medicine has no side effects.*\n    * I have personally had positive experiences with natural medicine.\n\n    \\*Italics indicate questions about misconceptions\n12. Which of the following traditional medicines is associated with your culture or family background? *(Select all that apply) (MAQ)*\n    * Jamu\n    * Ayurveda\n    * Traditional Chinese Medicine (TCM)\n    * Other:\n    * None\n13. Have you personally used any of the traditional medicines you indicated above? (MCQ)\n    * Yes\n    * No\n    * If you selected \"none\" please choose this option.\n14. Would you be willing to try traditional medicine from a culture other than your own, or from any culture if traditional remedies are not part of your cultural or family background? (MCQ)\n    * Yes\n    * No\n15. Regardless of answers, what are your top 3 reasons for being or not being willing to try traditional medicine from another culture or any culture if you do not have a tradition of using remedies in your culture or family? (MAQ)\n    * I am curious about other cultures' traditional practices.\n    * Recommendation from friends, family, or professionals.\n    * I am open to new experiences.\n    * I am concerned about safety or side effects from other cultures.\n    * I am unfamiliar with other cultures' traditional medicine.\n    * Other:\n16. Who in your household is **most** likely to encourage the use of traditional remedies? (MCQ)\n    * Parents\n    * Grandparents\n    * Siblings\n    * Other relatives (e.g., aunts, uncles)\n    * Helper\n    * Myself\n    * No one in my household suggests using traditional remedies.\n17. **Scenario:** You're at home with a mild stomachache. (MCQ)\n    * Take an antibiotic tablet.\n    * Take a non-antibiotic medicine e.g.: antacid used for indigestion.\n    * Sip on cinnamon tea, known for its digestive & antibacterial benefits.\n18. **Scenario:** You have a scratchy throat at home. (MCQ)\n    * Take an antibiotic tablet.\n    * Take a non-antibiotic medicine e.g.: throat lozenge.\n    * Consume a spoonful of manuka honey, which has antibacterial properties.\n19. **Scenario:** You notice a small skin infection at home. (MCQ)\n    * Use an over-the-counter antibiotic ointment.\n    * Apply a non-antibiotic medicine e.g.: moisturiser.\n    * Apply coconut oil, which has antibacterial properties.\n20. What concerns, if any, do you have about using natural ingredients like manuka honey, cinnamon, or coconut oil? (*Select all that apply.*) (MAQ)\n    * Possible side effects\n    * Possible allergies\n    * May not be as effective as non-antibiotics.\n    * May not be as effective as antibiotics.\n    * Prefer treatments with longer scientific use\n    * Not common in my culture or family\n    * Not familiar with these ingredients\n    * No concerns\n    * Other:\n\n## Derivations of Statistics from Table 4\nThis section presents the calculations used to derive the statistical values discussed in the explanation below Table 4. The following steps and workings show how the figures were obtained from the data in Table 4 to support the analysis presented in the main report.\n\nFor the following sentence: \"Cinnamon users were found to be 28.1 percentage points more likely to agree that natural remedies ‘contain fewer chemicals,’ while non-users were 6.5 times more likely to disagree.\"\n\nThe 28.1 percentage point difference was calculated using the values from the \"Agree\" row under \"Cinnamon vs Non-Cinnamon\" ($76.9\\% - 48.8\\% = 28.1$ percentage points). The 6.5-fold difference was obtained from the \"Disagree\" row in the same comparison ($28.6\\% \\div 4.4\\% = 6.5$).\n\nSimilarly, for the sentence, \"Non-manuka honey users were 30.3% more likely to agree with this statement relative to manuka honey users, whereas manuka honey users were about three times more likely to respond neutrally.\"\n\nThe 30.3% difference was calculated from the \"Agree\" row under \"Manuka Honey vs Non-Manuka Honey\" using the formula $((83.8\\% - 64.3\\%) \\div 64.3\\%) \\times 100 = 30.3\\%$, rounded to three significant figures. The three-fold difference was derived from the \"Neutral\" row in Table 4, where it was calculated as shown ($28.6\\% \\div 9.5\\% \\approx 3$)."
 }
