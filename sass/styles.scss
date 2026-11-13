@@ -377,6 +377,11 @@ ul.authors {
 }
 
 article#main {
+
+    >h1 {
+        margin: $header-height 0;
+    }
+
     max-width: $page-max-width;
     margin: 0 auto;
     padding: 0 12px;
@@ -494,6 +499,7 @@ button {
     margin-bottom: 1lh;
     padding-bottom: 1lh;
     border-bottom: 1px solid $dark-black;
+    gap: $header-height;
 }
 
 #abstract {
