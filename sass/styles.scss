@@ -391,10 +391,11 @@ article#main {
         text-wrap: pretty;
         line-height: 1.5;
         hyphens: none;
+        text-indent: 1.5em;
     }
 
-    p+p {
-        text-indent: 1.5em;
+    :is(h1, h2, h3, h4)+p {
+        text-indent: 0;
     }
 
     p:has(+:is(h1, h2, h3, h4)) {
