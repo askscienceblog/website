@@ -56,7 +56,6 @@ $light-white: #ffffff;
 
 p {
     margin: 0 auto;
-    hyphens: auto;
     margin-bottom: .75lh;
     max-width: $text-max-width;
 }
@@ -96,10 +95,6 @@ a:active {
 address {
     display: inline;
     font-style: normal;
-
-    a {
-        hyphens: none;
-    }
 }
 
 body {
@@ -390,7 +385,6 @@ article#main {
         margin: 0;
         text-wrap: pretty;
         line-height: 1.5;
-        hyphens: none;
         text-indent: 1.5em;
     }
 
