@@ -23,6 +23,6 @@
 	"allowScripts": {
 		"sharp@0.34.5": true,
 		"esbuild@0.28.2": true,
-		"workerd@1.20261110.1": true
+		"workerd@1.20261119.1": true
 	}
 }
