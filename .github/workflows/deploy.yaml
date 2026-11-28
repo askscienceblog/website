@@ -5,6 +5,16 @@ on:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+      rebuild_all_pdfs:
+        description: "Rebuild every PDF, even unchanged ones (e.g. after a ConTeXt or font update)"
+        type: boolean
+        default: false
+
+# one deploy at a time, in push order: two runs at once could deploy an older site over a newer one
+concurrency:
+  group: deploy-website
+  cancel-in-progress: false
 
 jobs:
   set-up-context:
@@ -54,6 +64,9 @@ jobs:
           npm approve-scripts --all
 
       - name: Generate Website
+        env:
+          # pdf.sh skips a PDF whose inputs match its last upload unless this is set
+          FORCE_PDF: ${{ inputs.rebuild_all_pdfs && 'yes' || '' }}
         run: |
           cd $GITHUB_WORKSPACE
           sass sass:public/static

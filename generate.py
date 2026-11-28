@@ -16,6 +16,7 @@ from markupsafe import Markup
 from pydantic import BaseModel, Field
 from slugify import slugify
 
+SITE_URL = "https://ayrj.org"
 CONFIG_JSON = re.compile(r"{#(?:\+|-)*\s*({.*?})\s*(?:\+|-)*#}", re.DOTALL)
 STOPWORDS = [
     "i",
@@ -220,7 +221,10 @@ def render_template(
         filename = (
             page_slug(var["file_name"]) if not options.raw_slug else var["file_name"]
         ) + options.file_extension
-        output = env.get_template(template_path).render(**var)
+        path = url_path(options.write_to, filename)
+        output = env.get_template(template_path).render(
+            **{**var, "page_path": path, "page_url": SITE_URL + path}
+        )
 
         with Path(output_path, filename).open("w", encoding="utf-8") as file:
             if options.file_extension in post_processing:
@@ -230,10 +234,24 @@ def render_template(
             file.write(out)
 
 
+def url_path(write_to: list[str], filename: str) -> str:
+    # the path the page is served at: Cloudflare's asset handling ("auto-trailing-slash") drops ".html"
+    # and serves index.html at its folder, e.g. articles/foo.html -> /articles/foo, policy/index.html -> /policy/
+    parts = [*write_to, filename]
+    if parts[-1] == "index.html":
+        parts[-1] = ""
+    elif parts[-1].endswith(".html"):
+        parts[-1] = parts[-1].removesuffix(".html")
+    return "/" + "/".join(parts)
+
+
 def pandoc(
     value,
     arguments=("-f", "markdown", "-t", "html5"),
 ):
+    # convert first: an undefined variable must raise here, not in subprocess's stdin thread, where the error
+    # is lost and pandoc waits for input forever (a JSON without "markdown" hung the whole build)
+    value = str(value)
     try:
         res = subprocess.run(
             ["pandoc"] + list(arguments),
