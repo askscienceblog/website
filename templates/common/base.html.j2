@@ -17,7 +17,8 @@
     <link rel="preload" href="/static/XCharter-Bold.otf" as="font" crossorigin>
     <link rel="preload" href="/static/XCharter-Italic.otf" as="font" crossorigin>
 
-    <link rel="canonical" href="{{ page_url }}" />
+    {# the 404 page is served at every missing address, so it must not claim a URL of its own #}
+    {% if page_path != "/404" %}<link rel="canonical" href="{{ page_url }}" />{% endif %}
     <link rel="icon" href="/static/adaptive-logo.svg">
     <link rel="stylesheet" href="/static/styles.css">
     <script src="/address.js" defer></script>
